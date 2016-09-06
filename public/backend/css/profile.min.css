@@ -1,0 +1,40 @@
+.portlet.light {
+    padding: 12px 20px 15px;
+    background-color: #fff;
+}
+.profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 50%!important;
+    -moz-border-radius: 50%!important;
+    border-radius: 50%!important;
+}
+.profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+}
+.profile-usertitle-name {
+    color: #5a7391;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.profile-usermenu {
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+.profile-usermenu ul li {
+    border-bottom: 1px solid #f0f4f7;
+}
+.profile-usermenu ul li.active a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -2px;
+}
+.profile-usermenu ul li a i {
+    margin-right: 8px;
+    font-size: 16px;
+}
