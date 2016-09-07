@@ -6,3 +6,4 @@ Homestead.json
 .env
 /public/uploads
 .tags*
+.idea
