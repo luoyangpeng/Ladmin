@@ -140,6 +140,7 @@ class ArticleRepository {
     public function delete($id)
     {
         $result = Article::destroy($id);
+        
         if($result) {
             return true;
         }else {
