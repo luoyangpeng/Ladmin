@@ -27,7 +27,7 @@
 
 Route::group(['domain'=>env('ADMIN_DOMAIN'),'middleware' => ['web']],function(){
     Route::auth();
-    Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
+    Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['auth']], function ($router) {
 
         $router->get('/', 'IndexController@index');
         $router->get('/i18n', 'IndexController@dataTableI18n');
