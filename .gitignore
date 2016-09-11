@@ -4,6 +4,7 @@
 Homestead.yaml
 Homestead.json
 .env
-/public/uploads
+/public/backend/uploads
 .tags*
 .idea
+public/md5list2.txt

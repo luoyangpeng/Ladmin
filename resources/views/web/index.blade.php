@@ -17,21 +17,19 @@
 
                         <!-- THE SECOND SLIDE -->
                         <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">                        
-                            <img src="/front/assets/img/sliders/revolution/1.jpeg" alt="">
-
-
+                            <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035355.jpeg" alt="">
                         </li>
                         
                         <!-- THE THIRD SLIDE -->
                         <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">
-                            <img src="/front/assets/img/sliders/revolution/2.jpeg" alt="">
+                            <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035250.jpeg" alt="">
 
                         </li>               
                         
                         <!-- THE FORTH SLIDE -->
                         <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">
                             <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                            <img src="/front/assets/img/sliders/revolution/3.jpeg" alt="">
+                            <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035132.jpeg" alt="">
 
                         </li>
                 </ul>
@@ -99,9 +97,9 @@
                     <ul class="bxslider">
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img1.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img1.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062733.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062733.png" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -110,9 +108,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img2.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062741.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062741.png" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -121,9 +119,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img3.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -132,9 +130,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img4.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -143,9 +141,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img5.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -154,9 +152,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img6.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -165,9 +163,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img3.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -176,9 +174,9 @@
                         </li>
                         <li>
                             <em>
-                                <img src="/front/assets/img/works/img4.jpg" alt="" />
-                                <a href="portfolio_item.html"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                                <a href="/front/assets/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
+                                <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
+                                <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
                             </em>
                             <a class="bxslider-block" href="#">
                                 <strong>Iadmin Project</strong>
@@ -212,43 +210,43 @@
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/front/assets/img/clients/client_2_gray.png" alt="" /> 
+                                <img src="/front/assets/img/clients/client_2_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_2.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/front/assets/img/clients/client_3_gray.png" alt="" /> 
+                                <img src="/front/assets/img/clients/client_3_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_3.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/front/assets/img/clients/client_4_gray.png" alt="" /> 
+                                <img src="/front/assets/img/clients/client_4_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_4.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/front/assets/img/clients/client_5_gray.png" alt="" /> 
+                                <img src="/front/assets/img/clients/client_5_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_5.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
-                            <a href="#">                        
-                                <img src="/front/assets/img/clients/client_6_gray.png" alt="" /> 
+                            <a href="#">
+                                <img src="/front/assets/img/clients/client_6_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_6.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/front/assets/img/clients/client_7_gray.png" alt="" /> 
+                                <img src="/front/assets/img/clients/client_7_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_7.png" class="color-img" alt="" />
                             </a>
                         </li>
                         <li>
-                            <a href="#">                        
-                                <img src="/front/assets/img/clients/client_8_gray.png" alt="" /> 
+                            <a href="#">
+                                <img src="/front/assets/img/clients/client_8_gray.png" alt="" />
                                 <img src="/front/assets/img/clients/client_8.png" class="color-img" alt="" />
                             </a>
                         </li>

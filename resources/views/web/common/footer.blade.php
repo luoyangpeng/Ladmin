@@ -9,21 +9,11 @@
                     <div class="clearfix"></div>                    
                     <!-- END ABOUT -->          
 
-                    <h2>网站小图片</h2>
+                    <h2>网站logo</h2>
                     <!-- BEGIN BLOG PHOTOS STREAM -->
-                    <div class="blog-photo-stream margin-bottom-30">
-                        <ul class="list-unstyled">
-                            <li><a href="#"><img src="/front/assets/img/people/img5-small.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/works/img1.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/people/img4-large.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/works/img6.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/pics/img1-large.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/pics/img2-large.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/works/img3.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/people/img2-large.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/works/img2.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="/front/assets/img/works/img5.jpg" alt=""></a></li>
-                        </ul>
+                    <div class=" margin-bottom-30">
+
+                        <img src="http://www.iadmin.com/front/assets/img/logo.png" alt="">
                     </div>
                     <!-- END BLOG PHOTOS STREAM -->
                 </div>
@@ -74,7 +64,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <p>
-                        <span class="margin-right-10">2016 © Lmyadmin. 版权所有.</span> 
+                        <span class="margin-right-10">2016 © iyoulnag. 版权所有.</span>
                        
                     </p>
                 </div>
