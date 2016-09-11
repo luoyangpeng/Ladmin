@@ -73,7 +73,3 @@ Route::group(['domain'=>env('FRONT_DOMAIN')],function($router){
 
     require(__DIR__ . '/Routes/web.php');
 });
-Route::group(['domain'=>'iyoulang.cc'],function($router){
-
-    require(__DIR__ . '/Routes/web.php');
-});

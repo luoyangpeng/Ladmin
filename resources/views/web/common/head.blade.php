@@ -19,7 +19,7 @@
    <!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
    <link href="/front/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />              
    <link rel="stylesheet" href="/front/assets/plugins/revolution_slider/css/rs-style.css" media="screen">
-   <link rel="stylesheet" href="/front/assets/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen"> 
+   <link rel="stylesheet" href="/front/assets/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen">
    <link href="/front/assets/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />                
    <!-- END PAGE LEVEL PLUGIN STYLES -->
 
