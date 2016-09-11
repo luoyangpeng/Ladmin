@@ -13,7 +13,7 @@
                     <!-- BEGIN BLOG PHOTOS STREAM -->
                     <div class=" margin-bottom-30">
 
-                        <img src="http://www.iadmin.com/front/assets/img/logo.png" alt="">
+                        <img src="/front/assets/img/logo.png" alt="">
                     </div>
                     <!-- END BLOG PHOTOS STREAM -->
                 </div>
