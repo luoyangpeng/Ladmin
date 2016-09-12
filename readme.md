@@ -27,3 +27,5 @@ php artisan db:seed
 ```
 
 - 其他命令可以直接在项目根目录下执行`php artisan`,可以得到关于`artisan`的所有命令
+- 
+![](http://o6hc01bvr.bkt.clouddn.com/20160911062751.png)
