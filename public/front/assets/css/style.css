@@ -437,7 +437,7 @@ Header and header elements.
 	z-index: 999;
 	position: relative;
 	box-shadow: 0 1px 3px #ddd;	
-	background: #222831;
+	background: #fff;
 	filter:none;
 	border: none; 
 	padding-left: 0;
@@ -519,7 +519,7 @@ Header and header elements.
 }
 
 .header .navbar-nav li a {
-	color: #ffffff;
+	color: #333;
 	font-size: 15px;
 	font-weight: 400;
 	text-shadow: none;
