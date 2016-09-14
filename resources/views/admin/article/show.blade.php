@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('css')
+    <link href="{{asset('backend/plugins/md-editor/css/editormd.css')}}" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
 <div class="page-bar">
 	<ul class="page-breadcrumb">
@@ -28,62 +31,47 @@
               </div>
           </div>
           <div class="portlet-body form">
-          		@if (isset($errors) && count($errors) > 0 )
-					    <div class="alert alert-danger">
-					        <button class="close" data-close="alert"></button>
-					        @foreach($errors->all() as $error)
-					            <span class="help-block"><strong>{{ $error }}</strong></span>
-					        @endforeach
-					    </div>
-					    @endif
-              @include('flash::message')
+
               <form role="form" class="form-horizontal" method="POST" action="/admin/article/{{$article['id']}}">
               		{!! csrf_field() !!}
                   <input type="hidden" name="_method" value="PUT">
                   <input type="hidden" name="id" value="{{$article['id']}}">
                   <div class="form-body">
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="title">{{trans('labels.article.title')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="title">{{trans('labels.article.title')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="title" disabled name="title" placeholder="{{trans('labels.article.title')}}" value="{{$article['title']}}">
                               <div class="form-control-focus"> </div>
                           </div>
-                      </div>
 
-                      <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="desc">{{trans('labels.article.desc')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="desc" disabled name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{$article['desc']}}">
                               <div class="form-control-focus"> </div>
                           </div>
-                      </div>
 
-                      <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="author">{{trans('labels.article.author')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="author">{{trans('labels.article.author')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="author" disabled name="author" placeholder="{{trans('labels.article.author')}}" value="{{$article['author']}}">
                               <div class="form-control-focus"> </div>
                           </div>
+
                       </div>
 
+
+
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="from">{{trans('labels.article.from')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="from" disabled name="from" placeholder="{{trans('labels.article.from')}}" value="{{$article['from']}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
 
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="content">{{trans('labels.article.content')}}</label>
-                          <div class="col-md-8">
-                              {!! UEditor::css() !!}
-                              {!! UEditor::content() !!}
-                              {!! UEditor::js() !!}
-                          </div>
-
+                          <div id="test-editormd"></div>
+                          <textarea name="content" class="hide" id="content">{{$article['content']}}</textarea>
                       </div>
-
 
                       <div class="form-group form-md-line-input">
                         <label class="col-md-2 control-label" for="form_control_1">{{trans('labels.role.status')}}</label>
@@ -139,11 +127,95 @@
 
 
 @section('js')
+
+    <script src="{{asset('backend/plugins/md-editor/js/editormd.js')}}"></script>
+    <script type="text/javascript">
+        var testEditor;
+        var content;
+        var md ;
+
+        $(function() {
+            md =  $("#content").val();
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 740,
+                path : '/backend/plugins/md-editor/lib/',
+                toolbarIcons : function() {
+
+                    return ["undo", "redo", "|", "bold", "del", "italic", "quote",
+                        "ucwords", "uppercase", "lowercase", "|", "h1", "h2", "h3",
+                        "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link",
+                        "reference-link", "image", "myImage", "code", "preformatted-text", "code-block",
+                        "table", "datetime", "emoji", "html-entities", "pagebreak", "|",
+                        "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|", "help", "info"];
+
+                },
+                toolbarIconsClass : {
+                    myImage : "fa-file-picture-o"  // 指定一个FontAawsome的图标类
+                },
+                // 自定义工具栏按钮的事件处理
+                toolbarHandlers : {
+                    myImage : function(cm, icon, cursor, selection) {
+                        showChoseImageDialog(cm,"{{url('admin/image/lib')}}");
+
+
+                    }
+                },
+
+                //theme : "dark",
+                //previewTheme : "dark",
+                //editorTheme : "pastel-on-dark",
+                markdown : md,
+                codeFold : true,
+                //syncScrolling : false,
+                saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                searchReplace : true,
+                //watch : false,                // 关闭实时预览
+                htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+                //toolbar  : false,             //关闭工具栏
+                //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+                emoji : true,
+                taskList : true,
+                tocm            : true,         // Using [TOCM]
+                tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+                flowChart : true,             // 开启流程图支持，默认关闭
+                sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+                //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+                //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+                //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+                //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+                //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+                imageUpload : true,
+                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL : "./php/upload.php",
+                onload : function() {
+                    console.log('onload', this);
+                    //this.fullscreen();
+                    //this.unwatch();
+                    //this.watch().fullscreen();
+
+                    //this.setMarkdown("#PHP");
+                    //this.width("100%");
+                    //this.height(480);
+                    //this.resize("100%", 640);
+                }
+            });
+            $("#submit").on('click',function(){
+                content = testEditor.getMarkdown();
+                $("#content").val(content);
+            });
+
+
+        });
+    </script>
+
+
+
     <script>
         /**
          * 弹出选择图片提示框
          */
-        function showChoseImageDialog( content ){
+        function showChoseImageDialog( cm, content ){
 
 
             layer.open({
@@ -168,8 +240,9 @@
                     $('.form-group').find('input[type=hidden]').val(imagePath);
                     //修改图片src属性
                     $('.form-group').find('img').attr('src', imagePath);
-                    var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
-                    ue.execCommand("insertHtml",html);
+                    //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
+                    //ue.execCommand("insertHtml",html);
+                    cm.replaceSelection("![](" + imagePath +")");
                     layer.closeAll()
 
                 },
@@ -180,53 +253,6 @@
         }
 
     </script>
-    <script>
-        var ue = UE.getEditor('ueditor',{initialFrameHeight:400,autoHeightEnabled: false}); //用辅助方法生成的话默认id是ueditor
 
-        ue.ready(function() {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');
-
-            var article_content = $("#article_content").val();
-            ue.execCommand("insertHtml",article_content);
-            ue.setDisabled();
-        });
-
-        UE.registerUI('选择图片', function(editor, uiName) {
-            //注册按钮执行时的command命令，使用命令默认就会带有回退操作
-            editor.registerCommand(uiName, {
-                execCommand: function() {
-                    alert('execCommand:' + uiName)
-                }
-            });
-            //创建一个button
-            var btn = new UE.ui.Button({
-                //按钮的名字
-                name: uiName,
-                //提示
-                title: uiName,
-                //添加额外样式，指定icon图标，这里默认使用一个重复的icon
-                cssRules: 'background-position: -726px -77px;',
-                //点击时执行的命令
-                onclick: function() {
-
-                    showChoseImageDialog("{{url('admin/image/lib')}}");
-                }
-            });
-            //当点到编辑内容上时，按钮要做的状态反射
-            editor.addListener('selectionchange', function() {
-                var state = editor.queryCommandState(uiName);
-                if (state == -1) {
-                    btn.setDisabled(true);
-                    btn.setChecked(false);
-                } else {
-                    btn.setDisabled(false);
-                    btn.setChecked(state);
-                }
-            });
-            //因为你是添加button,所以需要返回这个button
-            return btn;
-        });
-
-    </script>
 
 @endsection

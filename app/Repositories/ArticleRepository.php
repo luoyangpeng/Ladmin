@@ -132,7 +132,7 @@ class ArticleRepository {
     public function store($request)
     {
         $data = $request->all();
-        $data['content'] = $data['ueditor'];
+        $data['content'] = $data['content'];
         $result = Article::create($data);
         return $result;
     }
@@ -152,7 +152,7 @@ class ArticleRepository {
     {
         $article = Article::find($id);
         $data = $request->all();
-        $data['content'] = $data['ueditor'];
+        $data['content'] = $data['content'];
 
         $result = $article->fill($data)->save();
 

@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('css')
+    <link href="{{asset('backend/plugins/md-editor/css/editormd.css')}}" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
 <div class="page-bar">
 	<ul class="page-breadcrumb">
@@ -42,37 +45,35 @@
                 
                   <div class="form-body">
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="title">{{trans('labels.article.title')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="title">{{trans('labels.article.title')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="title" name="title" placeholder="{{trans('labels.article.title')}}" value="{{old('title')}}">
                               <div class="form-control-focus"> </div>
                           </div>
-                      </div>
 
-                      <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="desc">{{trans('labels.article.desc')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{old('desc')}}">
                               <div class="form-control-focus"> </div>
                           </div>
-                      </div>
 
-                      <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="author">{{trans('labels.article.author')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="author">{{trans('labels.article.author')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="author" name="author" placeholder="{{trans('labels.article.author')}}" value="{{old('author')}}">
                               <div class="form-control-focus"> </div>
                           </div>
+
                       </div>
 
+
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="from">{{trans('labels.article.from')}}</label>
-                          <div class="col-md-8">
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
+                          <div class="col-md-3">
                               <input type="text" class="form-control" id="from" name="from" placeholder="{{trans('labels.article.from')}}" value="{{old('from')}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
-
+                      <!--
                       <div class="form-group form-md-line-input">
                           <label class="col-md-2 control-label" for="content">{{trans('labels.article.content')}}</label>
                           <div class="col-md-8">
@@ -81,6 +82,11 @@
                               {!! UEditor::js() !!}
                           </div>
 
+                      </div>
+                      -->
+                      <div class="form-group form-md-line-input">
+                          <div id="test-editormd"></div>
+                          <textarea name="content" class="hide" id="content"></textarea>
                       </div>
 
 
@@ -118,7 +124,7 @@
                       <div class="row">
                           <div class="col-md-offset-2 col-md-10">
                               <a href="/admin/article" class="btn default">{{trans('crud.cancel')}}</a>
-                              <button type="submit" class="btn blue">{{trans('crud.submit')}}</button>
+                              <button type="submit" class="btn blue" id="submit">{{trans('crud.submit')}}</button>
                           </div>
                       </div>
                   </div>
@@ -130,16 +136,87 @@
 @endsection
 
 
-
-
 @section('js')
+    <script src="{{asset('backend/plugins/md-editor/js/editormd.js')}}"></script>
+    <script type="text/javascript">
+        var testEditor;
+        var content;
+        var md = "{{old('content')}}";
+
+        $(function() {
+
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 740,
+                path : '/backend/plugins/md-editor/lib/',
+                toolbarIcons : function() {
+
+                    return ["undo", "redo", "|", "bold", "del", "italic", "quote",
+                        "ucwords", "uppercase", "lowercase", "|", "h1", "h2", "h3",
+                        "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link",
+                        "reference-link", "image", "myImage", "code", "preformatted-text", "code-block",
+                        "table", "datetime", "emoji", "html-entities", "pagebreak", "|",
+                        "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|", "help", "info"];
+                    // Or return editormd.toolbarModes[name]; // full, simple, mini
+                    // Using "||" set icons align right.
+                    //return ["undo", "redo", "|", "bold", "hr", "|", "preview", "watch", "|", "fullscreen", "info"]
+                },
+                toolbarIconsClass : {
+                    myImage : "fa-file-picture-o"  // 指定一个FontAawsome的图标类
+                },
+                // 自定义工具栏按钮的事件处理
+                toolbarHandlers : {
+                    myImage : function(cm, icon, cursor, selection) {
+                        showChoseImageDialog(cm,"{{url('admin/image/lib')}}");
+
+
+                    }
+                },
+                //theme : "dark",
+                //previewTheme : "dark",
+                //editorTheme : "pastel-on-dark",
+                markdown : md,
+                codeFold : true,
+                //syncScrolling : false,
+                saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                searchReplace : true,
+                //watch : false,                // 关闭实时预览
+                htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+                //toolbar  : false,             //关闭工具栏
+                //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+                emoji : true,
+                placeholder : "请输入markdown内容",
+                taskList : true,
+                tocm            : true,         // Using [TOCM]
+                tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+                flowChart : true,             // 开启流程图支持，默认关闭
+                sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+                //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+                //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+                //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+                //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+                //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+                imageUpload : true,
+                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL : "./php/upload.php",
+                onload : function() {
+                    console.log('onload', this);
+
+                }
+            });
+            $("#submit").on('click',function(){
+                content = testEditor.getMarkdown();
+                $("#content").val(content);
+            });
+
+
+        });
+    </script>
     <script>
         /**
          * 弹出选择图片提示框
          */
-        function showChoseImageDialog(obj, content){
-
-            var _this = obj;
+        function showChoseImageDialog(cm, content){
 
             layer.open({
                 title:'选择图片',
@@ -163,8 +240,9 @@
                     $('.form-group').find('input[type=hidden]').val(imagePath);
                     //修改图片src属性
                     $('.form-group').find('img').attr('src', imagePath);
-                    var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
-                    ue.execCommand("insertHtml",html);
+                    //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
+                    //ue.execCommand("insertHtml",html);
+                    cm.replaceSelection("![](" + imagePath +")");
                     layer.closeAll()
 
                 },
@@ -176,7 +254,7 @@
 
     </script>
     <script>
-        var ue = UE.getEditor('ueditor',{initialFrameHeight:400,autoHeightEnabled: false}); //用辅助方法生成的话默认id是ueditor
+       /* var ue = UE.getEditor('ueditor',{initialFrameHeight:400,autoHeightEnabled: false}); //用辅助方法生成的话默认id是ueditor
 
         ue.ready(function() {
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');
@@ -221,7 +299,7 @@
             });
             //因为你是添加button,所以需要返回这个button
             return btn;
-        });
+        });*/
     </script>
 
 @endsection

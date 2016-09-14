@@ -28,7 +28,7 @@ class ArticleRequest extends Request
             'desc' => 'required',
           	'author' => 'required',
             'from' => 'required',
-            'ueditor' => 'required',
+            'content' => 'required',
             'status' =>  'required',
         ];
     }
@@ -47,7 +47,7 @@ class ArticleRequest extends Request
             'desc' => trans('labels.article.desc'),
             'author' => trans('labels.article.author'),
             'from' => trans('labels.article.from'),
-            'ueditor' => trans('labels.article.content'),
+            'content' => trans('labels.article.content'),
             'status' => trans('labels.article.status'),
         ];
     }
