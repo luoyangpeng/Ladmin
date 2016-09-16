@@ -2483,3 +2483,11 @@ li [class*=" fa-"].icon-large {
 .login-signup-page .checkbox{
 	padding-left: 0;
 }
+
+.page-body-background{
+	background: #efefef;
+}
+.blog-sidebar ,.white_bg{
+	background: #fff;
+}
+

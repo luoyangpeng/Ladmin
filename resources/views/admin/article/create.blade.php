@@ -51,11 +51,13 @@
                               <div class="form-control-focus"> </div>
                           </div>
 
-                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
                           <div class="col-md-3">
-                              <input type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{old('desc')}}">
+                              <input type="text" class="form-control" id="from" name="from" placeholder="{{trans('labels.article.from')}}" value="{{old('from')}}">
                               <div class="form-control-focus"> </div>
                           </div>
+
 
                           <label class="col-md-1 control-label" for="author">{{trans('labels.article.author')}}</label>
                           <div class="col-md-3">
@@ -67,9 +69,24 @@
 
 
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
+                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+                          <div class="col-md-10">
+                              <textarea type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{old('desc')}}"></textarea>
+                              <div class="form-control-focus"> </div>
+                          </div>
+
+                      </div>
+
+
+                      <div class="form-group form-md-line-input">
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.thumb')}}</label>
                           <div class="col-md-3">
-                              <input type="text" class="form-control" id="from" name="from" placeholder="{{trans('labels.article.from')}}" value="{{old('from')}}">
+                              <div class="col-md-8 thumb-image">
+
+                                  <img src="" width="200" height="200"/>
+                                  <p class="btn blue margin-top-10">选择图片</p>
+                              </div>
+                              <input type="text" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{old('thumb')}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
@@ -211,6 +228,11 @@
 
 
         });
+
+        //选择封面
+        $(".thumb-image").on("click",function() {
+            showChoseImageDialog('',"{{url('admin/image/lib')}}");
+        });
     </script>
     <script>
         /**
@@ -242,7 +264,10 @@
                     $('.form-group').find('img').attr('src', imagePath);
                     //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
                     //ue.execCommand("insertHtml",html);
-                    cm.replaceSelection("![](" + imagePath +")");
+                    if(cm != '') {
+                        cm.replaceSelection("![](" + imagePath +")");
+                    }
+
                     layer.closeAll()
 
                 },

@@ -75,5 +75,6 @@ class ArticleController extends Controller {
         }else {
             Flash::error(trans("alerts.serviceBusy"));
         }
+        return redirect('/admin/article');
     }
 }

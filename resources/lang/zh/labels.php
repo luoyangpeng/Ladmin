@@ -87,6 +87,7 @@ return [
 		'author' => '作者',
 		'from' => '来源',
 		'content' => '文章内容',
+		'thumb' => '封面',
 		'status' => '状态',
 	],
 	'article_category' =>[

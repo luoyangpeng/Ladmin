@@ -75,6 +75,20 @@
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
+
+
+                      <div class="form-group form-md-line-input">
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.thumb')}}</label>
+                          <div class="col-md-3">
+                              <div class="col-md-8 thumb-image">
+
+                                  <img src="{{$article['thumb']}}" width="200" height="200" id="thumb-image"/>
+                                  <p class="btn blue margin-top-10">选择图片</p>
+                              </div>
+                              <input type="hidden" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{old('thumb')}}">
+                              <div class="form-control-focus"> </div>
+                          </div>
+                      </div>
                     <!--
                       <div class="form-group form-md-line-input">
                           <label class="col-md-2 control-label" for="content">{{trans('labels.article.content')}}</label>
@@ -221,7 +235,10 @@
                 $("#content").val(content);
             });
 
-
+            //选择封面
+            $(".thumb-image").on("click",function() {
+                showChoseImageDialog('',"{{url('admin/image/lib')}}");
+            });
         });
     </script>
 
@@ -253,10 +270,15 @@
                     //设置input值
                     $('.form-group').find('input[type=hidden]').val(imagePath);
                     //修改图片src属性
-                    $('.form-group').find('img').attr('src', imagePath);
+                    //$('.form-group').find('img').attr('src', imagePath);
                     //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
                     //ue.execCommand("insertHtml",html);
-                    cm.replaceSelection("![](" + imagePath +")");
+                    if(cm != '') {
+                        cm.replaceSelection("![](" + imagePath +")");
+                    }else{
+                        $("#thumb-image").attr("src",imagePath);
+                    }
+
                     layer.closeAll()
 
                 },
