@@ -164,9 +164,9 @@
 		});
 
 	</script>
-	<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/lib/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
 	<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysBeFLSg"></script>
-	<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
 	<script type="text/javascript">
 		window.changyan.api.config({
 			appid: 'cysBeFLSg',
