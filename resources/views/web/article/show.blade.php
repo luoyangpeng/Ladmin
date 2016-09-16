@@ -39,7 +39,8 @@
 
 				</div>
 				<hr class="blog-post-sep">
-
+				<div id="cyReward" role="cylabs" data-use="reward"></div>
+				<div id="SOHUCS" sid="{{$article['id']}}"></div>
 
 			</div>
 			<!-- END LEFT SIDEBAR -->
@@ -162,5 +163,14 @@
 
 		});
 
+	</script>
+	<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/lib/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysBeFLSg"></script>
+	<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+	<script type="text/javascript">
+		window.changyan.api.config({
+			appid: 'cysBeFLSg',
+			conf: '85d88bacecaced21c43f8ded47c1760f'
+		});
 	</script>
 @endsection
