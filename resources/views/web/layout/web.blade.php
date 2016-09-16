@@ -17,7 +17,6 @@
     <!-- END GLOBAL MANDATORY STYLES -->
 
 
-    <link href="/front/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
     <!-- BEGIN THEME STYLES -->
 
     <link href="/front/assets/css/style.css" rel="stylesheet" type="text/css"/>

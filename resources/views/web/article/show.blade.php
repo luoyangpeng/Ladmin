@@ -37,10 +37,17 @@
 						<textarea style="display: none" name="editormd-markdown-doc">{{$article['content']}}</textarea>
 					</div>
 
+					<div class="white_bg padding20">
+						<hr class="blog-post-sep">
+
+						<div id="cyReward" role="cylabs" data-use="reward" sourceid="{{$article['id']}}" cid="1"></div>
+						<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/lib/jquery.js"></script>
+						<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysBeFLSg"></script>
+						<div id="SOHUCS" sid="{{$article['id']}}"></div>
+					</div>
+
 				</div>
-				<hr class="blog-post-sep">
-				<div id="cyReward" role="cylabs" data-use="reward"></div>
-				<div id="SOHUCS" sid="{{$article['id']}}"></div>
+
 
 			</div>
 			<!-- END LEFT SIDEBAR -->
@@ -164,8 +171,7 @@
 		});
 
 	</script>
-	<script type="text/javascript" charset="utf-8" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
-	<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysBeFLSg"></script>
+
 	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
 	<script type="text/javascript">
 		window.changyan.api.config({
@@ -173,4 +179,5 @@
 			conf: '85d88bacecaced21c43f8ded47c1760f'
 		});
 	</script>
+
 @endsection
