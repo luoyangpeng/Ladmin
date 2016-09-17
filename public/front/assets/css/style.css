@@ -1174,7 +1174,7 @@ Footer
 .footer {
 	padding: 35px 0;
 	font-size: 13px;
-	background: #62707f;
+	background: #1f2021;
 }
 
 .footer h2 {
@@ -1258,7 +1258,8 @@ Copyright
 	color: #dee4eb;
 	font-size: 12px;
 	padding: 10px 0;
-	background: #4a5866;
+	background: #1f2021;
+	border-top: 1px solid #333;
 }
 
 .copyright p {

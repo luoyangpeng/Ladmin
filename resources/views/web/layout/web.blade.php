@@ -107,9 +107,9 @@
                 <div class="clearfix"></div>
                 <!-- END ABOUT -->
 
-                <h2>网站logo</h2>
+                <h2 class="margin-bottom-20">网站logo</h2>
                 <!-- BEGIN BLOG PHOTOS STREAM -->
-                <div class=" margin-bottom-30">
+                <div>
 
                     <img src="/front/assets/img/logo.png" alt="">
                 </div>
@@ -124,18 +124,6 @@
                 </address>
                 <!-- END CONTACTS -->
 
-                <!-- BEGIN SUBSCRIBE -->
-
-                <form action="#" class="form-subscribe">
-                    <div class="input-group input-large">
-                        <input class="form-control" type="text">
-                            <span class="input-group-btn">
-                                <button class="btn theme-btn" type="button">关注</button>
-                            </span>
-                    </div>
-                </form>
-
-                <!-- END SUBSCRIBE -->
             </div>
             <div class="col-md-4 col-sm-4">
                 <!-- BEGIN TWITTER BLOCK -->
@@ -151,6 +139,7 @@
 
                 <!-- END TWITTER BLOCK -->
             </div>
+
         </div>
     </div>
 </div>
@@ -158,8 +147,11 @@
 
 <!-- BEGIN COPYRIGHT -->
 <div class="copyright">
+
     <div class="container">
+
         <div class="row">
+
             <div class="col-md-8 col-sm-8">
                 <p>
                     <span class="margin-right-10">2016 © iyoulnag. 版权所有.</span>
