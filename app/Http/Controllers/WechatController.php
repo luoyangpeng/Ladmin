@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use EasyWeChat\Foundation\Application;
+use EasyWeChat\Payment\Order;
+
 class WechatController extends Controller
 {
 
@@ -47,4 +50,48 @@ class WechatController extends Controller
 
         return $wechat->server->serve();
     }
+
+    public function pay()
+    {
+        $options = [
+
+            'app_id' => 'xxxx',
+
+            // payment
+            'payment' => [
+                'merchant_id'        => 'your-mch-id',
+                'key'                => 'key-for-signature',
+                'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
+                'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
+                'notify_url'         => '默认的订单回调地址',       // 你也可以在下单时单独设置来想覆盖它
+                // 'device_info'     => '013467007045764',
+                // 'sub_app_id'      => '',
+                // 'sub_merchant_id' => '',
+                // ...
+            ],
+        ];
+
+        $app = new Application($options);
+
+        $payment = $app->payment;
+        $order_number = date("YmdHis");
+        //创建订单
+        $attributes = [
+            'body'             => 'iPad mini 16G 白色',
+            'detail'           => 'iPad mini 16G 白色',
+            'out_trade_no'     => $order_number,
+            'total_fee'        => 1,
+
+        ];
+
+        $order = new Order($attributes);
+
+        $result = $payment->prepare($order);
+        $prepayId = $result->prepay_id;
+
+        $json = $payment->configForPayment($prepayId);
+
+        return view("web.wechat.pay",compact('json'));
+    }
+
 }
