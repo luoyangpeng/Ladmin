@@ -14,7 +14,7 @@
     <!-- BEGIN REVOLUTION SLIDER -->
     <div class="fullwidthbanner-container slider-main">
         <div class="fullwidthabnner">
-            <ul id="revolutionul" style="display:none;">
+            <ul id="revolutionul" >
                 <!-- THE NEW SLIDE -->
 
                 <!-- THE SECOND SLIDE -->

@@ -28,7 +28,10 @@
     <link rel="shortcut icon" href="favicon.ico" />
 
 </head>
-<body>
+<body onload="load()">
+<div id="loading_div" style="position: absolute;width: 100%;height: 100%;overflow:hidden;background-color: #fff;z-index:9999;">
+    <div align="center" style="position:absolute;top:48%;left: 48%"><img src="/front/assets/img/preloader.gif" /></div>
+</div>
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-default navbar-static-top">
 
@@ -176,6 +179,13 @@
 
 <script type="text/javascript" src="/front/assets/plugins/back-to-top.js"></script>
 <!-- END CORE PLUGINS -->
+<script>
+
+    function load(){
+        document.getElementById('loading_div').style.display='none';
+    }
+</script>
+
 @yield('js')
 </body>
 
