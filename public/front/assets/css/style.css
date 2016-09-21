@@ -1456,6 +1456,7 @@ Copyright
 .service-box-v1 {
 	padding: 15px; 
 	text-align: center;
+
 }
 
 .service-box-v1 i {
@@ -2494,4 +2495,29 @@ li [class*=" fa-"].icon-large {
 .padding20{
 	padding:20px
 }
+.col-md-24{
+	width:23%;
+	margin-left: 20px;
+}
+.banner_bg{
+	width: 100%;
+	height: 450px;
+	opacity: 1;
+	visibility: inherit;
+	z-index: 20;
+	background-image: url("/front/assets/img/banner.jpg");
+	background-color: rgba(0, 0, 0, 0);
+	background-size: cover;
+}
+
+.banner_title{
+	font-weight: bold;
+	line-height: 400px;
+	text-align: center;
+	color: #fff;
+	font-size: 4em;
+	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+	background: rgba(0,0,0,0.5);
+}
+
 

@@ -1,42 +1,17 @@
 @extends('web.layout.web')
 
 @section('css')
-<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<link href="/front/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
-<link rel="stylesheet" href="/front/assets/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen">
-<link href="/front/assets/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
-<!-- END PAGE LEVEL PLUGIN STYLES -->
+
 @endsection
 
 @section('content')
  <!-- BEGIN PAGE CONTAINER -->
 <div class="page-container">
     <!-- BEGIN REVOLUTION SLIDER -->
-    <div class="fullwidthbanner-container slider-main">
-        <div class="fullwidthabnner">
-            <ul id="revolutionul" >
-                <!-- THE NEW SLIDE -->
-
-                <!-- THE SECOND SLIDE -->
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">
-                    <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035355.jpeg" alt="">
-                </li>
-
-                <!-- THE THIRD SLIDE -->
-                <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">
-                    <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035250.jpeg" alt="">
-
-                </li>
-
-                <!-- THE FORTH SLIDE -->
-                <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="/front/assets/img/sliders/revolution/thumbs/thumb2.jpg">
-                    <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                    <img src="http://o6hc01bvr.bkt.clouddn.com/20160911035132.jpeg" alt="">
-
-                </li>
-            </ul>
-            <div class="tp-bannertimer tp-bottom"></div>
-        </div>
+    <div class="fullwidthbanner-container slider-main banner_bg">
+        <h1 class="banner_title ">
+            最好用的Laravel后台管理系统
+        </h1>
     </div>
     <!-- END REVOLUTION SLIDER -->
 
@@ -84,178 +59,8 @@
         </div>
         <!-- END SERVICE BLOCKS -->
 
-
-
-
         <div class="clearfix"></div>
 
-        <!-- BEGIN RECENT WORKS -->
-        <div class="row recent-work margin-bottom-40">
-            <div class="col-md-3">
-                <h2><a href="portfolio.html">后台效果图片</a></h2>
-                <p>最好用的后台管理系统，没有之一，不信，看看不就知道了.完美支持手机端，平板电脑，pc客户端。视觉盛宴come on</p>
-            </div>
-            <div class="col-md-9">
-                <ul class="bxslider">
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062733.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062733.png" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062741.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062741.png" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                    <li>
-                        <em>
-                            <img src="http://o6hc01bvr.bkt.clouddn.com/middle/20160911062751.png" alt="" />
-                            <a href="#"><i class="fa fa-link icon-hover icon-hover-1"></i></a>
-                            <a href="http://o6hc01bvr.bkt.clouddn.com/20160911062751.png" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search icon-hover icon-hover-2"></i></a>
-                        </em>
-                        <a class="bxslider-block" href="#">
-                            <strong>Iadmin Project</strong>
-                            <b>项目图片</b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- END RECENT WORKS -->
-
-        <div class="clearfix"></div>
-
-
-
-
-
-        <!-- BEGIN CLIENTS -->
-        <div class="row margin-bottom-40">
-            <div class="col-md-3">
-                <h2><a href="#">友情链接</a></h2>
-                <p>Lorem dipsum folor margade sitede lametep eiusmod psumquis dolore.</p>
-            </div>
-            <div class="col-md-9">
-                <ul class="bxslider1 clients-list">
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_1_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_1.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_2_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_2.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_3_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_3.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_4_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_4.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_5_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_5.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_6_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_6.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_7_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_7.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/front/assets/img/clients/client_8_gray.png" alt="" />
-                            <img src="/front/assets/img/clients/client_8.png" class="color-img" alt="" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- END CLIENTS -->
     </div>
     <!-- END CONTAINER -->
 </div>
@@ -264,19 +69,12 @@
 
 
  @section('js')
-     <script src="/front/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-     <!-- BEGIN PAGE LEVEL JAVASCRIPTS(REQUIRED ONLY FOR CURRENT PAGE) -->
-    <script type="text/javascript" src="/front/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-    <script type="text/javascript" src="/front/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="/front/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="/front/assets/plugins/bxslider/jquery.bxslider.min.js"></script>
     <script src="/front/assets/scripts/app.js"></script>
     <script src="/front/assets/scripts/index.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
             App.init();
-            App.initBxSlider();
-            Index.initRevolutionSlider();
+
         });
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->

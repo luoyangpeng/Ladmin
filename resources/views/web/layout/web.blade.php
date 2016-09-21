@@ -32,6 +32,7 @@
 <div id="loading_div" style="position: absolute;width: 100%;height: 100%;overflow:hidden;background-color: #fff;z-index:9999;">
     <div align="center" style="position:absolute;top:48%;left: 48%"><img src="/front/assets/img/preloader.gif" /></div>
 </div>
+<div id="content" class="hide">
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-default navbar-static-top">
 
@@ -62,18 +63,7 @@
                     <a class="dropdown-toggle" href="{{url('blog/')}}">博客  </a>
 
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  href="{{url('image/')}}">效果图</a>
 
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  href="#">小游戏</a>
-
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  href="#">帮助文档 </a>
-
-                </li>
 
                 <li class="menu-search">
                     <span class="sep"></span>
@@ -166,7 +156,7 @@
     </div>
 </div>
 <!-- END COPYRIGHT -->
-
+</div>
 
 <!-- Load javascripts at bottom, this will reduce page load time -->
 <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
@@ -183,6 +173,7 @@
 
     function load(){
         document.getElementById('loading_div').style.display='none';
+        $("#content").removeClass("hide");
     }
 </script>
 

@@ -62,50 +62,6 @@
 
             <!-- BEGIN RIGHT SIDEBAR -->
             <div class="col-md-3 col-sm-3 blog-sidebar">
-                <!-- CATEGORIES START -->
-                <h2>Categories</h2>
-                <ul class="nav sidebar-categories margin-bottom-40">
-                    <li><a href="#">London (18)</a></li>
-                    <li><a href="#">Moscow (5)</a></li>
-                    <li class="active"><a href="#">Paris (12)</a></li>
-                    <li><a href="#">Berlin (7)</a></li>
-                    <li><a href="#">Instanbul (3)</a></li>
-                </ul>
-                <!-- CATEGORIES END -->
-
-                <!-- BEGIN RECENT NEWS -->
-                <h2>Recent News</h2>
-                <div class="recent-news margin-bottom-10">
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-3">
-                            <img src="front/assets/img/people/img2-large.jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="col-md-9 recent-news-inner">
-                            <h3><a href="#">Letiusto gnissimos</a></h3>
-                            <p>Decusamus tiusto odiodig nis simos ducimus qui sint</p>
-                        </div>
-                    </div>
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-3">
-                            <img src="front/assets/img/people/img1-large.jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="col-md-9 recent-news-inner">
-                            <h3><a href="#">Deiusto anissimos</a></h3>
-                            <p>Decusamus tiusto odiodig nis simos ducimus qui sint</p>
-                        </div>
-                    </div>
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-3">
-                            <img src="front/assets/img/people/img3-large.jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="col-md-9 recent-news-inner">
-                            <h3><a href="#">Tesiusto baissimos</a></h3>
-                            <p>Decusamus tiusto odiodig nis simos ducimus qui sint</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- END RECENT NEWS -->
-
 
                 <!-- BEGIN BLOG TAGS -->
                 <div class="blog-tags margin-bottom-20">
