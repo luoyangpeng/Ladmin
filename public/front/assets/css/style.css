@@ -2512,12 +2512,17 @@ li [class*=" fa-"].icon-large {
 
 .banner_title{
 	font-weight: bold;
-	line-height: 400px;
+	line-height: 450px;
 	text-align: center;
 	color: #fff;
 	font-size: 4em;
 	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 	background: rgba(0,0,0,0.5);
+}
+@media screen and (max-width: 760px) {
+	.banner_title{
+		font-size: 2.4em;
+	}
 }
 
 

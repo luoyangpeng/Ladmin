@@ -28,11 +28,9 @@
     <link rel="shortcut icon" href="favicon.ico" />
 
 </head>
-<body onload="load()">
-<div id="loading_div" style="position: absolute;width: 100%;height: 100%;overflow:hidden;background-color: #fff;z-index:9999;">
-    <div align="center" style="position:absolute;top:48%;left: 48%"><img src="/front/assets/img/preloader.gif" /></div>
-</div>
-<div id="content" class="hide">
+<body>
+
+
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-default navbar-static-top">
 
@@ -156,7 +154,7 @@
     </div>
 </div>
 <!-- END COPYRIGHT -->
-</div>
+
 
 <!-- Load javascripts at bottom, this will reduce page load time -->
 <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
