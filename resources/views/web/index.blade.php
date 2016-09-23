@@ -9,9 +9,17 @@
 <div class="page-container">
     <!-- BEGIN REVOLUTION SLIDER -->
     <div class="fullwidthbanner-container slider-main banner_bg">
-        <h1 class="banner_title">
-            <span>最好用的Laravel后台管理系统</span>
-        </h1>
+        <div class="banner_content">
+
+            <h1 class="banner_title">
+                <span>最好用的Laravel后台管理系统</span>
+            </h1>
+            <div id="banner-start">
+                <span id="banner-start-command">https://github.com/luoyangpeng/Ladmin</span>
+                <a id="banner-start-link" target="_blank" href="https://github.com/luoyangpeng/Ladmin"><i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+
     </div>
     <!-- END REVOLUTION SLIDER -->
 

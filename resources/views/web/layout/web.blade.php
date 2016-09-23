@@ -98,17 +98,11 @@
                 <div class="clearfix"></div>
                 <!-- END ABOUT -->
 
-                <h2 class="margin-bottom-20">网站logo</h2>
-                <!-- BEGIN BLOG PHOTOS STREAM -->
-                <div>
 
-                    <img src="/front/assets/img/logo.png" alt="">
-                </div>
-                <!-- END BLOG PHOTOS STREAM -->
             </div>
             <div class="col-md-4 col-sm-4 space-mobile">
                 <!-- BEGIN CONTACTS -->
-                <h2>我系我们</h2>
+                <h2>联系我们</h2>
                 <address class="margin-bottom-40">
                     QQ:652008158<br>
                     Email: <a href="mailto:luoyangpeng1122@163.com">luoyangpeng1122@163.com</a>
@@ -167,13 +161,6 @@
 
 <script type="text/javascript" src="/front/assets/plugins/back-to-top.js"></script>
 <!-- END CORE PLUGINS -->
-<script>
-
-    function load(){
-        document.getElementById('loading_div').style.display='none';
-        $("#content").removeClass("hide");
-    }
-</script>
 
 @yield('js')
 </body>

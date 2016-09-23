@@ -277,6 +277,14 @@ Misc tools
   padding-left: 0 !important;
 }
 
+.padding-right-30 {
+	padding-right: 30px;
+}
+
+.padding-left-20 {
+	padding-left: 20px;
+}
+
 .hide {
   display: none;
 }
@@ -2495,34 +2503,66 @@ li [class*=" fa-"].icon-large {
 .padding20{
 	padding:20px
 }
-.col-md-24{
-	width:23%;
-	margin-left: 20px;
-}
+
 .banner_bg{
 	width: 100%;
 	height: 450px;
 	opacity: 1;
 	visibility: inherit;
 	z-index: 20;
-	background-image: url("/front/assets/img/banner.jpg");
-	background-color: rgba(0, 0, 0, 0);
-	background-size: cover;
+	background: #0da3e2;
 }
 
 .banner_title{
 	font-weight: bold;
-	line-height: 450px;
 	text-align: center;
 	color: #fff;
 	font-size: 4em;
+	padding-top: 120px;
 	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-	background: rgba(0,0,0,0.5);
 }
 @media screen and (max-width: 760px) {
 	.banner_title{
 		font-size: 2.4em;
 	}
+}
+
+@media screen and (min-width: 769px) {
+	#banner-start {
+		padding: 40px 0;
+		font-size: 14px;
+	}
+}
+
+#banner-start {
+	text-align: center;
+	padding: 4rem 0;
+	display: table;
+	margin: 0 auto;
+}
+#banner-start-link {
+	color: #fff;
+	background: #0089d7;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 15px;
+	text-decoration: none;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+
+#banner-start-command {
+	color: #444;
+	background: #fff;
+	font-family: Monaco,Source Code Pro,Menlo,Consolas,monospace;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 1rem 1.2rem;
+}
+
+.blog-list{
+	background: #ffffff;
+	padding:20px
 }
 
 

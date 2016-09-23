@@ -17,8 +17,8 @@
 			<div class="col-md-8 col-sm-8">
 				<ul class="pull-right breadcrumb">
 					<li><a href="index.html">首页</a></li>
-					<li><a href="">Pages</a></li>
-					<li class="active">Blog Page</li>
+					<li><a href="{{url('/blog')}}">博客</a></li>
+					<li class="active">{{$article['title']}}</li>
 				</ul>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 		<!-- BEGIN BLOG -->
 		<div class="row">
 			<!-- BEGIN LEFT SIDEBAR -->
-			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40">
+			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40 padding-right-30">
 
 				<div class="row">
 
@@ -47,7 +47,7 @@
 
 					<div class="white_bg padding20">
 						<hr class="blog-post-sep">
-						
+
 						<div id="SOHUCS" sid="{{$article['id']}}"></div>
 					</div>
 
@@ -58,7 +58,7 @@
 			<!-- END LEFT SIDEBAR -->
 
 			<!-- BEGIN RIGHT SIDEBAR -->
-			<div class="col-md-24 col-sm-3 blog-sidebar">
+			<div class="col-md-3 col-sm-3 blog-sidebar">
 
 				<!-- BEGIN BLOG TAGS -->
 				<div class="blog-tags margin-bottom-20">
@@ -133,7 +133,7 @@
 
 	</script>
 
-	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+	<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
 	<script type="text/javascript">
 		window.changyan.api.config({
 			appid: 'cysBeFLSg',
