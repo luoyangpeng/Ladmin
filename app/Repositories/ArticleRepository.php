@@ -15,7 +15,7 @@ class ArticleRepository {
      */
     public function getAll()
     {
-        return Article::all()->toArray();
+        return Article::Paginate(10);
     }
 
     /**

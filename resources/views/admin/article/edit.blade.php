@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('css')
     <link href="{{asset('backend/plugins/md-editor/css/editormd.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/plugins/select2/select2.min.css')}}" rel="stylesheet" />
 @endsection
 @section('content')
 <div class="page-bar">
@@ -52,9 +53,9 @@
                               <div class="form-control-focus"> </div>
                           </div>
 
-                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
                           <div class="col-md-3">
-                              <input type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{$article['desc']}}">
+                              <input type="text" class="form-control" id="from" name="from" placeholder="{{trans('labels.article.from')}}" value="{{$article['from']}}">
                               <div class="form-control-focus"> </div>
                           </div>
 
@@ -69,13 +70,27 @@
 
 
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-1 control-label" for="from">{{trans('labels.article.from')}}</label>
-                          <div class="col-md-3">
-                              <input type="text" class="form-control" id="from" name="from" placeholder="{{trans('labels.article.from')}}" value="{{$article['from']}}">
+
+                          <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
+                          <div class="col-md-10">
+                              <input type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{$article['desc']}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
 
+
+                      <div class="form-group form-md-line-input">
+
+                          <label class="col-md-1 control-label" >文章分类</label>
+                          <div class="col-md-5">
+                              <select name="category_id" class="col-md-5">
+                                  @foreach($category_list as $category)
+                                      <option value="{{$category['id']}}" @if($category['id'] == $article['category_id']) selected @endif>{{$category['name']}}</option>
+                                  @endforeach
+                              </select>
+                              <div class="form-control-focus"> </div>
+                          </div>
+                      </div>
 
                       <div class="form-group form-md-line-input">
                           <label class="col-md-1 control-label" for="from">{{trans('labels.article.thumb')}}</label>
@@ -85,7 +100,7 @@
                                   <img src="{{$article['thumb']}}" width="200" height="200" id="thumb-image"/>
                                   <p class="btn blue margin-top-10">选择图片</p>
                               </div>
-                              <input type="hidden" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{old('thumb')}}">
+                              <input type="hidden" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{$article['thumb']}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
@@ -338,6 +353,11 @@
             return btn;
         });
     */
+    </script>
+
+    <script src="{{asset('backend/plugins/select2/select2.min.js')}}"></script>
+    <script type="text/javascript">
+        $('select').select2();
     </script>
 
 @endsection

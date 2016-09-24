@@ -5,11 +5,12 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
-    <title>Iadmin</title>
+    <title>Ladmin Laravel 后台管理系统</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="Keywords" content="">
-    <meta content="" name="description" />
+    <meta name="Keywords" content="Ladmin,Laravel,后台管理系统,开源Laravel后台管理系统 ">
+    <meta content="Lmyadmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用." name="description" />
     <meta content="itas" name="author" />
+    <meta name="baidu-site-verification" content="hxaiwCrdBK" />
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="/front/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -53,11 +54,11 @@
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown active">
+                <li class="dropdown @if($url =="/")active @endif">
                     <a class="dropdown-toggle" href="/">首页 </a>
 
                 </li>
-                <li class="dropdown">
+                <li class="dropdown @if($url =="/blog")active @endif">
                     <a class="dropdown-toggle" href="{{url('blog/')}}">博客  </a>
 
                 </li>

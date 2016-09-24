@@ -29,40 +29,28 @@
         <!-- BEGIN SERVICE BLOCKS -->
         <div class="">
             <div class="row margin-bottom-20">
-                <div class="col-md-4 service-box-v1">
+                <div class="col-md-3 service-box-v1">
                     <div><i class="fa fa-thumbs-up color-grey"></i></div>
                     <h2>优美的代码和框架</h2>
                     <p>Beautiful code and framework.</p>
                 </div>
-                <div class="col-md-4 service-box-v1">
+                <div class="col-md-3 service-box-v1">
                     <div><i class="fa fa-cloud-download color-grey"></i></div>
                     <h2>使用漂亮的模板</h2>
                     <p>Use beautiful templates.</p>
                 </div>
-                <div class="col-md-4 service-box-v1">
+                <div class="col-md-3 service-box-v1">
                     <div><i class="fa fa-dropbox color-grey"></i></div>
                     <h2>多平台支持</h2>
                     <p>Multi-platform support.</p>
                 </div>
-            </div>
-            <div class="row margin-bottom-20">
-
-                <div class="col-md-4 service-box-v1">
-                    <div><i class="fa fa-gift color-grey"></i></div>
-                    <h2>高扩展</h2>
-                    <p>High scalability.</p>
-                </div>
-                <div class="col-md-4 service-box-v1">
-                    <div><i class="fa fa-comments color-grey"></i></div>
-                    <h2>易使用</h2>
-                    <p>Easy to use.</p>
-                </div>
-                <div class="col-md-4 service-box-v1">
+                <div class="col-md-3 service-box-v1">
                     <div><i class="fa fa-globe color-grey"></i></div>
                     <h2>完整文档</h2>
                     <p>Complete documentation.</p>
                 </div>
             </div>
+
 
         </div>
         <!-- END SERVICE BLOCKS -->

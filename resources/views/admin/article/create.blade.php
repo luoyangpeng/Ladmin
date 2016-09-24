@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('css')
     <link href="{{asset('backend/plugins/md-editor/css/editormd.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/plugins/select2/select2.min.css')}}" rel="stylesheet" />
 @endsection
 @section('content')
 <div class="page-bar">
@@ -71,11 +72,26 @@
                       <div class="form-group form-md-line-input">
                           <label class="col-md-1 control-label" for="desc">{{trans('labels.article.desc')}}</label>
                           <div class="col-md-10">
-                              <textarea type="text" class="form-control" id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{old('desc')}}"></textarea>
+                              <textarea type="text" class="form-control"  id="desc" name="desc" placeholder="{{trans('labels.article.desc')}}" value="{{old('desc')}}"></textarea>
                               <div class="form-control-focus"> </div>
                           </div>
 
+
                       </div>
+
+                      <div class="form-group form-md-line-input">
+
+                          <label class="col-md-1 control-label" >文章分类</label>
+                          <div class="col-md-5">
+                              <select name="category_id" class="col-md-5">
+                                  @foreach($category_list as $category)
+                                      <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                  @endforeach
+                              </select>
+                              <div class="form-control-focus"> </div>
+                          </div>
+                      </div>
+
 
 
                       <div class="form-group form-md-line-input">
@@ -325,6 +341,12 @@
             //因为你是添加button,所以需要返回这个button
             return btn;
         });*/
+    </script>
+
+
+    <script src="{{asset('backend/plugins/select2/select2.min.js')}}"></script>
+    <script type="text/javascript">
+        $('select').select2();
     </script>
 
 @endsection

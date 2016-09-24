@@ -53,7 +53,7 @@
                       </div>
 
                       <div class="form-group form-md-line-input">
-                          <label class="col-md-2 control-label" for="desc">{{trans('labels.article_category.pid')}}</label>
+                          <label class="col-md-2 control-label" >{{trans('labels.article_category.pid')}}</label>
                           <div class="col-md-8">
                               <select name="pid" class="col-md-3">
                                   <option value="0">顶级分类</option>

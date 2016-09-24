@@ -30,10 +30,10 @@
                     @foreach($article_list as $article)
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
-                                <img src="{{$article['thumb']}}" alt="" class="img-responsive">
+                                <a href="/blog/{{$article['id']}}"> <img src="{{$article['thumb']}}" alt="" class="img-responsive"></a>
                             </div>
                             <div class="col-md-8 col-sm-8">
-                                <h2><a href="#">{{$article['title']}}</a></h2>
+                                <h2><a href="/blog/{{$article['id']}}">{{$article['title']}}</a></h2>
                                 <ul class="blog-info">
                                     <li><i class="fa fa-calendar"></i>{{$article['created_at']}} </li>
                                     <li><i class="fa fa-tags"></i> </li>
@@ -47,15 +47,7 @@
 
 
                     <div class="text-center">
-                        <ul class="pagination pagination-centered">
-                            <li><a href="#">Prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li class="active"><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">Next</a></li>
-                        </ul>
+                        {!! $article_list->render() !!}
                     </div>
                 </div>
             </div>
@@ -66,16 +58,18 @@
 
                 <!-- BEGIN BLOG TAGS -->
                 <div class="blog-tags margin-bottom-20">
-                    <h2>Tags</h2>
+                    <div class="">
+                        <h2>文章分类</h2>
+                        <hr>
+                    </div>
+
                     <ul>
-                        <li><a href="#"><i class="fa fa-tags"></i>OS</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Metronic</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Dell</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Conquer</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>MS</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Google</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Keenthemes</a></li>
-                        <li><a href="#"><i class="fa fa-tags"></i>Twitter</a></li>
+                        @foreach($category_list as $category)
+
+                        <li><a href="#"><i class="fa fa-tags"></i>{{$category['name']}}</a></li>
+
+                        @endforeach
+
                     </ul>
                 </div>
                 <!-- END BLOG TAGS -->

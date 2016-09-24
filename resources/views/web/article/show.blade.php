@@ -62,16 +62,18 @@
 
 				<!-- BEGIN BLOG TAGS -->
 				<div class="blog-tags margin-bottom-20">
-					<h2>Tags</h2>
+					<div class="">
+						<h2>文章分类</h2>
+						<hr>
+					</div>
+
 					<ul>
-						<li><a href="#"><i class="fa fa-tags"></i>OS</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Metronic</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Dell</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Conquer</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>MS</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Google</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Keenthemes</a></li>
-						<li><a href="#"><i class="fa fa-tags"></i>Twitter</a></li>
+						@foreach($category_list as $category)
+
+							<li><a href="#"><i class="fa fa-tags"></i>{{$category['name']}}</a></li>
+
+						@endforeach
+
 					</ul>
 				</div>
 				<!-- END BLOG TAGS -->
