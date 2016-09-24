@@ -12,7 +12,7 @@
         <div class="banner_content">
 
             <h1 class="banner_title">
-                <span>最好用的Laravel后台管理系统</span>
+                <span>Ladmin后台管理系统</span>
             </h1>
             <div id="banner-start">
                 <span id="banner-start-command">https://github.com/luoyangpeng/Ladmin</span>

@@ -9,17 +9,21 @@ class ArticleRepository {
 
     /**
      * get all article
+     *
      * @itas
      * @DateTime 2016-08-27
      * @return   array
      */
     public function getAll()
     {
-        return Article::Paginate(10);
+        return Article::join("article_category as category","category.id","=","article.category_id")
+                ->select("article.*","category.name")
+                ->Paginate(10);
     }
 
     /**
      * article dataTables data
+     *
      * @return array
      */
     public function ajaxIndex()
@@ -162,6 +166,18 @@ class ArticleRepository {
             return false;
 
         }
+    }
+
+    /**
+     * 更新文章浏览数
+     *
+     * @param $article_id
+     * @return int
+     */
+    public function updateViewCount($article_id)
+    {
+        $res = Article::whereId($article_id)->increment("view_count",1);
+        return $res;
     }
 
 }

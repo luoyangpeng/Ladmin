@@ -39,7 +39,7 @@
 						<p>
 							<spa class="margin-left-10"><i class="glyphicon glyphicon-calendar"></i> {{$article['created_at']}}</spa>
 							<span class="margin-left-10"><i class="glyphicon glyphicon-user"></i> {{$article['author']}}</span>
-							<span class="margin-left-10"><i class="glyphicon glyphicon-eye-open"></i></span>
+							<span class="margin-left-10"><i class="glyphicon glyphicon-eye-open"></i> {{$article['view_count']}}</span>
 						</p>
 
 						<textarea style="display: none" name="editormd-markdown-doc">{{$article['content']}}</textarea>

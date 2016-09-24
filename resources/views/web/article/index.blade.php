@@ -36,7 +36,7 @@
                                 <h2><a href="/blog/{{$article['id']}}">{{$article['title']}}</a></h2>
                                 <ul class="blog-info">
                                     <li><i class="fa fa-calendar"></i>{{$article['created_at']}} </li>
-                                    <li><i class="fa fa-tags"></i> </li>
+                                    <li><i class="fa fa-tags"></i>{{$article['name']}} </li>
                                 </ul>
                                 <p>{{$article['desc']}}</p>
                                 <a class="more" href="/blog/{{$article['id']}}">阅读全文 <i class="fa fa-angle-right"></i></a>

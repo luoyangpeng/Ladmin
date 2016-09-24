@@ -11,6 +11,7 @@ class ArticleController extends Controller {
     {
         $article_list = $articleRepository->getAll();
         $category_list = $categoryRepository->getAll();
+
         return view("web.article.index",compact('article_list','category_list'));
     }
 
@@ -18,6 +19,9 @@ class ArticleController extends Controller {
     {
         $article = $articleRepository->getArticleById($id);
         $category_list = $categoryRepository->getAll();
+
+        //更新文章浏览数
+        $articleRepository->updateViewCount($id);
 
         return view("web.article.show",compact("article","category_list"));
     }
