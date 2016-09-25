@@ -1,4 +1,4 @@
-# IAdmin 后台安装指南
+# LAdmin 后台安装指北
 
 - 初始化项目,进入项目根目录,执行`composer install`安装依赖
 
@@ -26,6 +26,10 @@ php artisan migrate
 php artisan db:seed
 ```
 
-- 其他命令可以直接在项目根目录下执行`php artisan`,可以得到关于`artisan`的所有命令
-- 
+
 ![](http://o6hc01bvr.bkt.clouddn.com/20160911062751.png)
+
+由开源项目IAdmin 扩展
+
+#License
+MIT
