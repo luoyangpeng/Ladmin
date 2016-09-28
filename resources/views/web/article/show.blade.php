@@ -48,7 +48,16 @@
 					<div class="white_bg padding20">
 						<hr class="blog-post-sep">
 
+						<!-- 代码1：放在页面需要展示的位置  -->
+						<!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+						<div class="text-center" id="cyReward" role="cylabs" data-use="reward" sourceid="{{$article['id']}}" cid="{{$article['id']}}"></div>
+						<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+						<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+						<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+
 						<div id="SOHUCS" sid="{{$article['id']}}"></div>
+						<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+						<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysBeFLSg"></script>
 					</div>
 
 				</div>
@@ -88,7 +97,7 @@
 <!-- END BEGIN PAGE CONTAINER -->
 @endsection
 
-		
+
 @section('js')
 	<script src="{{asset('backend/plugins/md-editor/lib/marked.min.js')}}"></script>
 	<script src="{{asset('backend/plugins/md-editor/lib/prettify.min.js')}}"></script>
@@ -109,14 +118,11 @@
 				//htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
 				htmlDecode      : "style,script,iframe",  // you can filter tags decode
 				//toc             : false,
-				theme : "dark",
-				previewTheme : "dark",
-				editorTheme : "pastel-on-dark",
 				tocm            : true,    // Using [TOCM]
 				//tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
 				//gfm             : false,
 				//tocDropdown     : true,
-				// markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+				//markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
 				emoji           : true,
 				taskList        : true,
 				tex             : true,  // 默认不解析
@@ -124,18 +130,14 @@
 				sequenceDiagram : true,  // 默认不解析
 			});
 
-			//console.log("返回一个 jQuery 实例 =>", testEditormdView);
-
 			// 获取Markdown源码
 			//console.log(testEditormdView.getMarkdown());
-
-			//alert(testEditormdView.getMarkdown());
 
 		});
 
 	</script>
 
-	<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
 	<script type="text/javascript">
 		window.changyan.api.config({
 			appid: 'cysBeFLSg',
