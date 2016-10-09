@@ -10,3 +10,6 @@ Route::get('/blog', 'ArticleController@index');
 Route::get('/blog/{id}', 'ArticleController@show');
 
 Route::any('/wechat', 'WechatController@serve');
+
+Route::any('/wechat/pay', 'WechatController@pay');
+

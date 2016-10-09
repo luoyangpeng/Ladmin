@@ -30,16 +30,16 @@
                     @foreach($article_list as $article)
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
-                                <a href="/blog/{{$article['id']}}"> <img src="{{$article['thumb']}}" alt="" class="img-responsive"></a>
+                                <a href="/blog/{{$article['en_id']}}"> <img src="{{$article['thumb']}}" alt="" class="img-responsive"></a>
                             </div>
                             <div class="col-md-8 col-sm-8">
-                                <h2><a href="/blog/{{$article['id']}}">{{$article['title']}}</a></h2>
+                                <h2><a href="/blog/{{$article['en_id']}}">{{$article['title']}}</a></h2>
                                 <ul class="blog-info">
                                     <li><i class="fa fa-calendar"></i>{{$article['created_at']}} </li>
                                     <li><i class="fa fa-tags"></i>{{$article['name']}} </li>
                                 </ul>
                                 <p>{{$article['desc']}}</p>
-                                <a class="more" href="/blog/{{$article['id']}}">阅读全文 <i class="fa fa-angle-right"></i></a>
+                                <a class="more" href="/blog/{{$article['en_id']}}">阅读全文 <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                         <hr class="blog-post-sep">

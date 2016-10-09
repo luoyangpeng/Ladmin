@@ -55,7 +55,7 @@ class WechatController extends Controller
     {
         $options = [
 
-            'app_id' => 'xxxx',
+            'app_id' => 'wxd741c36410676bdc',
 
             // payment
             'payment' => [

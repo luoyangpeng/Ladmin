@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use UserRepository;
 
 class HomeController extends Controller
 {
