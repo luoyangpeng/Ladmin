@@ -60,7 +60,7 @@ class WechatController extends Controller
             // payment
             'payment' => [
                 'merchant_id'        => '1398575402',
-                'key'                => 'MD5',
+                'key'                => 'a89dbc1bb0567e05642794a469ae110e',
                 'cert_path'          => config_path()."/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
                 'key_path'           => config_path()."/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
                 'notify_url'         => 'https://www.iyoulang.cc/wechat/callback/',       // 你也可以在下单时单独设置来想覆盖它
