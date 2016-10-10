@@ -12,7 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-
+        'wechat/*'
     ];
 
     public function handle($request, Closure $next)
