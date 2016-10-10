@@ -53,7 +53,7 @@ class WechatController extends Controller
         return $wechat->server->serve();
     }
 
-    public function pay()
+    /*public function pay()
     {
         $options = [
 
@@ -91,6 +91,6 @@ class WechatController extends Controller
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
-    }
+    }*/
 
 }
