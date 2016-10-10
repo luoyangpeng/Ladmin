@@ -74,7 +74,8 @@ class WechatController extends Controller
 
         $payment = $app->payment;
         $order_number = date("YmdHis");
-        $user = $app->oauth->user();
+        $userService = $app->user;
+        dd($userService);
         $open_id =$user->getId();
         //创建订单
         $attributes = [
