@@ -18,7 +18,7 @@ return [
      */
     'app_id'  => env('WECHAT_APPID', 'wxd741c36410676bdc'),         // AppID
     'secret'  => env('WECHAT_SECRET', 'f01c21e7cf84f2147861c59620ebf1b5'),     // AppSecret
-    'token'   => env('WECHAT_TOKEN', '123456'),          // Token
+    'token'   => env('WECHAT_TOKEN', 'ioCnU4JZqcgw5sjqHc'),          // Token
     'aes_key' => env('WECHAT_AES_KEY', ''),                    // EncodingAESKey
 
     /*
