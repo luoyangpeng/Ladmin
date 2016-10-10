@@ -9,10 +9,6 @@ class WechatController extends Controller
 {
 
 
-    public function __construct()
-    {
-
-    }
 
     /**
      * 图灵api地址
@@ -75,7 +71,7 @@ class WechatController extends Controller
         ];
 
         $app = new Application($options);
-        $user = $app->oauth->user();
+       
         $payment = $app->payment;
         $order_number = date("YmdHis");
         //创建订单
@@ -84,7 +80,7 @@ class WechatController extends Controller
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
-            //"openid"           =>$user->getId(),
+
             "trade_type"       =>"good",
         ];
 
