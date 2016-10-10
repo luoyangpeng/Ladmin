@@ -82,10 +82,10 @@ class WechatController extends Controller
         ];
 
         $order = new Order($attributes);
-
+        dd($order);
         $result = $payment->prepare($order);
         $prepayId = $result->prepay_id;
-        dd($result);
+
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
