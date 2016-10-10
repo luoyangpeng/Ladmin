@@ -11,7 +11,7 @@ class WechatController extends Controller
 
     public function __construct()
     {
-        $this->middleware("wechat.oauth",['only'=>"pay"]);
+
     }
 
     /**
@@ -84,7 +84,7 @@ class WechatController extends Controller
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
-            "openid"           =>$user->getId(),
+            //"openid"           =>$user->getId(),
             "trade_type"       =>"good",
         ];
 
