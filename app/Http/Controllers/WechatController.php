@@ -42,9 +42,9 @@ class WechatController extends Controller
                     }
                 }
                 if($message->MsgType == 'text') {
-                     $post_data = json_encode(['key'=>$this->key,'info'=>$message->Content]);
-                     $content = json_decode(curlRequest($this->api,$post_data),true);
-                     return $content['text'];
+                    // $post_data = json_encode(['key'=>$this->key,'info'=>$message->Content]);
+                     //$content = json_decode(curlRequest($this->api,$post_data),true);
+                     //return $content['text'];
                      
                 }
               
@@ -87,7 +87,7 @@ class WechatController extends Controller
 
         $result = $payment->prepare($order);
         $prepayId = $result->prepay_id;
-print_r($result);
+
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
