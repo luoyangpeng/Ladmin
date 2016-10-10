@@ -58,7 +58,6 @@ class WechatController extends Controller
         $options = [
 
             'app_id' => 'wxb3c7d034b1ec511a',
-
             // payment
             'payment' => [
                 'merchant_id'        => '1398575402',
@@ -74,16 +73,13 @@ class WechatController extends Controller
 
         $payment = $app->payment;
         $order_number = date("YmdHis");
-        $userService = $app->user;
-        dd($userService);
-        $open_id =$user->getId();
+
         //创建订单
         $attributes = [
             'body'             => 'iPad mini 16G 白色',
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
-            "openid"           =>$open_id,
             "trade_type"       =>"JSAPI",
         ];
 
