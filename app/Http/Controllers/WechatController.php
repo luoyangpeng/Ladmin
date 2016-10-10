@@ -25,7 +25,7 @@ class WechatController extends Controller
     public function serve()
     {
         $wechat = app('wechat');
-        /*$user = $wechat->user;
+        $user = $wechat->user;
         $wechat->server->setMessageHandler(function($message) use ($user) {
               $fromUser = $user->get($message->FromUserName);
                if ($message->MsgType == 'event') {
@@ -48,12 +48,12 @@ class WechatController extends Controller
 
                 }
 
-        });*/
+        });
 
         return $wechat->server->serve();
     }
 
-    /*public function pay()
+    public function pay()
     {
         $options = [
 
@@ -91,6 +91,6 @@ class WechatController extends Controller
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
-    }*/
+    }
 
 }
