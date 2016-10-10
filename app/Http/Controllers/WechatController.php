@@ -24,12 +24,22 @@ class WechatController extends Controller
      */
     public function serve()
     {
-        $wechat = app('wechat');
-        /*$user = $wechat->user;
+        $app = new Application($options);
+
+
+        $server = $app->server;
+
+        $server->setMessageHandler(function ($message) {
+            return "您好！欢迎关注我!";
+        });
+
+        $server->serve()->send();
+        /*$wechat = app('wechat');
+        $user = $wechat->user;
         $wechat->server->setMessageHandler(function($message) use ($user) {
               $fromUser = $user->get($message->FromUserName);
                if ($message->MsgType == 'event') {
-                   
+
                     switch ($message->Event) {
                         case 'subscribe':
                             return "{$fromUser->nickname} 欢迎关注 iadmin";
@@ -48,9 +58,9 @@ class WechatController extends Controller
                      
                 }
               
-        });*/
+        });
 
-        return $wechat->server->serve();
+        return $wechat->server->serve();*/
     }
 
     public function pay()
