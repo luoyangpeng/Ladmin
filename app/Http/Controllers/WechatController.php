@@ -14,8 +14,8 @@ class WechatController extends Controller
      * 图灵api地址
      * @var string
      */
-    protected $api = "http://www.tuling123.com/openapi/api";
-    private $key = "440d51245801430c9f12afbdaf070637";
+   // protected $api = "http://www.tuling123.com/openapi/api";
+    //private $key = "440d51245801430c9f12afbdaf070637";
 
     /**
      * 处理微信的请求消息
