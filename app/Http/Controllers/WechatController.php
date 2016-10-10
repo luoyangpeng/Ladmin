@@ -55,19 +55,16 @@ class WechatController extends Controller
     {
         $options = [
 
-            'app_id' => 'wxd741c36410676bdc',
+            'app_id' => 'wxb3c7d034b1ec511a',
 
             // payment
             'payment' => [
-                'merchant_id'        => 'your-mch-id',
+                'merchant_id'        => '1398575402',
                 'key'                => 'key-for-signature',
-                'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
-                'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
-                'notify_url'         => '默认的订单回调地址',       // 你也可以在下单时单独设置来想覆盖它
-                // 'device_info'     => '013467007045764',
-                // 'sub_app_id'      => '',
-                // 'sub_merchant_id' => '',
-                // ...
+                'cert_path'          => config_path()."/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
+                'key_path'           => config_path()."/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
+                'notify_url'         => 'https://www.iyoulang.cc/wechat/callback/',       // 你也可以在下单时单独设置来想覆盖它
+
             ],
         ];
 
