@@ -24,16 +24,13 @@ class WechatController extends Controller
      */
     public function serve()
     {
-        $app = new Application($options);
-
-
-        $server = $app->server;
-
-        $server->setMessageHandler(function ($message) {
-            return "您好！欢迎关注我!";
+        $wechat = app('wechat');
+        $wechat->server->setMessageHandler(function($message){
+            return "欢迎关注 ！";
         });
 
-        $server->serve()->send();
+
+        return $wechat->server->serve();
         /*$wechat = app('wechat');
         $user = $wechat->user;
         $wechat->server->setMessageHandler(function($message) use ($user) {
