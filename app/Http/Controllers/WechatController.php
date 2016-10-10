@@ -14,8 +14,8 @@ class WechatController extends Controller
      * 图灵api地址
      * @var string
      */
-   // protected $api = "http://www.tuling123.com/openapi/api";
-    //private $key = "440d51245801430c9f12afbdaf070637";
+    protected $api = "http://www.tuling123.com/openapi/api";
+    private $key = "440d51245801430c9f12afbdaf070637";
 
     /**
      * 处理微信的请求消息
@@ -25,13 +25,6 @@ class WechatController extends Controller
     public function serve()
     {
         $wechat = app('wechat');
-        $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 ！";
-        });
-
-
-        return $wechat->server->serve();
-        /*$wechat = app('wechat');
         $user = $wechat->user;
         $wechat->server->setMessageHandler(function($message) use ($user) {
               $fromUser = $user->get($message->FromUserName);
@@ -57,7 +50,7 @@ class WechatController extends Controller
               
         });
 
-        return $wechat->server->serve();*/
+        return $wechat->server->serve();
     }
 
     public function pay()
