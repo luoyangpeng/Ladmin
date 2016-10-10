@@ -8,6 +8,12 @@ use EasyWeChat\Payment\Order;
 class WechatController extends Controller
 {
 
+
+    public function __construct()
+    {
+        $this->middleware("wechat.oauth",['only'=>"pay"]);
+    }
+
     /**
      * 图灵api地址
      * @var string
@@ -69,7 +75,7 @@ class WechatController extends Controller
         ];
 
         $app = new Application($options);
-
+        $user = $app->oauth->user();
         $payment = $app->payment;
         $order_number = date("YmdHis");
         //创建订单
@@ -78,14 +84,15 @@ class WechatController extends Controller
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
+            "openid"           =>$user->getId(),
             "trade_type"       =>"good",
         ];
 
         $order = new Order($attributes);
-        dd($order);
+
         $result = $payment->prepare($order);
         $prepayId = $result->prepay_id;
-
+print_r($result);
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
