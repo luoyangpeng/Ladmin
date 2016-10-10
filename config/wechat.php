@@ -47,7 +47,7 @@ return [
     /*
      * 微信支付
      */
-    'payment' => [
+    /*'payment' => [
         'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID', 'your-mch-id'),
         'key'                => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
         'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), // XXX: 绝对路径！！！！
@@ -56,5 +56,5 @@ return [
         // 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
         // 'sub_merchant_id' => env('WECHAT_PAYMENT_SUB_MERCHANT_ID', ''),
 
-    ],
+    ],*/
 ];
