@@ -25,7 +25,7 @@ class WechatController extends Controller
     public function serve()
     {
         $wechat = app('wechat');
-        $user = $wechat->user;
+        /*$user = $wechat->user;
         $wechat->server->setMessageHandler(function($message) use ($user) {
               $fromUser = $user->get($message->FromUserName);
                if ($message->MsgType == 'event') {
@@ -42,13 +42,13 @@ class WechatController extends Controller
                     }
                 }
                 if($message->MsgType == 'text') {
-                    // $post_data = json_encode(['key'=>$this->key,'info'=>$message->Content]);
-                     //$content = json_decode(curlRequest($this->api,$post_data),true);
-                     //return $content['text'];
+                     $post_data = json_encode(['key'=>$this->key,'info'=>$message->Content]);
+                     $content = json_decode(curlRequest($this->api,$post_data),true);
+                     return $content['text'];
                      
                 }
               
-        });
+        });*/
 
         return $wechat->server->serve();
     }
