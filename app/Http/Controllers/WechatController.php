@@ -78,7 +78,7 @@ class WechatController extends Controller
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
-
+            "trade_type"       =>"good",
         ];
 
         $order = new Order($attributes);
