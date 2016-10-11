@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
-use App\Repositories\orderRepository;
+use App\Repositories\OrderRepository;
 
 class WechatController extends Controller
 {
