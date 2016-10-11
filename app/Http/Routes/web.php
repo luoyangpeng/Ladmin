@@ -12,5 +12,6 @@ Route::get('/blog/{id}', 'ArticleController@show');
 Route::any('/wechat', 'WechatController@serve');
 
 Route::any('/wechat/pay', 'WechatController@pay');
+Route::any('/wechat/callback', 'WechatController@callback');
 
 
