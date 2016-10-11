@@ -8,13 +8,6 @@ use EasyWeChat\Payment\Order;
 class WechatController extends Controller
 {
 
-
-    public function __construct() 
-    {
-        $this->middleware("wechat.oauth",['only'=>'pay']);
-    }
-
-
     /**
      * 图灵api地址
      * @var string
@@ -63,6 +56,10 @@ class WechatController extends Controller
         $options = [
 
             'app_id' => 'wxb3c7d034b1ec511a',
+            'oauth' => [
+                 'scopes'   => ['snsapi_base'],
+                 'callback' => '/wechat/pay',
+            ],
             // payment
             'payment' => [
                 'merchant_id'        => '1398575402',
@@ -74,9 +71,21 @@ class WechatController extends Controller
             ],
         ];
 
-       $user =  $user = session('wechat.oauth_user');
 
         $app = new Application($options);
+
+        $oauth = $app->oauth;
+
+        // 未登录
+        if (empty($_SESSION['wechat_user'])) {
+
+          $_SESSION['target_url'] = 'wechat/pay';
+
+          return $oauth->redirect();
+        }
+
+        // 已经登录过
+        $user = $_SESSION['wechat_user'];
      
         $payment = $app->payment;
         $order_number = date("YmdHis");
