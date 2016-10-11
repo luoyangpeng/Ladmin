@@ -61,13 +61,16 @@ class WechatController extends Controller
             // payment
             'payment' => [
                 'merchant_id'        => '1398575402',
-                'key'                => 'a89dbc1bb0567e05642794a469ae110e',
+                'key'                => 'GiSMc8nQOT0oKhyL25NsZkXvwtamYpCq',
                 'cert_path'          => config_path()."/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
                 'key_path'           => config_path()."/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
                 'notify_url'         => 'https://www.iyoulang.cc/wechat/callback/',       // 你也可以在下单时单独设置来想覆盖它
-
+                'device_info'     =>'web',
             ],
         ];
+
+        //获取用户open_id
+        $user = $app->oauth->user();
 
         $app = new Application($options);
 
@@ -80,7 +83,8 @@ class WechatController extends Controller
             'detail'           => 'iPad mini 16G 白色',
             'out_trade_no'     => $order_number,
             'total_fee'        => 1,
-            "trade_type"       =>"JSAPI",
+            'trade_type'       =>"JSAPI",
+            'openid' => $user->id,
         ];
 
         $order = new Order($attributes);
