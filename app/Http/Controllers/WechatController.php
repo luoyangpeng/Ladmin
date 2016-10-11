@@ -61,7 +61,7 @@ class WechatController extends Controller
     public function pay()
     {
 
-        session("test","111");
+        session(['test'=>111]);
         echo session("test");exit;
         $options = [
 
