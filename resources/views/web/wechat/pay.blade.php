@@ -17,7 +17,6 @@
         
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
-            line-height: 43px;
             background: #FFF;
             font-size: 12px;
            
