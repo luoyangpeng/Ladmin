@@ -139,8 +139,9 @@ class WechatController extends Controller
         $response = $app->payment->handleNotify(function($notify, $successful){
             $orderRepository = new OrderRepository();
             $order = $orderRepository->findOrderByTransId($notify->transaction_id);
-
+            Log::info($order);
             if (!$order) { // 如果订单不存在
+                Log::info("Order not exist");
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
             }
 
