@@ -69,8 +69,8 @@ class WechatController extends Controller
             'payment' => [
                 'merchant_id'        => '1398575402',
                 'key'                => 'GiSMc8nQOT0oKhyL25NsZkXvwtamYpCq',
-                'cert_path'          => config_path()."/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
-                'key_path'           => config_path()."/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
+                'cert_path'          => "/home/www/iadmin/config/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
+                'key_path'           => "/home/www/iadmin/config/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
                 'notify_url'         => 'https://www.iyoulang.cc/wechat/callback/',       // 你也可以在下单时单独设置来想覆盖它
                 'device_info'     =>'web',
             ],
@@ -96,6 +96,7 @@ class WechatController extends Controller
         $order = new Order($attributes);
 
         $result = $payment->prepare($order);
+        dd($result);
         $prepayId = $result->prepay_id;
 
         $json = $payment->configForPayment($prepayId);
