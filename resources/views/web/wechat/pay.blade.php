@@ -43,6 +43,7 @@
             font-size: 16px;
             margin-top: 14px;
             color: #fff;
+            border: none;
         }
     </style>
     <script type="text/javascript">
