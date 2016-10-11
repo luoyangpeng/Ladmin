@@ -69,10 +69,12 @@ class WechatController extends Controller
             ],
         ];
 
-        //获取用户open_id
-        $user = $app->oauth->user();
+       
 
         $app = new Application($options);
+        //获取用户open_id
+        $response = $app->oauth->scopes(['snsapi_base'])->redirect();
+        $user = $app->oauth->user();
 
         $payment = $app->payment;
         $order_number = date("YmdHis");
