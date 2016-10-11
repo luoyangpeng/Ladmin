@@ -119,7 +119,7 @@ class WechatController extends Controller
             'openid' => $user->id,
         ];
 
-        $orderRepository = new orderRepository();
+        $orderRepository = new OrderRepository();
         $orderRepository->store($data);
 
         $json = $payment->configForPayment($prepayId);
@@ -137,8 +137,8 @@ class WechatController extends Controller
     public function callback()
     {
         $response = $app->payment->handleNotify(function($notify, $successful){
-            $orderRepository = new orderRepository();
-            $order = orderRepository->findOrderByTransId($notify->transaction_id);
+            $orderRepository = new OrderRepository();
+            $order = $orderRepository->findOrderByTransId($notify->transaction_id);
 
             if (!$order) { // 如果订单不存在
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了

@@ -16,6 +16,6 @@ class OrderRepository {
 	{
 		$result = Order::find(transaction_id);
 
-		return $result
+		return $result;
 	}
 }
