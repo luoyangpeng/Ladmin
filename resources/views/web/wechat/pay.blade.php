@@ -14,13 +14,13 @@
             font-size: 45px;
         }
         .skf_xinf {
-            height: 43px;
+        
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
             line-height: 43px;
             background: #FFF;
             font-size: 12px;
-            overflow: hidden;
+           
         }
         .all_w {
             width: 91.3%;
