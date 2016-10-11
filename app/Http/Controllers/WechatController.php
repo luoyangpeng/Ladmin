@@ -11,7 +11,7 @@ class WechatController extends Controller
 
     public function __construct() 
     {
-        $this->middleware("wechat.oauth",['only'=>'pay']);
+        //$this->middleware("wechat.oauth",['only'=>'pay']);
     }
 
 
@@ -60,6 +60,9 @@ class WechatController extends Controller
 
     public function pay()
     {
+
+        session("test","111");
+        echo session("test");exit;
         $options = [
 
             'app_id' => 'wxb3c7d034b1ec511a',
