@@ -94,7 +94,7 @@
 </div>
 <div class="skf_xinf">
   <div class="all_w"> 
-    <span class="bt">收款方</span> <span class="fr">{{$compay_name}}</span> 
+    <span class="bt">收款方</span> <span class="fr">{{$company_name}}</span> 
     <div class="clearfix"></div>
     <span class="bt">商品名称</span> <span class="fr">{{$goods_name}}</span> 
   </div>
