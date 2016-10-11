@@ -4,6 +4,47 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>微信支付</title>
+    <style>
+        .wenx_xx {
+            text-align: center;
+            font-size: 16px;
+            padding: 18px 0;
+         }
+         .wenx_xx .wxzf_price {
+            font-size: 45px;
+        }
+        .skf_xinf {
+            height: 43px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            line-height: 43px;
+            background: #FFF;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        .all_w {
+            width: 91.3%;
+            margin: 0 auto;
+        }
+        .skf_xinf .bt {
+            color: #767676;
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .ljzf_but {
+            border-radius: 3px;
+            height: 45px;
+            line-height: 45px;
+            background: #44bf16;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 14px;
+            color: #fff;
+        }
+    </style>
     <script type="text/javascript">
         //调用微信JS api 支付
         function jsApiCall()
@@ -13,8 +54,14 @@
                     {!! $json !!},
         function(res){
             WeixinJSBridge.log(res.err_msg);
-            alert(res.err_code+res.err_desc+res.err_msg);
-        }
+            //alert(res.err_code+res.err_desc+res.err_msg);
+            if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+
+            }else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+                    //取消支付
+            }
+
+            }
         );
         }
 
@@ -36,9 +83,15 @@
 </head>
 <body>
 <br/>
-<font color="#9ACD32"><b>该笔订单支付金额为<span style="color:#f00;font-size:50px">1分</span>钱</b></font><br/><br/>
+<div class="wenx_xx">
+  <div class="mz">微信公司</div>
+  <div class="wxzf_price">￥0.01</div>
+</div>
+<div class="skf_xinf">
+  <div class="all_w"> <span class="bt">收款方</span> <span class="fr">美容大人</span> </div>
+</div>
 <div align="center">
-    <button style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
+    <button  class="ljzf_but all_w" type="button" onclick="callpay()" >立即支付</button>
 </div>
 </body>
 </html>
