@@ -89,12 +89,12 @@
 <body>
 <br/>
 <div class="wenx_xx">
-  <div class="mz">微信公司</div>
+  <div class="mz">{{$company_name}}</div>
   <div class="wxzf_price">￥{{$price/100}}</div>
 </div>
 <div class="skf_xinf">
   <div class="all_w"> 
-    <span class="bt">收款方</span> <span class="fr">美容大人</span> 
+    <span class="bt">收款方</span> <span class="fr">{{$compay_name}}</span> 
     <div class="clearfix"></div>
     <span class="bt">商品名称</span> <span class="fr">{{$goods_name}}</span> 
   </div>
