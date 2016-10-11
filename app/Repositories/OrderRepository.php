@@ -14,7 +14,7 @@ class OrderRepository {
 
 	public function findOrderByTransId($transaction_id)
 	{
-		$result = Order::find(transaction_id);
+		$result = Order::find($transaction_id);
 
 		return $result;
 	}
