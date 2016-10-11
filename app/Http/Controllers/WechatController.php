@@ -11,7 +11,7 @@ class WechatController extends Controller
 
     public function __construct() 
     {
-        $this->middleware("wechat.oath",['only'=>'pay']);
+        $this->middleware("wechat.oauth",['only'=>'pay']);
     }
 
 
