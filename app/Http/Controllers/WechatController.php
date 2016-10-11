@@ -15,12 +15,26 @@ class WechatController extends Controller
      */
     protected $api;
     private $key;
+    protected $options;
 
     public function __construct() 
     {
         $this->middleware("wechat.oauth",['only'=>'pay']);
         $this->api = env('TULING_API');
         $this->key = env('TULING_KEY');
+        $this->options = [
+
+            'app_id' => env('WECHAT_APPID'),
+            // payment
+            'payment' => [
+                'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID'),
+                'key'                => env('WECHAT_PAYMENT_KEY'),
+                'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH'), // XXX: 绝对路径！！！！
+                'key_path'           => env('WECHAT_PAYMENT_KEY_PATH'),  // XXX: 绝对路径！！！！
+                'notify_url'         => env('WECHAT_PAYMENT_NOTIFY_URL'),// 你也可以在下单时单独设置来想覆盖它
+                'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO'),
+            ],
+        ];
     }
 
 
@@ -65,24 +79,9 @@ class WechatController extends Controller
     public function pay()
     {
 
-    
-        $options = [
-
-            'app_id' => env('WECHAT_APPID'),
-            // payment
-            'payment' => [
-                'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID'),
-                'key'                => env('WECHAT_PAYMENT_KEY'),
-                'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH'), // XXX: 绝对路径！！！！
-                'key_path'           => env('WECHAT_PAYMENT_KEY_PATH'),  // XXX: 绝对路径！！！！
-                'notify_url'         => env('WECHAT_PAYMENT_NOTIFY_URL'),// 你也可以在下单时单独设置来想覆盖它
-                'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO'),
-            ],
-        ];
-
        $user =  $user = session('wechat.oauth_user');
 
-        $app = new Application($options);
+        $app = new Application($this->options);
      
         $payment = $app->payment;
         $order_number = date("YmdHis");
@@ -136,6 +135,7 @@ class WechatController extends Controller
      */
     public function callback()
     {
+        $app = new Application($this->options);
         $response = $app->payment->handleNotify(function($notify, $successful){
             $orderRepository = new OrderRepository();
             $order = $orderRepository->findOrderByTransId($notify->transaction_id);
