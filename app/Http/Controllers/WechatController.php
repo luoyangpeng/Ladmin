@@ -11,7 +11,7 @@ class WechatController extends Controller
 
     public function __construct() 
     {
-        //$this->middleware("wechat.oauth",['only'=>'pay']);
+        $this->middleware("wechat.oauth",['only'=>'test']);
     }
 
 
@@ -61,8 +61,7 @@ class WechatController extends Controller
     public function pay()
     {
 
-        session(['test'=>111]);
-        echo session("test");exit;
+    
         $options = [
 
             'app_id' => 'wxb3c7d034b1ec511a',
@@ -102,6 +101,12 @@ class WechatController extends Controller
         $json = $payment->configForPayment($prepayId);
 
         return view("web.wechat.pay",compact('json'));
+    }
+
+
+    public function test()
+    {
+        dd(session("wechat.oauth_user"));
     }
 
 }
