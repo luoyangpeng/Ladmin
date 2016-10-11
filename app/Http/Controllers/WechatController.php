@@ -9,6 +9,11 @@ class WechatController extends Controller
 {
 
 
+    public function __construct() 
+    {
+        $this->middleware("wechat.oath","['only'=>'pay']");
+    }
+
 
     /**
      * 图灵api地址
@@ -69,13 +74,10 @@ class WechatController extends Controller
             ],
         ];
 
-       
+       $user =  $user = session('wechat.oauth_user');
 
         $app = new Application($options);
-        //获取用户open_id
-        $response = $app->oauth->scopes(['snsapi_base'])->redirect();
-        $user = $app->oauth->user();
-
+     
         $payment = $app->payment;
         $order_number = date("YmdHis");
 
