@@ -69,11 +69,11 @@ Route::group(['domain'=>env('ADMIN_DOMAIN'),'middleware' => ['web']],function(){
 });
 
 
-Route::group(['domain'=>env('FRONT_DOMAIN')],function($router){
+Route::group(['domain'=>env('FRONT_DOMAIN'),'middleware' => ['web'] ],function($router){
 
     require(__DIR__ . '/Routes/web.php');
 });
-Route::group(['domain'=>'iyoulang.cc'],function($router){
+Route::group(['domain'=>'iyoulang.cc' ,'middleware' => ['web'] ],function($router){
 
     require(__DIR__ . '/Routes/web.php');
 });
