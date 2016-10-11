@@ -8,19 +8,22 @@ use EasyWeChat\Payment\Order;
 class WechatController extends Controller
 {
 
-
-    public function __construct() 
-    {
-        $this->middleware("wechat.oauth",['only'=>'pay']);
-    }
-
-
     /**
      * 图灵api地址
      * @var string
      */
-    protected $api = "http://www.tuling123.com/openapi/api";
-    private $key = "440d51245801430c9f12afbdaf070637";
+    protected $api;
+    private $key;
+
+    public function __construct() 
+    {
+        $this->middleware("wechat.oauth",['only'=>'pay']);
+        $this->api = env('TULING_API');
+        $this->key = env('TULING_KEY');
+    }
+
+
+    
 
     /**
      * 处理微信的请求消息
@@ -64,15 +67,15 @@ class WechatController extends Controller
     
         $options = [
 
-            'app_id' => 'wxb3c7d034b1ec511a',
+            'app_id' => env('WECHAT_APPID'),
             // payment
             'payment' => [
-                'merchant_id'        => '1398575402',
-                'key'                => 'GiSMc8nQOT0oKhyL68NsZkXvwtamYpCq',
-                'cert_path'          => "/home/www/iadmin/config/cert/apiclient_cert.pem", // XXX: 绝对路径！！！！
-                'key_path'           => "/home/www/iadmin/config/cert/apiclient_key.pem",      // XXX: 绝对路径！！！！
-                'notify_url'         => 'https://www.iyoulang.cc/wechat/callback/',       // 你也可以在下单时单独设置来想覆盖它
-                'device_info'     =>'web',
+                'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID'),
+                'key'                => env('WECHAT_PAYMENT_KEY'),
+                'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH'), // XXX: 绝对路径！！！！
+                'key_path'           => env('WECHAT_PAYMENT_KEY_PATH'),  // XXX: 绝对路径！！！！
+                'notify_url'         => env('WECHAT_PAYMENT_NOTIFY_URL'),// 你也可以在下单时单独设置来想覆盖它
+                'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO'),
             ],
         ];
 
