@@ -88,12 +88,13 @@ class WechatController extends Controller
 
         $goods_name = request("goods_name","iPad mini 16G 白色");
         $detail = request("detail","iPad mini 16G 白色");
+        $price = 1;
         //创建订单
         $attributes = [
             'body'             => $goods_name,
             'detail'           => $detail,
             'out_trade_no'     => $order_number,
-            'total_fee'        => 1,
+            'total_fee'        => $price,
             'trade_type'       =>"JSAPI",
             'openid' => $user->id,
         ];
@@ -106,7 +107,7 @@ class WechatController extends Controller
 
         $json = $payment->configForPayment($prepayId);
 
-        return view("web.wechat.pay",compact('json','goods_name'));
+        return view("web.wechat.pay",compact('json','goods_name','price'));
     }
 
 
