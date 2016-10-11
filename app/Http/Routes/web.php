@@ -13,5 +13,4 @@ Route::any('/wechat', 'WechatController@serve');
 
 Route::any('/wechat/pay', 'WechatController@pay');
 
-Route::any('/wechat/test', 'WechatController@test');
 
