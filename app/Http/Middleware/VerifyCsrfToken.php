@@ -29,7 +29,7 @@ class VerifyCsrfToken extends BaseVerifier
     {
         $routes = [
             'admin/image/upload_image',
-
+            'wechat/callback',
 
         ];
 
