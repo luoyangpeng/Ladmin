@@ -95,6 +95,7 @@
 <div class="skf_xinf">
   <div class="all_w"> 
     <span class="bt">收款方</span> <span class="fr">美容大人</span> 
+    <span class="clearfix"></span>
     <span class="bt">商品名称</span> <span class="fr">{{$goods_name}}</span> 
   </div>
   
