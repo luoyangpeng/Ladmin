@@ -141,10 +141,10 @@ class WechatController extends Controller
             $order = $orderRepository->findOrderByOrderNumber($notify->out_trade_no);
             
             if (!$order) { // 如果订单不存在
-                Log::info("Order not exist");
+                Log::info("Order not exist".$notify->out_trade_no);
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
             }
-
+            $order = $order->find($order->id);
             // 如果订单存在
             // 检查订单是否已经更新过支付状态
             if ($order->pay_at) { // 假设订单字段“支付时间”不为空代表已经支付

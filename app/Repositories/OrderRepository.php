@@ -14,7 +14,7 @@ class OrderRepository {
 
 	public function findOrderByOrderNumber($order_number)
 	{
-		$result = Order::find($order_number);
+		$result = Order::where("order_number","=",$order_number)->get();
 
 		return $result;
 	}
