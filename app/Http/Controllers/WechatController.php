@@ -138,8 +138,8 @@ class WechatController extends Controller
         $app = new Application($this->options);
         $response = $app->payment->handleNotify(function($notify, $successful){
             $orderRepository = new OrderRepository();
-            $order = $orderRepository->findOrderByTransId($notify->transaction_id);
-            Log::info($order);
+            $order = $orderRepository->findOrderByOrderNumber($notify->out_trade_no);
+            
             if (!$order) { // 如果订单不存在
                 Log::info("Order not exist");
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
@@ -154,7 +154,7 @@ class WechatController extends Controller
             // 用户是否支付成功
             if ($successful) {
                 // 不是已经支付状态则修改为已经支付状态
-                $order->pay_at = time(); // 更新支付时间为当前时间
+                $order->pay_at = date("Y-m-d H:i:s"); // 更新支付时间为当前时间
                 $order->status = 1;
             } else { // 用户支付失败
                 $order->status = -1;

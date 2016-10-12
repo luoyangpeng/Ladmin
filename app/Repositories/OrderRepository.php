@@ -12,9 +12,9 @@ class OrderRepository {
 	}
 
 
-	public function findOrderByTransId($transaction_id)
+	public function findOrderByOrderNumber($order_number)
 	{
-		$result = Order::find($transaction_id);
+		$result = Order::find($order_number);
 
 		return $result;
 	}
