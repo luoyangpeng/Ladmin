@@ -111,7 +111,7 @@ class WechatController extends Controller
         //创建数据库订单
         $data = [
             'goods_name' => $goods_name,
-            'price' => $price,
+            'price' => $price/100,
              'order_number' => $order_number,
              'transaction_id' => $prepayId,
              'status' => 0,
