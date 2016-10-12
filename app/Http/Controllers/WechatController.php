@@ -113,7 +113,7 @@ class WechatController extends Controller
             'goods_name' => $goods_name,
             'price' => $price/100,
              'order_number' => $order_number,
-             'transaction_id' => $prepayId,
+             'prepay_id' => $prepayId,
              'status' => 0,
             'openid' => $user->id,
         ];
