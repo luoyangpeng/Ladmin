@@ -61,9 +61,10 @@
             WeixinJSBridge.log(res.err_msg);
             //alert(res.err_code+res.err_desc+res.err_msg);
             if(res.err_msg == "get_brand_wcpay_request:ok" ) {
-
+                    location.href = '{{$target_url}}'+'?pay_status=success';
             }else if(res.err_msg == "get_brand_wcpay_request:cancel"){
                     //取消支付
+                location.href = '{{$target_url}}'+'?pay_status=cancel';
             }
 
             }

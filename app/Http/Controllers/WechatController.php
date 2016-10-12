@@ -90,6 +90,8 @@ class WechatController extends Controller
         $detail = request("detail","iPad mini 16G 白色");
         $price = request("price",1);
         $company_name = request('company_name',"腾讯科技有限公司");
+        //跳转地址
+        $target_url = request('target_url','/');
         //创建订单
         $attributes = [
             'body'             => $goods_name,
@@ -123,7 +125,7 @@ class WechatController extends Controller
 
         $json = $payment->configForPayment($prepayId);
 
-        return view("web.wechat.pay",compact('json','goods_name','price','company_name'));
+        return view("web.wechat.pay",compact('json','goods_name','price','company_name','target_url'));
     }
 
 
