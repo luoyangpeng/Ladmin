@@ -25,7 +25,7 @@
 	}
 	.box{
 		position: absolute;
-		top:30%;
+		top:20%;
 		width: 99%;
 	}
 	.money_title{
