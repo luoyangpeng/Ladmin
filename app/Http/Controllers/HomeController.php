@@ -17,5 +17,17 @@ class HomeController extends Controller
 
         return view('web.index');
     }
+
+
+    /**
+     * 打赏
+     * @itas
+     * @DateTime 2016-10-13
+     * @return   [type]     [description]
+     */
+    public function reward()
+    {
+    	return view('web.reward');
+    }
     
 }

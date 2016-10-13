@@ -2,6 +2,7 @@
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/reward', 'HomeController@reward');
 
 //文章
 Route::get('/blog', 'ArticleController@index');
