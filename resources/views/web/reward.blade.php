@@ -63,7 +63,7 @@
 
 	}
 	.blue_btn{
-		color:#fff;
+		color:#fff !important;
 		background: #0da3e2 !important;
 		margin: 5px;
 		width: 80px;
@@ -110,7 +110,7 @@
 	function reward(){
 		var price = $("#money").val();
 		if(price){
-			location.href = "/wechat/pay?price="+price;
+			location.href = "/wechat/pay?price="+price*100;
 		}else{
 			location.href = "/wechat/pay";
 		}
