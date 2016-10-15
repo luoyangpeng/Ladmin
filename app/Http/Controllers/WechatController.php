@@ -175,7 +175,7 @@ class WechatController extends Controller
 
     public function createMenu()
     {
-        $app = new Application($options);
+        $app = new Application($this->options);
         $menu = $app->menu;
 
         $buttons = [
