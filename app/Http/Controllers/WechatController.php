@@ -171,6 +171,25 @@ class WechatController extends Controller
     }
 
 
+
+
+    public function createMenu()
+    {
+        $app = new Application($options);
+        $menu = $app->menu;
+
+        $buttons = [
+            [
+                "type" => "view",
+                "name" => "加入群",
+                "url"  => "http://u1570922.jisuapp.cn/app?_app_id=m8M36568Tm"
+            ],
+            
+        ];
+        $menu->add($buttons);
+    }
+
+
    
 
 }
