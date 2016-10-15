@@ -187,7 +187,7 @@ class WechatController extends Controller
         $buttons = [
             [
                 "type" => "view",
-                "name" => "百度一下",
+                "name" => "百度一下(测试)",
                 "url"  => "http://www.baidu.com"
             ],
             
