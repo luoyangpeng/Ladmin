@@ -175,14 +175,20 @@ class WechatController extends Controller
 
     public function createMenu()
     {
-        $app = new Application($this->options);
+        $options = [
+            'app_id'  => config('wechat.app_id'),         
+            'secret'  => config('wechat.secret'),    
+            'token'   => config('wechat.token'),        
+            'aes_key' => config('wechat.aes_key'),
+        ];
+        $app = new Application($options);
         $menu = $app->menu;
 
         $buttons = [
             [
                 "type" => "view",
-                "name" => "加入群",
-                "url"  => "http://u1570922.jisuapp.cn/app?_app_id=m8M36568Tm"
+                "name" => "百度一下",
+                "url"  => "http://www.baidu.com"
             ],
             
         ];
