@@ -247,8 +247,9 @@
     // 后端推送来消息时
     socket.on('new_msg', function(msg){
         console.log("收到消息："+msg);
-        var html='<li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>'+msg.value +'</li>';
+        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>'+msg +'</li>';
         $("#chat-thread ul").append(html);
+        $("body").scrollTop($("body").height());
     });
     // 后端推送来在线数据时
     socket.on('update_online_count', function(online_stat){
