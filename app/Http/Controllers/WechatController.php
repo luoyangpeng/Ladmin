@@ -202,7 +202,8 @@ class WechatController extends Controller
 
    public function userInfo()
    {
-        dd(session("wechat.oauth_user"));
+        $user = session("wechat.oauth_user");
+        dd($user->original);
    }
 
 }

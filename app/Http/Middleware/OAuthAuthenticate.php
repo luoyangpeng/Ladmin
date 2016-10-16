@@ -50,13 +50,13 @@ class OAuthAuthenticate
         $user = session("wechat.oauth_user");
         $wechatRepository = new WechatUserRepository();
         $data = [
-            'openid'   => $user->id,
-            'nickname' => $user->nickname,
-            'sex'      => $user->sex,
-            'province' => $user->province,
-            'city'     => $user->city,
-            'country'  => $user->country,
-            'headimgurl' => $user->headimgurl,
+            'openid'   => $user->original->openid,
+            'nickname' => $user->original->nickname,
+            'sex'      => $user->original->sex,
+            'province' => $user->original->province,
+            'city'     => $user->original->city,
+            'country'  => $user->original->country,
+            'headimgurl' => $user->original->headimgurl,
         ];
         $wechatRepository->store($data);
 
