@@ -52,5 +52,6 @@ class Kernel extends HttpKernel
         'permission' => \Bican\Roles\Middleware\VerifyPermission::class,
         'level' => \Bican\Roles\Middleware\VerifyLevel::class,
         'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class,
+        'wechat.oauth2' => \App\Http\Middleware\OAuthAuthenticate::class,
     ];
 }

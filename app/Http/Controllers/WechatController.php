@@ -20,6 +20,7 @@ class WechatController extends Controller
     public function __construct() 
     {
         $this->middleware("wechat.oauth",['only'=>'pay']);
+        $this->middleware("wechat.oauth2",['only'=>'userInfo']);
         $this->api = env('TULING_API');
         $this->key = env('TULING_KEY');
         $this->options = [
@@ -171,8 +172,10 @@ class WechatController extends Controller
     }
 
 
-
-
+    /**
+     * 创建微信菜单
+     *
+     */
     public function createMenu()
     {
         $options = [
@@ -196,6 +199,10 @@ class WechatController extends Controller
     }
 
 
-   
+
+   public function userInfo()
+   {
+        dd(session("wechat.oauth_user"));
+   }
 
 }

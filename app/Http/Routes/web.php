@@ -12,12 +12,17 @@ Route::get('/blog/{id}', 'ArticleController@show');
 
 
 //微信
-Route::any('/wechat', 'WechatController@serve');
+Route::group(['prefix'=>"wechat"],function(){
+    Route::any('', 'WechatController@serve');
 
-Route::any('/wechat/pay', 'WechatController@pay');
-Route::any('/wechat/callback', 'WechatController@callback');
+    Route::any('/pay', 'WechatController@pay');
+    Route::any('/callback', 'WechatController@callback');
 
-Route::any('/wechat/menu', 'WechatController@createMenu');
+    Route::any('/menu', 'WechatController@createMenu');
+
+    Route::get('/info', 'WechatController@userInfo');
+});
+
 
 
 
