@@ -44,6 +44,7 @@
             float: left;
             margin-left: 60px;
             margin-right: 60px;
+            margin-top: 20px;
             color: #8dc63f;
         }
 
