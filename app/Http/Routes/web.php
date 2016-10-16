@@ -28,6 +28,10 @@ Route::group(['prefix'=>"wechat"],function(){
 
 Route::get('/push','MessagePushController@push');
 
+//聊天
+Route::get('/chat','MessagePushController@chat');
+
+
 
 
 

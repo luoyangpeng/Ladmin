@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 class MessagePushController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware("wechat.oauth2",['only'=>'chat']);
+    }
+
     public function push()
     {
         // 指明给谁推送，为空表示向所有在线用户推送
@@ -26,5 +31,13 @@ class MessagePushController extends Controller {
         $return = curl_exec ( $ch );
         curl_close ( $ch );
         var_export($return);
+    }
+
+
+    public function chat()
+    {
+        $user = session("wechat.oauth_user");
+        $openid = $user->id;
+        return view('web.chat',compact('openid'));
     }
 }

@@ -206,4 +206,5 @@ class WechatController extends Controller
         dd($user->original);
    }
 
+
 }
