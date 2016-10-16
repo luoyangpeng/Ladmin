@@ -26,7 +26,7 @@ Route::group(['prefix'=>"wechat"],function(){
 
 //消息推送
 
-Route::get('/push/{id}','MessagePushController@push');
+Route::get('/push','MessagePushController@push');
 
 
 
