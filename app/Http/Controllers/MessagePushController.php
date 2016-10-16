@@ -9,7 +9,7 @@ class MessagePushController extends Controller {
         // 指明给谁推送，为空表示向所有在线用户推送
         $to_uid = '';
         // 推送的url地址，上线时改成自己的服务器地址
-        $push_api_url = "http://121.42.201.58:2120";
+        $push_api_url = "http://workerman.net:2121/";
         $post_data = array(
             "type" => "publish",
             "content" => "这个是推送的测试数据",
