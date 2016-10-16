@@ -184,6 +184,10 @@
             width:50px;
             height:50px;
         }
+        .nickname{
+            line-height: 70px;
+            text-align: center;
+        }
 
     </style>
 </head>
@@ -193,7 +197,10 @@
     <ul>
         <foreach name="mylist" item="vo">
             <if condition="$vo['uid'] neq $user['uid']">
-                <li class="rcv"><div class="rcv_img" style="background-image: url(http://www.malu.me/im/img/f-30.png)"></div>
+                <li class="rcv">
+                    <div class="rcv_img" style="background-image: url(http://www.malu.me/im/img/f-30.png)">
+                        <p class="nickname">ice</p>
+                    </div>
                     <div class="rcv_user">Ladmin:</div>你好呀
                 </li>
                 <else/>
@@ -239,7 +246,8 @@
     // 连接服务端
     var socket = io('http://121.42.201.58:2120');
     // uid可以是自己网站的用户id，以便针对uid推送以及统计在线人数
-    uid = '{{$openid}}';
+    uid = '{{$user->id}}';
+    nickname = '{{$user->nickname}}';
     // socket连接后以uid登录
     socket.on('connect', function(){
         socket.emit('login', uid);
@@ -247,7 +255,7 @@
     // 后端推送来消息时
     socket.on('new_msg', function(msg){
         console.log("收到消息："+msg);
-        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>'+msg +'</li>';
+        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"><p class="nickname">'+nickname+'</p></div>'+msg +'</li>';
         $("#chat-thread ul").append(html);
         $("body").scrollTop($("body").height());
     });

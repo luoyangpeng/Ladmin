@@ -6,7 +6,7 @@ class MessagePushController extends Controller {
 
     public function __construct()
     {
-        $this->middleware("wechat.oauth2",['only'=>'chat']);
+        //$this->middleware("wechat.oauth2",['only'=>'chat']);
     }
 
     public function push()
@@ -37,7 +37,6 @@ class MessagePushController extends Controller {
     public function chat()
     {
         $user = session("wechat.oauth_user");
-        $openid = $user->id;
-        return view('web.chat',compact('openid'));
+        return view('web.chat',compact('user'));
     }
 }
