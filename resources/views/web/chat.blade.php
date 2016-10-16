@@ -188,7 +188,7 @@
     </style>
 </head>
 <body>
-<header> 聊天系统 </header>
+<header> 聊天系统(<span id="online"></span>) </header>
 <div id="chat-thread" class="ps-container ps-active-y">
     <ul>
         <foreach name="mylist" item="vo">
@@ -247,6 +247,8 @@
     // 后端推送来消息时
     socket.on('new_msg', function(msg){
         console.log("收到消息："+msg);
+        var html='<li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>'+msg.value +'</li>';
+        $("#chat-thread ul").append(html);
     });
     // 后端推送来在线数据时
     socket.on('update_online_count', function(online_stat){
@@ -261,13 +263,16 @@
 
         var input = document.getElementById("chat_input");
 
-        var client_id ='';
-
         //input.focus();
         $(".face").hide();
         //显示自己发送的内容
 
         var content=input.value;
+
+        //发送消息
+        $.get("https://www.iyoulang.cc/push",{content:content},function(data){
+
+        });
 
         var is_img = content.match("/\.jpg|\.png|\.bmp/|\.jpeg");
         if(is_img!=null){
