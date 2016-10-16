@@ -186,7 +186,7 @@
         }
         .nickname{
             line-height: 70px;
-            text-align: center;
+            width: 150px;
         }
 
     </style>
@@ -199,7 +199,7 @@
             <if condition="$vo['uid'] neq $user['uid']">
                 <li class="rcv">
                     <div class="rcv_img" style="background-image: url(http://www.malu.me/im/img/f-30.png)">
-                        <p class="nickname">ice</p>
+                        <p class="nickname">ice世界</p>
                     </div>
                     <div class="rcv_user">Ladmin:</div>你好呀
                 </li>
