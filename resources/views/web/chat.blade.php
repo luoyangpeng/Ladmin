@@ -100,6 +100,7 @@
             -webkit-animation: show-chat-odd 0.15s 1 ease-in;
             float: right;
             margin-right: 90px;
+            margin-top: 20px;
             color: #3F9DC6;
         }
         #chat-thread li.send .my_img {
