@@ -196,25 +196,21 @@
 <header> 聊天系统(<span id="online"></span>) </header>
 <div id="chat-thread" class="ps-container ps-active-y">
     <ul>
-        <foreach name="mylist" item="vo">
-            <if condition="$vo['uid'] neq $user['uid']">
+        <!--
+                
                 <li class="rcv">
                     <div class="rcv_img" style="background-image: url(http://www.malu.me/im/img/f-30.png)">
                         <p class="nickname">ice世界</p>
                     </div>
                     <div class="rcv_user">Ladmin:</div>你好呀
                 </li>
-                <else/>
+                
                 <li class="send">
                     <div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>
                     How are you
                 </li>
-            </if>
-        </foreach>
-
-        <!--
-        <li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>fsfssfsf</li>
         -->
+    
     </ul>
     <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
         <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
@@ -258,8 +254,10 @@
         var data = eval("("+msg+")");
         console.log("收到消息："+data.content);
         var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"><p class="nickname">'+data.nickname+'</p></div>'+data.content +'</li>';
-        $("#chat-thread ul").append(html);
-        $("body").scrollTop($("body").height());
+        if(data.nickname != nickname){
+            $("#chat-thread ul").append(html);
+            $("body").scrollTop($("body").height());
+        }    
     });
     // 后端推送来在线数据时
     socket.on('update_online_count', function(online_stat){
@@ -289,7 +287,10 @@
         if(is_img!=null){
             var html='<li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div><img src="'+input.value+'"</li>';
         }else{
-            var html='<li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div>'+input.value +'</li>';
+            var html='<li class="send">'+
+                    '<div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)">'+
+                    '<p class="nickname">'+nickname+'</p>'+
+                    '</div>'+input.value +'</li>';
         }
         $("#chat-thread ul").append(html);
         //
