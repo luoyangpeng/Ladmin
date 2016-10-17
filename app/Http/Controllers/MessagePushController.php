@@ -14,12 +14,14 @@ class MessagePushController extends Controller {
         // 指明给谁推送，为空表示向所有在线用户推送
         $to_uid = request('uid','');
         $content = request('content','');
+        $nickname = request('nickname','');
         // 推送的url地址
         $push_api_url = "http://121.42.201.58:2121";
         $post_data = array(
-            "type" => "publish",
-            "content" => $content,
-            "to" => $to_uid,
+            "type"     => "publish",
+            "content"  => $content,
+            'nickname' => $nickname,
+            "to"       => $to_uid,
         );
         $ch = curl_init ();
         curl_setopt ( $ch, CURLOPT_URL, $push_api_url );
