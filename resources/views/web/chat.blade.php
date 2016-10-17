@@ -255,8 +255,9 @@
     });
     // 后端推送来消息时
     socket.on('new_msg', function(msg){
-        console.log("收到消息："+msg);
-        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"><p class="nickname">'+nickname+'</p></div>'+msg +'</li>';
+        var data = eval("("+msg+")");
+        console.log("收到消息："+data.content);
+        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"><p class="nickname">'+data.nickname+'</p></div>'+data.content +'</li>';
         $("#chat-thread ul").append(html);
         $("body").scrollTop($("body").height());
     });
@@ -280,7 +281,7 @@
         var content=input.value;
 
         //发送消息
-        $.get("https://www.iyoulang.cc/push",{content:content},function(data){
+        $.get("https://www.iyoulang.cc/push",{content:content,nickname:nickname},function(data){
 
         });
 

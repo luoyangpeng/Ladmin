@@ -150,7 +150,8 @@
                     layer.alert('账号在其他地点登录,你已被迫下线');
                     location.href="{{url('logout')}}";
                 }
-                console.log("收到消息："+msg);
+                var data = eval("("+msg+")");
+                console.log("收到消息："+data.content);
             });
             // 后端推送来在线数据时
             socket.on('update_online_count', function(online_stat){
