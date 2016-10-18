@@ -61,7 +61,7 @@
             border-radius: 4px;
             background-color: rgba(25, 147, 147, 0.2);
             word-wrap: break-word;
-            max-width: 80%;
+            /*max-width: 80%;*/
         }
 
         .rcv_user {
