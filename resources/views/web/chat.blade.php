@@ -10,6 +10,7 @@
         body {
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         header {
@@ -256,7 +257,7 @@
         var data = eval("("+msg+")");
         console.log("收到消息："+data.content);
         var html='<li class="rcv">'+
-                    '<div class="rcv_img" style="background-image:url('+avatar+')">'+
+                    '<div class="rcv_img" style="background-image:url('+data.avatar+')">'+
                         '<p class="nickname">'+data.nickname+'</p>'+
                         '</div>'+data.content +
                  '</li>';
