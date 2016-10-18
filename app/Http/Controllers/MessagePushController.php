@@ -22,6 +22,7 @@ class MessagePushController extends Controller {
             "type"     => "publish",
             "content"  => $content,
             'nickname' => $nickname,
+            'avatar'   => $avatar,
             "to"       => $to_uid,
         );
         $ch = curl_init ();
