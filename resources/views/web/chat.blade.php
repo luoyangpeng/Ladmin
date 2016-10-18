@@ -246,6 +246,7 @@
     // uid可以是自己网站的用户id，以便针对uid推送以及统计在线人数
     uid = '{{$user->id}}';
     nickname = '{{$user->nickname}}';
+    var avatar = '{{$user->avatar}}';
     // socket连接后以uid登录
     socket.on('connect', function(){
         socket.emit('login', uid);
@@ -254,7 +255,11 @@
     socket.on('new_msg', function(msg){
         var data = eval("("+msg+")");
         console.log("收到消息："+data.content);
-        var html='<li class="rcv"><div class="rcv_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"><p class="nickname">'+data.nickname+'</p></div>'+data.content +'</li>';
+        var html='<li class="rcv">'+
+                    '<div class="rcv_img" style="background-image:url('+avatar+')">'+
+                        '<p class="nickname">'+data.nickname+'</p>'+
+                        '</div>'+data.content +
+                 '</li>';
         if(data.nickname != nickname){
             $("#chat-thread ul").append(html);
             $("body").scrollTop($("body").height());
@@ -280,7 +285,7 @@
         var content=input.value;
 
         //发送消息
-        $.get("https://www.iyoulang.cc/push",{content:content,nickname:nickname},function(data){
+        $.get("https://www.iyoulang.cc/push",{content:content,nickname:nickname,avatar:avatar},function(data){
 
         });
 
@@ -289,7 +294,7 @@
             var html='<li class="send"><div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)"></div><img src="'+input.value+'"</li>';
         }else{
             var html='<li class="send">'+
-                    '<div class="my_img" style="background-image:url(http://www.malu.me/im/img/f-18.png)">'+
+                    '<div class="my_img" style="background-image:url('+avatar+')">'+
                     '<p class="nickname">'+nickname+'</p>'+
                     '</div>'+input.value +'</li>';
         }
