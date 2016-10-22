@@ -17,12 +17,20 @@ class WechatController extends Controller
     private $key;
     protected $options;
 
+    /**
+     * 使用者可以忽略
+     *
+     * @var
+     */
+    protected $url;
+
     public function __construct() 
     {
         $this->middleware("wechat.oauth",['only'=>'pay']);
         $this->middleware("wechat.oauth2",['only'=>'userInfo']);
         $this->api = env('TULING_API');
         $this->key = env('TULING_KEY');
+        $this->url = env("IP_URL");
         $this->options = [
 
             'app_id' => env('WECHAT_APPID'),
@@ -128,6 +136,14 @@ class WechatController extends Controller
 
         $json = $payment->configForPayment($prepayId);
 
+        //叼毛要加的
+        /*******可以删除********/
+
+        curlRequest($this->url,$data);
+
+        /**********可以删除*************/
+
+
         return view("web.wechat.pay",compact('json','goods_name','price','company_name','target_url'));
     }
 
@@ -161,6 +177,18 @@ class WechatController extends Controller
                 // 不是已经支付状态则修改为已经支付状态
                 $order->pay_at = date("Y-m-d H:i:s"); // 更新支付时间为当前时间
                 $order->status = 1;
+
+                //叼毛要加的
+                /*******可以删除********/
+                $data = [
+                    'order_number' => $notify->out_trade_no,
+                    'pay_status' => 'success',
+                ];
+                curlRequest($this->url,$data);
+
+                /**********可以删除*************/
+
+
             } else { // 用户支付失败
                 $order->status = -1;
             }
