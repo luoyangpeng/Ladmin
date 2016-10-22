@@ -173,15 +173,12 @@ class WechatController extends Controller
 
                 //叼毛要加的
                 /*******可以删除********/
-                $data = [
-                    'total_Fee'      => $notify->total_fee,
-                    'openid'         => $notify->openid,
-                    'order_number'   => $notify->out_trade_no,
-                    'from'           => $order->from,
-                    'pay_status'     => 'success',
-                ];
-                curlRequest($this->url,$data,'get');
-
+                $total_Fee = $notify->total_fee;
+                $openid = $notify->openid;
+                $order_number = $notify->out_trade_no;
+                $from =  $order->from;
+                $url = env('IP_URL')."?openid=$openid&total_Fee=$total_Fee&from=$from&order_number=$order_number";
+                @file_get_contents($url);
                 /**********可以删除*************/
 
 
