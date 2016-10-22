@@ -17,7 +17,7 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $js->config(array('onMenuShareAppMessage', 'onMenuShareTimeline'), true) ?>);
+    wx.config(<?php echo $js->config(array('onMenuShareAppMessage', 'onMenuShareTimeline'), false) ?>);
 
 
     wx.ready(function(){
