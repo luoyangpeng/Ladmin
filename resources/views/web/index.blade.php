@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-3 service-box-v1">
                     <div><i class="fa fa-globe color-grey"></i></div>
-                    <h2>完整文档</h2>
+                    <h2>功能丰富</h2>
                     <p>Complete documentation.</p>
                 </div>
             </div>
