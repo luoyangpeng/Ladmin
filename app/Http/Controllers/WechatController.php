@@ -91,6 +91,7 @@ class WechatController extends Controller
         $detail = request("detail","iPad mini 16G 白色");
         $price = request("price",1);
         $company_name = request('company_name',"腾讯科技有限公司");
+        $from = request('from');
         //跳转地址
         $target_url = request('target_url','/');
         //创建订单
@@ -119,6 +120,7 @@ class WechatController extends Controller
              'prepay_id' => $prepayId,
              'status' => 0,
             'openid' => $user->id,
+            'from' => $from,
         ];
 
         $orderRepository = new OrderRepository();
