@@ -21,6 +21,9 @@ Route::group(['prefix'=>"wechat"],function(){
     Route::any('/menu', 'WechatController@createMenu');
 
     Route::get('/info', 'WechatController@userInfo');
+
+    //分享
+    Route::get('/share','WechatController@share');
 });
 
 

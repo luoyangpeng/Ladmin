@@ -225,6 +225,36 @@ class WechatController extends Controller
     }
 
 
+    /**
+     * 微信分享
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function share()
+    {
+        $options = [
+            'app_id'  => config('wechat.app_id'),
+            'secret'  => config('wechat.secret'),
+            'token'   => config('wechat.token'),
+            'aes_key' => config('wechat.aes_key'),
+        ];
+
+        $app = new Application($options);
+        $js = $app->js;
+
+        //分享内容
+
+        $data = [
+            'title'  => request('title',"测试分享"),
+            'desc'   => request('desc',"测试分享"),
+            'imgUrl' => request('imgUrl','http://www.ecmaster.cn/Public/Ueditor/php/upload/20140731/14067731255989.png'),
+            'link'   => request('link',"https://iyoulang.cc"),
+        ];
+
+        return view('web.wechat.share',compact('js','data'));
+    }
+
+
 
    public function userInfo()
    {
