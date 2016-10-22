@@ -136,13 +136,6 @@ class WechatController extends Controller
 
         $json = $payment->configForPayment($prepayId);
 
-        //叼毛要加的
-        /*******可以删除********/
-
-        curlRequest($this->url,$data);
-
-        /**********可以删除*************/
-
 
         return view("web.wechat.pay",compact('json','goods_name','price','company_name','target_url'));
     }
@@ -181,6 +174,8 @@ class WechatController extends Controller
                 //叼毛要加的
                 /*******可以删除********/
                 $data = [
+                    'total_fee' => $notify->total_fee,
+                    'openid' => $notify->openid,
                     'order_number' => $notify->out_trade_no,
                     'pay_status' => 'success',
                 ];
