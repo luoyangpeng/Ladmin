@@ -178,7 +178,7 @@ class WechatController extends Controller
                 $order_number = $notify->out_trade_no;
                 $from =  $order->from;
                 $url = env('IP_URL')."?openid=$openid&total_Fee=$total_Fee&from=$from&order_number=$order_number";
-                @file_get_contents($url);
+                file_get_contents($url);
                 /**********可以删除*************/
 
 
