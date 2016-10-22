@@ -1,14 +1,26 @@
 <html>
 <head>
 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="//vjs.zencdn.net/5.10/video-js.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/5.10/video.js"></script>
+    <script src="https://npmcdn.com/videojs-contrib-hls@^3.0.0/dist/videojs-contrib-hls.js"></script>
+
 </head>
 <body>
 <!-- livestream.html -->
-<video width="640" height="360"
-        autoplay controls autobuffer 
-        src="http://121.42.201.58:8888/live/livestream.m3u8"
-        type="application/vnd.apple.mpegurl">
+
+
+<video id=example-video width="100%" height="100%" autoplay x-webkit-airplay webkit-playsinline controls autobuffer class="video-js vjs-default-skin">
+    <source
+            src="http://121.42.201.58:8888/live/livestream.m3u8"
+            type="application/x-mpegURL">
 </video>
+
+<script>
+    var player = videojs('example-video');
+    player.play();
+</script>
 </body>
 </html>
 
