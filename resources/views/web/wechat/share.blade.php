@@ -10,7 +10,12 @@
 
 <body>
 
-微信分享
+<div style="width: 90%">
+    <div align="center" style="margin: 0 auto">
+        <img src="http://www.ecmaster.cn/Public/Ueditor/php/upload/20140731/14067731255989.png"/>
+    </div>
+</div>
+
 <script type="text/javascript" charset="utf-8">
     wx.config(<?php echo $js->config(array('onMenuShareAppMessage', 'onMenuShareTimeline'), true) ?>);
 
