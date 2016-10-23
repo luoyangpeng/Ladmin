@@ -19,7 +19,13 @@ class ArticleController extends Controller {
 
         $category_list = $categoryRepository->getAll();
 
-        return view("web.article.index",compact('article_list','category_list'));
+        $seo = [
+            'title'    => 'Ladmin 文章列表',
+            'desc'     => 'Lmyadmin博客系统.',
+            'keywords' => 'Ladmin,Ladmin博客',
+        ];
+
+        return view("web.article.index",compact('article_list','category_list','seo'));
     }
 
     public function show($id ,ArticleRepository $articleRepository ,ArticleCategoryRepository $categoryRepository)
@@ -32,6 +38,12 @@ class ArticleController extends Controller {
         //更新文章浏览数
         $articleRepository->updateViewCount($id);
 
-        return view("web.article.show",compact("article","category_list"));
+        $seo = [
+            'title'    => $article['title']."_Ladmin",
+            'desc'     => $article['desc'],
+            'keywords' => 'Ladmin,'.$article['title'],
+        ];
+
+        return view("web.article.show",compact("article","category_list","seo"));
     }
 }

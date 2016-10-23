@@ -5,10 +5,10 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
-    <title>Ladmin Laravel 后台管理系统</title>
+    <title>{{$seo['title']}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="Keywords" content="Ladmin,Laravel,后台管理系统,开源Laravel后台管理系统 ">
-    <meta content="Lmyadmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用." name="description" />
+    <meta name="keywords" content="{{$seo['keywords']}} ">
+    <meta content="{{$seo['desc']}}" name="description" />
     <meta content="itas" name="author" />
     <meta name="baidu-site-verification" content="hxaiwCrdBK" />
 
