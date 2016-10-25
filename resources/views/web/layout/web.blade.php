@@ -105,7 +105,7 @@
                 <!-- BEGIN CONTACTS -->
                 <h2>联系我们</h2>
                 <address class="margin-bottom-40">
-                    QQ:652008158<br>
+                    QQ群:517471676<br>
                     Email: <a href="mailto:luoyangpeng1122@163.com">luoyangpeng1122@163.com</a>
                 </address>
                 <!-- END CONTACTS -->
@@ -117,7 +117,7 @@
                 <dl class="dl-horizontal f-twitter">
                     <dt><i class="fa fa-twitter"></i></dt>
                     <dd>
-                        <a href="#">新浪微博</a>
+                        <a href="http://weibo.com/hnlhlyp1122" target="_blank">新浪微博</a>
 
                     </dd>
                 </dl>

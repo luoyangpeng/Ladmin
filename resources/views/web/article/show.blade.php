@@ -30,9 +30,9 @@
 		<!-- BEGIN BLOG -->
 		<div class="row">
 			<!-- BEGIN LEFT SIDEBAR -->
-			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40 padding-right-30">
+			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40 ">
 
-				<div class="row">
+				<div class="">
 
 					<div id="editormd-view">
 						<h1 class="text-center">{{$article['title']}}</h1>
