@@ -28,20 +28,20 @@ class WechatController extends Controller
     {
         $this->middleware("wechat.oauth",['only'=>'pay']);
         $this->middleware("wechat.oauth2",['only'=>'userInfo']);
-        $this->api = env('TULING_API');
-        $this->key = env('TULING_KEY');
-        $this->url = env("IP_URL");
+        $this->api = config('tuling.api');
+        $this->key = config('tuling.key');
+        $this->url = config("url.ip_url");
         $this->options = [
 
-            'app_id' => env('WECHAT_APPID'),
+            'app_id' => config("wechat.app_id"),
             // payment
             'payment' => [
-                'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID'),
-                'key'                => env('WECHAT_PAYMENT_KEY'),
-                'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH'), // XXX: 绝对路径！！！！
-                'key_path'           => env('WECHAT_PAYMENT_KEY_PATH'),  // XXX: 绝对路径！！！！
-                'notify_url'         => env('WECHAT_PAYMENT_NOTIFY_URL'),// 你也可以在下单时单独设置来想覆盖它
-                'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO'),
+                'merchant_id'        => config("wechat.payment.merchant_id"),
+                'key'                => config("wechat.payment.key"),
+                'cert_path'          => config("wechat.payment.cert_path"), // XXX: 绝对路径！！！！
+                'key_path'           => config("wechat.payment.key_path"),  // XXX: 绝对路径！！！！
+                'notify_url'         => config("wechat.payment.notify_url"),// 你也可以在下单时单独设置来想覆盖它
+                'device_info'        => config("wechat.payment.device_info"),
             ],
         ];
     }
