@@ -44,6 +44,7 @@ class WechatController extends  Controller {
             'detail'           => $detail,
             'out_trade_no'     => $order_number,
             'total_fee'        => $price,
+            'trade_type'       =>"APP",
         ];
 
         $order = new Order($attributes);
