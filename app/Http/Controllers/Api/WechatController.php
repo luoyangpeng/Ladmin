@@ -50,6 +50,8 @@ class WechatController extends  Controller {
 
         $result = $payment->prepare($order);
 
+        dd($result);
+
         $prepayId = $result->prepay_id;
 
         $config = $payment->configForAppPayment($prepayId);
