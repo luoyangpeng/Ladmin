@@ -312,5 +312,126 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'admin.users.reset',
             'description' => '修改用户密码'
         ]);
+
+        /**
+         * 操作日志记录
+         */
+        Permission::create([
+            'name' => 'action list',
+            'slug' => 'admin.actionlog.list',
+            'description' => '操作日志记录'
+        ]);
+
+        /**
+         * 图片管理
+         */
+        Permission::create([
+            'name' => 'image manage',
+            'slug' => 'admin.image.manage',
+            'description' => '图片管理'
+        ]);
+
+        /**
+         * 图片上传
+         */
+        Permission::create([
+            'name' => 'image upload',
+            'slug' => 'admin.image.upload',
+            'description' => '图片上传'
+        ]);
+
+        /**
+         * 图片列表
+         */
+        Permission::create([
+            'name' => 'image select',
+            'slug' => 'admin.image.select',
+            'description' => '图片选择器'
+        ]);
+
+        /**
+         * 图片列表      
+         */
+        Permission::create([
+            'name' => 'action show',
+            'slug' => 'admin.actionlog.show',
+            'description' => '图片选择器'
+        ]);
+
+        Permission::create([
+            'name' => 'web setting',
+            'slug' => 'admin.setting.manage',
+            'description' => '网站设置'
+        ]);
+
+        Permission::create([
+            'name' => 'function switch',
+            'slug' => 'admin.setting.switch',
+            'description' => '功能开关'
+        ]);
+
+        Permission::create([
+            'name' => 'setting email',
+            'slug' => 'admin.setting.email',
+            'description' => '邮件模板设置'
+        ]);
+
+        Permission::create([
+            'name' => 'article manage',
+            'slug' => 'admin.article.manage',
+            'description' => '文章管理'
+        ]);
+
+        Permission::create([
+            'name' => 'article list',
+            'slug' => 'admin.article.list',
+            'description' => '文章列表'
+        ]);
+
+        Permission::create([
+            'name' => 'article create',
+            'slug' => 'admin.article.create',
+            'description' => '文章添加'
+        ]);
+
+        Permission::create([
+            'name' => 'article edit',
+            'slug' => 'admin.article.edit',
+            'description' => '文章编辑'
+        ]);
+
+        Permission::create([
+            'name' => 'admin delete',
+            'slug' => 'admin.article.delete',
+            'description' => '文章删除'
+        ]);
+
+        Permission::create([
+            'name' => 'article ban',
+            'slug' => 'admin.article.trash',
+            'description' => '文章禁用'
+        ]);
+
+        Permission::create([
+            'name' => 'article category list',
+            'slug' => 'admin.article.categorylist',
+            'description' => '文章分类列表'
+        ]);
+
+        Permission::create([
+            'name' => 'article_category create',
+            'slug' => 'admin.article.categorycreate',
+            'description' => '文章分类创建'
+        ]);
+
+        Permission::create([
+            'name' => 'articleCategory edit',
+            'slug' => 'admin.articlecategory.edit',
+            'description' => '文章分类编辑'
+        ]);
+
+        
+
+
     }
 }
