@@ -18,6 +18,7 @@ class ActionLogRepository {
     public function createActionLog($type,$data)
     {
         $actionLog = new ActionLog();
+
         if(auth()->check()){
             $actionLog->uid = auth()->user()->id;
             $actionLog->username = auth()->user()->name;
@@ -25,12 +26,19 @@ class ActionLogRepository {
             $actionLog->uid=0;
             $actionLog->username ="访客";
         }
-        $actionLog->browser = clientService::getBrowser($_SERVER['HTTP_USER_AGENT'],true);
-        $actionLog->system = clientService::getPlatForm($_SERVER['HTTP_USER_AGENT'],true);
-        $actionLog->url = request()->getRequestUri();
-        $actionLog->ip = request()->getClientIp();
-        $actionLog->type = $type;
-        $actionLog->data = $data;
+
+        if(isset($_SERVER['HTTP_USER_AGENT'])) {
+            $actionLog->browser = clientService::getBrowser($_SERVER['HTTP_USER_AGENT'],true);
+            $actionLog->system = clientService::getPlatForm($_SERVER['HTTP_USER_AGENT'],true);
+        } else{
+            $actionLog->browser = '';
+            $actionLog->system = '';
+        }
+        
+        $actionLog->url   = request()->getRequestUri();
+        $actionLog->ip    = request()->getClientIp();
+        $actionLog->type  = $type;
+        $actionLog->data  = $data;
         $res = $actionLog->save();
 
         return $res;

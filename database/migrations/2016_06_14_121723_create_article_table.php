@@ -23,7 +23,6 @@ class CreateArticleTable extends Migration
             $table->string("thumb",100)->comment('封面');
             $table->integer("status")->comment("文章状态");
             $table->integer("view_count")->comment("浏览数");
-            $table->foreign("category_id");
             $table->timestamps();
         });
     }
