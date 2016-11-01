@@ -32,6 +32,9 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/admin';
 
+
+    protected $redirectAfterLogout = '/login';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -59,7 +62,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Create a new user instance after a valrid egistration.
      *
      * @param  array  $data
      * @return User
