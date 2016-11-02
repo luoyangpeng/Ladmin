@@ -26,7 +26,7 @@
 	<!-- END BREADCRUMBS -->
 
 	<!-- BEGIN CONTAINER -->
-	<div class="container min-hight" >
+	<div class=" min-hight" >
 		<!-- BEGIN BLOG -->
 		<div class="row">
 			<!-- BEGIN LEFT SIDEBAR -->
