@@ -2497,7 +2497,7 @@ li [class*=" fa-"].icon-large {
 .page-body-background{
 	background: #efefef;
 }
-.blog-sidebar ,.white_bg{
+.white_bg{
 	background: #fff;
 }
 .padding20{
@@ -2563,6 +2563,15 @@ li [class*=" fa-"].icon-large {
 .blog-list{
 	background: #ffffff;
 	padding:20px
+}
+.panel {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid #e2e1e1;
+}
+
+.panel-body {
+    padding: 15px;
 }
 
 

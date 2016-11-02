@@ -5,7 +5,7 @@
 <div class="page-container page-body-background">
 
     <!-- BEGIN BREADCRUMBS -->
-    <div class="row breadcrumbs margin-bottom-40">
+    <div class=" breadcrumbs margin-bottom-40">
         <div class="container">
             <div class="col-md-4 col-sm-4">
                 <h1>博客</h1>
@@ -54,11 +54,11 @@
             <!-- END LEFT SIDEBAR -->
 
             <!-- BEGIN RIGHT SIDEBAR -->
-            <div class="col-md-3 col-sm-3 blog-sidebar">
+            <div class="col-md-3 col-sm-3 ">
 
                 <!-- BEGIN BLOG TAGS -->
-                <div class="blog-tags margin-bottom-20">
-                    <div class="">
+                <div class="blog-tags margin-bottom-20 blog-sidebar white_bg panel panel-body">
+                    <div class="text-center">
                         <h2>文章分类</h2>
                         <hr>
                     </div>

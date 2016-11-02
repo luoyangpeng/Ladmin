@@ -67,10 +67,10 @@
 			<!-- END LEFT SIDEBAR -->
 
 			<!-- BEGIN RIGHT SIDEBAR -->
-			<div class="col-md-3 col-sm-3 blog-sidebar">
+			<div class="col-md-3 col-sm-3 ">
 
 				<!-- BEGIN BLOG TAGS -->
-				<div class="blog-tags margin-bottom-20">
+				<div class="blog-tags margin-bottom-20 white_bg panel panel-body">
 					<div class="">
 						<h2>文章分类</h2>
 						<hr>
