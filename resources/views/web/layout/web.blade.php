@@ -92,7 +92,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4 space-mobile">
+            <div class="col-md-4 col-sm-4 ">
                 <!-- BEGIN ABOUT -->
                 <h2>关于</h2>
                 <p class="margin-bottom-30">Lmyadmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用.</p>
@@ -101,7 +101,7 @@
 
 
             </div>
-            <div class="col-md-4 col-sm-4 space-mobile">
+            <div class="col-md-4 col-sm-4 ">
                 <!-- BEGIN CONTACTS -->
                 <h2>联系我们</h2>
                 <address class="margin-bottom-40">
