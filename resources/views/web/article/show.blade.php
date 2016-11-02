@@ -26,13 +26,13 @@
 	<!-- END BREADCRUMBS -->
 
 	<!-- BEGIN CONTAINER -->
-	<div class=" min-hight" >
+	<div class="container min-hight" >
 		<!-- BEGIN BLOG -->
 		<div class="row">
 			<!-- BEGIN LEFT SIDEBAR -->
-			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40 ">
+			<div class="col-md-9 col-sm-9  ">
 
-				<div class="">
+				<div class="margin-bottom-40 ">
 
 					<div id="editormd-view">
 						<h1 class="text-center">{{$article['title']}}</h1>
