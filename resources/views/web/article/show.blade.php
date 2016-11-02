@@ -28,7 +28,7 @@
 	<!-- BEGIN CONTAINER -->
 	<div class="container min-hight" >
 		<!-- BEGIN BLOG -->
-		<div class="row">
+		<div class="">
 			<!-- BEGIN LEFT SIDEBAR -->
 			<div class="col-md-9 col-sm-9 blog-posts margin-bottom-40 ">
 
