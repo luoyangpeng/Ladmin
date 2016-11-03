@@ -24,7 +24,7 @@
         var myChart = echarts.init(document.getElementById('main'));
         option = {
             title : {
-                text: 'IAdmin网站用户访问来源',
+                text: 'LAdmin网站用户访问来源',
                 subtext: '纯属虚构',
                 x:'center'
             },

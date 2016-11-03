@@ -35,7 +35,7 @@
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-default navbar-static-top">
 
-    <div class="">
+    <div class="container">
         <div class="navbar-header">
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <button class="navbar-toggle btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
@@ -140,7 +140,10 @@
 
             <div class="col-md-8 col-sm-8">
                 <p>
-                    <span class="margin-right-10">2016 © iyoulnag. 版权所有.</span>
+                    <span class="margin-right-10">2016 © iyoulnag. 版权所有. </span>
+                    <span>
+                        Power by <a target="_blank" href="https://github.com/luoyangpeng/Ladmin">Ladmin</a>
+                    </span>
 
                 </p>
             </div>
