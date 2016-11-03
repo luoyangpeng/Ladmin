@@ -13,7 +13,7 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::table('order', function (Blueprint $table) {
-            $table->$table->increments('id');
+            $table->increments('id');
             $table->string("goods_name")->comment("商品名称");
             $table->string("openid")->comment("微信用户openid");
             $table->decimal("price")->comment("价格");
