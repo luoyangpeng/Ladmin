@@ -15,5 +15,6 @@ class Controller extends BaseController
     {
 
         view()->share("url",request()->getRequestUri());
+        view()->share("message_pull_url",config("message_push.message_pull_url"));
     }
 }

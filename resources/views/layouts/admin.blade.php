@@ -135,6 +135,7 @@
 
 
         <script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
+        @if($message_pull_url)
         <script>
             // 连接服务端
             var socket = io('http://121.42.201.58:2120');
@@ -143,7 +144,7 @@
             // socket连接后以uid登录
             socket.on('connect', function(){
                 socket.emit('login', uid);
-            });
+            }); 
             // 后端推送来消息时
             socket.on('new_msg', function(msg){
                 if(msg == 'other_place_logined'){
@@ -159,6 +160,7 @@
                 $("#online").html(online_stat);
             });
         </script>
+        @endif
     </body>
 
 </html>

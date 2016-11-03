@@ -17,7 +17,7 @@ class MessagePushController extends Controller {
         $nickname = request('nickname','');
         $avatar = request('avatar','http://www.malu.me/im/img/f-18.png');
         // 推送的url地址
-        $push_api_url = "http://121.42.201.58:2121";
+        $push_api_url = config("message_push.message_push_url");
         $post_data = array(
             "type"     => "publish",
             "content"  => $content,
