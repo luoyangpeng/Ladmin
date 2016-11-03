@@ -135,32 +135,37 @@
 
 
         <script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
-        @if($message_pull_url)
+        
         <script>
-            // 连接服务端
-            var socket = io('http://121.42.201.58:2120');
-            // uid可以是自己网站的用户id，以便针对uid推送以及统计在线人数
-            uid = {{auth()->user()->id}};
-            // socket连接后以uid登录
-            socket.on('connect', function(){
-                socket.emit('login', uid);
-            }); 
-            // 后端推送来消息时
-            socket.on('new_msg', function(msg){
-                if(msg == 'other_place_logined'){
-                    layer.alert('账号在其他地点登录,你已被迫下线');
-                    location.href="{{url('logout')}}";
-                }
-                var data = eval("("+msg+")");
-                console.log("收到消息："+data.content);
-            });
-            // 后端推送来在线数据时
-            socket.on('update_online_count', function(online_stat){
-                console.log(online_stat);
-                $("#online").html(online_stat);
-            });
+            var message_pull_url = "{{$message_pull_url or ''}}";
+            if(message_pull_url != '') {
+                // 连接服务端
+                var socket = io('http://121.42.201.58:2120');
+                // uid可以是自己网站的用户id，以便针对uid推送以及统计在线人数
+                uid = {{auth()->user()->id}};
+                // socket连接后以uid登录
+                socket.on('connect', function(){
+                    socket.emit('login', uid);
+                }); 
+                // 后端推送来消息时
+                socket.on('new_msg', function(msg){
+                    if(msg == 'other_place_logined'){
+                        layer.alert('账号在其他地点登录,你已被迫下线');
+                        location.href="{{url('logout')}}";
+                    }
+                    var data = eval("("+msg+")");
+                    console.log("收到消息："+data.content);
+                });
+                // 后端推送来在线数据时
+                socket.on('update_online_count', function(online_stat){
+                    console.log(online_stat);
+                    $("#online").html(online_stat);
+                });
+            }
+            
+           
         </script>
-        @endif
+        
     </body>
 
 </html>
