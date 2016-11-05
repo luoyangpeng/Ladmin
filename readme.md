@@ -31,8 +31,8 @@ php artisan db:seed
 
 ![](http://o6hc01bvr.bkt.clouddn.com/20160911062751.png)
 
-由开源项目IAdmin 扩展
-后台模板仅供测试交流，如需使用商业用途，请官网授权。
+>由开源项目IAdmin 扩展
+>后台模板仅供测试交流，如需使用商业用途，请官网授权。
 
 
 #License
