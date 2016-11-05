@@ -26,6 +26,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
+> 后台访问 youdomain/admin
 > 后台用户名密码 admin@admin.com 123456
 
 
