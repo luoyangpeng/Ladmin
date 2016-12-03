@@ -174,6 +174,9 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Overtrue\LaravelWechat\ServiceProvider::class,
 
+        //api Service Provider
+        Jlapp\Swaggervel\SwaggervelServiceProvider::class,
+
     ],
 
     /*

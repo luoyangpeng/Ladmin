@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "bican/roles": "2.1.*",
+        "laravel/framework": "5.2.*"
+,        "bican/roles": "2.1.*",
         "arcanedev/log-viewer": "~3.0",
         "hieu-le/active": "^3.0",
         "laracasts/flash": "^1.3",
@@ -16,7 +16,8 @@
         "ender/laravel-ueditor":"0.8.*",
 		"intervention/image":"dev-master",
         "overtrue/laravel-wechat":"~3.0",
-        "predis/predis":"^1.1"
+        "predis/predis":"^1.1",
+        "jlapp/swaggervel":"dev-master"
         
     },
     "require-dev": {
@@ -63,11 +64,6 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
     }
+   
 }

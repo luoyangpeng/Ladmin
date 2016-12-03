@@ -6,6 +6,27 @@ use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 
+/**
+ * @SWG\Swagger(
+ *     schemes={"http","https"},
+ *     host="api.iadmin.com",
+ *     basePath="/",
+ *     @SWG\Info(
+ *         version="1.0.0",
+ *         title="Ladmin API 管理中心",
+ *         description="Ladmin API 接口管理中心",
+ *         termsOfService="",
+ *         @SWG\Contact(
+ *             email="652008158@qq.com"
+ *         ),
+ *        
+ *     ),
+ *     @SWG\ExternalDocumentation(
+ *         description="",
+ *         url=""
+ *     )
+ * )
+ */
 class WechatController extends  Controller {
 
 
@@ -27,7 +48,29 @@ class WechatController extends  Controller {
         ];
     }
 
-
+     /**
+     * @SWG\Post(
+     *     path="/api/wechat_apy",
+     *     description="移动端app支付接口",
+     *     operationId="wechatPay",
+     *     produces={"application/json", "application/xml", "text/xml", "text/html"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="pet response",
+     *         @SWG\Schema(
+     *             type="array",
+     *             @SWG\Items(ref="#/definitions/pet")
+     *         ),
+     *     ),
+     *     @SWG\Response(
+     *         response="default",
+     *         description="unexpected error",
+     *         @SWG\Schema(
+     *             ref="#/definitions/errorModel"
+     *         )
+     *     )
+     * )
+     */
     public function wechatPay()
     {
         $app = new Application($this->options);
@@ -44,7 +87,7 @@ class WechatController extends  Controller {
             'detail'           => $detail,
             'out_trade_no'     => $order_number,
             'total_fee'        => $price,
-            'trade_type'       =>"APP",
+            'trade_type'       => "APP",
         ];
 
         $order = new Order($attributes);
@@ -58,5 +101,51 @@ class WechatController extends  Controller {
         $config = $payment->configForAppPayment($prepayId);
 
         return response()->json($config);
+    }
+
+
+
+     /**
+     * @SWG\Get(
+     *     path="/api/test",
+     *     description="Returns all pets from the system that the user has access to",
+     *     operationId="test",
+     *     produces={"application/json", "application/xml", "text/xml", "text/html"},
+     *     @SWG\Parameter(
+     *         name="tags",
+     *         in="query",
+     *         description="tags to filter by",
+     *         required=false,
+     *         type="array",
+     *         @SWG\Items(type="string"),
+     *         collectionFormat="csv"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="limit",
+     *         in="query",
+     *         description="maximum number of results to return",
+     *         required=false,
+     *         type="integer",
+     *         format="int32"
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="pet response",
+     *         @SWG\Schema(
+     *             type="array",
+     *             @SWG\Items(ref="#/definitions/pet")
+     *         ),
+     *     ),
+     *     @SWG\Response(
+     *         response="default",
+     *         description="unexpected error",
+     *         @SWG\Schema(
+     *             ref="#/definitions/errorModel"
+     *         )
+     *     )
+     * )
+     */
+    public function test() {
+
     }
 }

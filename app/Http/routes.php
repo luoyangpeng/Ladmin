@@ -23,7 +23,7 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
+  
 
 Route::group(['domain'=>env('ADMIN_DOMAIN'),'middleware' => ['web']],function(){
     Route::auth();
@@ -76,4 +76,11 @@ Route::group(['domain'=>env('FRONT_DOMAIN'),'middleware' => ['web'] ],function($
 Route::group(['domain'=>'iyoulang.cc' ,'middleware' => ['web'] ],function($router){
 
     require(__DIR__ . '/Routes/web.php');
+});
+
+//api
+Route::group(['domain'=>env('API_DOMAIN'),'middleware' => ['web'] ],function($router){
+ 
+
+
 });
