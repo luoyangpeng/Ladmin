@@ -16,81 +16,68 @@
         "https"
     ],
     "paths": {
-        "/api/wechat_apy": {
+        "/v1/pay": {
             "post": {
+                "tags": [
+                    "\u652f\u4ed8\u76f8\u5173\u63a5\u53e3"
+                ],
+                "summary": "\u6d4b\u8bd5\u63a5\u53e3",
                 "description": "\u79fb\u52a8\u7aefapp\u652f\u4ed8\u63a5\u53e3",
                 "operationId": "wechatPay",
                 "produces": [
                     "application/json",
-                    "application/xml",
-                    "text/xml",
-                    "text/html"
+                    "application/xml"
                 ],
                 "responses": {
                     "200": {
-                        "description": "pet response",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/pet"
-                            }
-                        }
+                        "description": "succes"
                     },
-                    "default": {
-                        "description": "unexpected error",
-                        "schema": {
-                            "$ref": "#/definitions/errorModel"
-                        }
+                    "500": {
+                        "description": "service error"
+                    },
+                    "404": {
+                        "description": "not found"
                     }
                 }
             }
         },
-        "/api/test": {
-            "get": {
-                "description": "Returns all pets from the system that the user has access to",
+        "/v1/test": {
+            "post": {
+                "tags": [
+                    "test"
+                ],
+                "summary": "\u6d4b\u8bd5\u63a5\u53e3",
+                "description": "\u6d4b\u8bd5\u63a5\u53e3",
                 "operationId": "test",
                 "produces": [
                     "application/json",
-                    "application/xml",
-                    "text/xml",
-                    "text/html"
+                    "application/xml"
                 ],
                 "parameters": [
                     {
-                        "name": "tags",
+                        "name": "username",
                         "in": "query",
-                        "description": "tags to filter by",
+                        "description": "The user name for login",
                         "required": false,
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "collectionFormat": "csv"
+                        "type": "string"
                     },
                     {
-                        "name": "limit",
+                        "name": "password",
                         "in": "query",
-                        "description": "maximum number of results to return",
+                        "description": "The password for login in clear text",
                         "required": false,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "pet response",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/pet"
-                            }
-                        }
+                        "description": "succes"
                     },
-                    "default": {
-                        "description": "unexpected error",
-                        "schema": {
-                            "$ref": "#/definitions/errorModel"
-                        }
+                    "500": {
+                        "description": "service error"
+                    },
+                    "404": {
+                        "description": "not found"
                     }
                 }
             }

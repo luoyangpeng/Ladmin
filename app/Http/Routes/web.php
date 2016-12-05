@@ -34,11 +34,7 @@ Route::get('/push','MessagePushController@push');
 //聊天
 Route::get('/chat','MessagePushController@chat');
 
-//api
 
-Route::group(['prefix'=>"api",'namespace'=>'Api'],function(){
-    Route::get('/pay','WechatController@wechatPay');
-});
 
 
 

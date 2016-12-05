@@ -7,6 +7,8 @@
  */
 
 return array(
+
+   'lang' => 'zh-cn',
     /*
       |--------------------------------------------------------------------------
       | Absolute path to location where parsed swagger annotations will be stored

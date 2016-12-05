@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
+use App\Services\ApiResponseService;
 
 /**
  * @SWG\Swagger(
@@ -50,25 +51,15 @@ class WechatController extends  Controller {
 
      /**
      * @SWG\Post(
-     *     path="/api/wechat_apy",
+     *     path="/v1/pay",
+     *     tags={"支付相关接口"},
+     *     summary="测试接口",
      *     description="移动端app支付接口",
      *     operationId="wechatPay",
-     *     produces={"application/json", "application/xml", "text/xml", "text/html"},
-     *     @SWG\Response(
-     *         response=200,
-     *         description="pet response",
-     *         @SWG\Schema(
-     *             type="array",
-     *             @SWG\Items(ref="#/definitions/pet")
-     *         ),
-     *     ),
-     *     @SWG\Response(
-     *         response="default",
-     *         description="unexpected error",
-     *         @SWG\Schema(
-     *             ref="#/definitions/errorModel"
-     *         )
-     *     )
+     *     produces={"application/json", "application/xml"},
+     * @SWG\Response(response=200, description="succes"),
+     * @SWG\Response(response=500, description="service error"),
+     * @SWG\Response(response=404, description="not found")   
      * )
      */
     public function wechatPay()
@@ -94,9 +85,12 @@ class WechatController extends  Controller {
 
         $result = $payment->prepare($order);
 
-        dd($result);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+            $prepayId = $result->prepay_id;
+        } else{
+            return response()->json($result);
+        }
 
-        $prepayId = $result->prepay_id;
 
         $config = $payment->configForAppPayment($prepayId);
 
@@ -106,46 +100,38 @@ class WechatController extends  Controller {
 
 
      /**
-     * @SWG\Get(
-     *     path="/api/test",
-     *     description="Returns all pets from the system that the user has access to",
+     * @SWG\Post(
+     *     path="/v1/test",
+     *     tags={"test"},
+     *     summary="测试接口",
+     *     description="测试接口",
      *     operationId="test",
-     *     produces={"application/json", "application/xml", "text/xml", "text/html"},
+     *     produces={"application/json", "application/xml"},
      *     @SWG\Parameter(
-     *         name="tags",
-     *         in="query",
-     *         description="tags to filter by",
-     *         required=false,
-     *         type="array",
-     *         @SWG\Items(type="string"),
-     *         collectionFormat="csv"
-     *     ),
-     *     @SWG\Parameter(
-     *         name="limit",
-     *         in="query",
-     *         description="maximum number of results to return",
-     *         required=false,
-     *         type="integer",
-     *         format="int32"
-     *     ),
-     *     @SWG\Response(
-     *         response=200,
-     *         description="pet response",
-     *         @SWG\Schema(
-     *             type="array",
-     *             @SWG\Items(ref="#/definitions/pet")
-     *         ),
-     *     ),
-     *     @SWG\Response(
-     *         response="default",
-     *         description="unexpected error",
-     *         @SWG\Schema(
-     *             ref="#/definitions/errorModel"
-     *         )
-     *     )
+     *     name="username",
+     *     in="query",
+     *     description="The user name for login",
+     *     required=false,
+     *     type="string"
+     *   ),
+     * @SWG\Parameter(
+     *     name="password",
+     *     in="query",
+     *     description="The password for login in clear text",
+     *     required=false,
+     *     type="string"
+     *   ),
+     * @SWG\Response(response=200, description="succes"),
+     * @SWG\Response(response=500, description="service error"),
+     * @SWG\Response(response=404, description="not found")
      * )
      */
     public function test() {
-
+        
+        $data = [
+            'name' => '老万',
+            'sex'  => '男',
+        ];
+        return ApiResponseService::success($data,200,'success');
     }
 }

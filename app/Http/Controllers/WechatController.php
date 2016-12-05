@@ -117,8 +117,11 @@ class WechatController extends Controller
 
 
         $result = $payment->prepare($order);
+
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+            $prepayId = $result->prepay_id;
+        }
         
-        $prepayId = $result->prepay_id;
 
         //创建数据库订单
         $data = [

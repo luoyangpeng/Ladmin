@@ -24,7 +24,7 @@
 |
 */
   
-
+//后台路由
 Route::group(['domain'=>env('ADMIN_DOMAIN'),'middleware' => ['web']],function(){
     Route::auth();
     Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['auth']], function ($router) {
@@ -68,19 +68,15 @@ Route::group(['domain'=>env('ADMIN_DOMAIN'),'middleware' => ['web']],function(){
     });
 });
 
-
+//前台路由
 Route::group(['domain'=>env('FRONT_DOMAIN'),'middleware' => ['web'] ],function($router){
 
     require(__DIR__ . '/Routes/web.php');
 });
-Route::group(['domain'=>'iyoulang.cc' ,'middleware' => ['web'] ],function($router){
 
-    require(__DIR__ . '/Routes/web.php');
-});
 
-//api
+//Api 路由
 Route::group(['domain'=>env('API_DOMAIN'),'middleware' => ['web'] ],function($router){
  
-
-
+    require(__DIR__ . '/Routes/api.php');
 });

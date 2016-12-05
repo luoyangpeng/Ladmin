@@ -12,31 +12,11 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'wechat/*'
+        'wechat/*',
+        'admin/image/upload_image',
+        'wechat/callback',
+        'v1/*'
     ];
 
-    public function handle($request, Closure $next)
-    {
-        if ($this->isReading($request) || $this->excludedRoutes($request) || $this->tokensMatch($request))
-        {
-            return $this->addCookieToResponse($request, $next($request));
-        }
-
-        throw new TokenMismatchException;
-    }
-
-    protected function excludedRoutes($request)
-    {
-        $routes = [
-            'admin/image/upload_image',
-            'wechat/callback',
-
-        ];
-
-        foreach($routes as $route)
-            if ($request->is($route))
-                return true;
-
-        return false;
-    }
+   
 }

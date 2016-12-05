@@ -34,6 +34,8 @@ header("Access-Control-Allow-Headers: X-Requested-With");
         <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
         <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
         <!-- <script src='lang/en.js' type='text/javascript'></script> -->
+        <script src='/vendor/swaggervel/lang/translator.js' type='text/javascript'></script>
+        <script src='/vendor/swaggervel/lang/{{config('swaggervel.lang')}}.js' type='text/javascript'></script>
 
         <script type="text/javascript">
 
