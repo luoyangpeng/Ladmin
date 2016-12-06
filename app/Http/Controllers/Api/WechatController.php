@@ -31,7 +31,7 @@ class WechatController extends  ApiBaseController {
      /**
      * @SWG\Post(
      *     path="/v1/pay",
-     *     tags={"支付相关接口"},
+     *     tags={"App Interface"},
      *     summary="测试接口",
      *     description="移动端app支付接口",
      *     operationId="wechatPay",

@@ -19,7 +19,7 @@
         "/v1/pay": {
             "post": {
                 "tags": [
-                    "\u652f\u4ed8\u76f8\u5173\u63a5\u53e3"
+                    "App Interface"
                 ],
                 "summary": "\u6d4b\u8bd5\u63a5\u53e3",
                 "description": "\u79fb\u52a8\u7aefapp\u652f\u4ed8\u63a5\u53e3",
