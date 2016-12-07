@@ -6,12 +6,20 @@
 
 # LAdmin 后台安装指北
 
-### 初始化项目,进入项目根目录,执行`composer install`安装依赖
+### 安装    
+```
+composer install
+```
 
-### 上面依赖包安装完成之后初始化项目,复制项目根目录下的 `.env.example` 文件命名为 `.env` 文件,配置数据库
+### 创建.env文件
+
+```
+cp .env.example .env
+```
 
 ### .env 配置
-#### 数据库配置
+
+#### 1.数据库配置
  ```
  	DB_HOST=localhost			//ip地址
  	DB_DATABASE=homestead		//数据库名称
@@ -19,20 +27,20 @@
  	DB_PASSWORD=secret			//数据库密码
  ```
 
- #### 域名配置
+#### 2.域名配置
+
  ```
 	ADMIN_DOMAIN = admin.test.com
 	FRONT_DOMAIN = www.test.com
 	API_DOMAIN =  api.test.com
  ```
 
- ###配置好数据库后生产项目秘钥，在项目根目录运行下面命令：
+### 配置好数据库后生产项目秘钥，在项目根目录运行下面命令：
 
  ```
  php artisan key:generate
-
  ```
-###迁移数据
+### 迁移数据
 
 ```
 php artisan migrate
