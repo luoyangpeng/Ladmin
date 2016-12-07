@@ -1,4 +1,9 @@
-![iView](https://www.iyoulang.cc/front/assets/img/logo.png)
+<p align="center">
+    <a href="https://www.iyoulang.cc">
+        <img width="144" src="https://www.iyoulang.cc/front/assets/img/logo.png">
+    </a>
+</p>
+
 
 # LAdmin 后台安装指北
 
