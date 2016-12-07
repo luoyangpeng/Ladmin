@@ -1,8 +1,4 @@
-<p align="center">
-    <a href="https://www.iyoulang.cc">
-        <img width="144" src="https://www.iyoulang.cc/front/assets/img/logo.png">
-    </a>
-</p>
+![iView](https://www.iyoulang.cc/front/assets/img/logo.png)
 
 # LAdmin 后台安装指北
 
@@ -54,12 +50,8 @@ php artisan db:seed
 > 后台访问 youdomain/admin
 > 后台用户名密码 admin@admin.com 123456
 
-<p align="center">
-    <a href="https://www.iyoulang.cc">
-        <img  src="http://o6hc01bvr.bkt.clouddn.com/20160921011158.png">
-    </a>
-</p>
 
+![iView](http://o6hc01bvr.bkt.clouddn.com/20160921011158.png)
 
 >由开源项目IAdmin 扩展
 >后台模板仅供测试交流，如需使用商业用途，请官网授权。
