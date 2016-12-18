@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use App\Services\ApiResponseService;
+use App\Lib\Code;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -45,6 +48,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        $host =  $request->getHttpHost();
+        $api_host = env('API_DOMAIN');
+
+        if($host == $api_host) {
+            return ApiResponseService::showError(Code::FATAL_ERROR);
+        }
+
         return parent::render($request, $e);
     }
 }

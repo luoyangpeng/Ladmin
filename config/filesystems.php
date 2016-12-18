@@ -63,10 +63,10 @@ return [
         ],
         'qiniu' => [
             'driver' => 'qiniu',
-            'domain' => 'o6hc01bvr.bkt.clouddn.com',   //你的七牛域名
-            'access_key'    => 'ZkfnWexejY_kcoBBddP23XuzKj5Za99TwVihrL7x',//AccessKey
-            'secret_key' => 'cUFV22fX3xQFN8SYmud0bVAP49XIQuY30kReghdM',//SecretKey
-            'bucket' => 'iadmin',                                 //Bucket名字
+            'domain' => env('QINIU_DOMAIN'),//你的七牛域名
+            'access_key' => env('QINIU_AK'),//AccessKey
+            'secret_key' => env('QINIU_SK'),//SecretKey
+            'bucket' => env('QINIU_BUCKET'),//Bucket名字
         ],
 
     ],

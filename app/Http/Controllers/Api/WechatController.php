@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use App\Services\ApiResponseService;
+use App\Lib\Code;
 
 
 class WechatController extends  ApiBaseController {
@@ -67,7 +68,7 @@ class WechatController extends  ApiBaseController {
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
             $prepayId = $result->prepay_id;
         } else{
-            return response()->json($result);
+            return ApiResponseService::showError(Code::WEIXIN_APP_PATNENT_ERROR);
         }
 
 
@@ -106,7 +107,7 @@ class WechatController extends  ApiBaseController {
      * )
      */
     public function test() {
-        
+
         $data = [
             'name' => '老万',
             'sex'  => '男',

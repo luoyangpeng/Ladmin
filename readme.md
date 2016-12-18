@@ -5,7 +5,7 @@
 </p>
 
 
-# LAdmin 后台安装指北
+# LAdmin 安装指北（包含：后台、前台、API）
 
 ### 安装    
 ```
@@ -53,13 +53,17 @@ php artisan db:seed
 ```
 
 > 后台访问 youdomain/admin
+
 > 后台用户名密码 admin@admin.com 123456
 
 
 ![iView](http://o6hc01bvr.bkt.clouddn.com/20160921011158.png)
 
->由开源项目IAdmin 扩展
+>后台权限部分使用的IAdmin
+
 >后台模板仅供测试交流，如需使用商业用途，请官网授权。
+
+> 使用本程序开发的网站 请在网页底部加入 Power by Ladmin ，链接指向 https://www.iyoulang.cc
 
 
 #License
