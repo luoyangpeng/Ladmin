@@ -13,7 +13,7 @@ class Code {
 	
 
 
-	const PAY_ALI = 1;    // 支付方式 支付宝
+	const PAY_ALI = 1;    // 支付方式 支付宝安装
 	const PAY_WEIXIN = 7;    // 支付方式 微信支付
 	
 	public static function errMsg() {

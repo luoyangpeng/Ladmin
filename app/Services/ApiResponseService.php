@@ -4,15 +4,17 @@ namespace App\Services;
 
 use  App\Lib\Code;
 
-class ApiResponseService {
+class ApiResponseService 
+{
 
-	public static function success($data,$code,$message)
+	public static function success($data, $code, $message)
 	{
 		$result = [
 			'data' 		=> $data,
 			'code' 		=> $code,
 			'message' 	=> $message	
 		];
+
 		return response()->json($result);
 	}
 
@@ -26,8 +28,8 @@ class ApiResponseService {
 			'code' 		=> $code,
 			'message' 	=> $message
 		];
-		return response()->json($result);
 
+		return response()->json($result);
 	}
 }
 

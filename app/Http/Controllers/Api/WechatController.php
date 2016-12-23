@@ -67,7 +67,7 @@ class WechatController extends  ApiBaseController {
 
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
             $prepayId = $result->prepay_id;
-        } else{
+        } else {
             return ApiResponseService::showError(Code::WEIXIN_APP_PATNENT_ERROR);
         }
 
