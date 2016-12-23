@@ -2505,20 +2505,20 @@ li [class*=" fa-"].icon-large {
 }
 
 .banner_bg{
-	width: 100%;
-	height: 450px;
-	opacity: 1;
-	visibility: inherit;
-	z-index: 20;
-	background: #0da3e2;
+	position: relative;
+    width: 100%;
+    min-height: 630px;
+    height: 50vw;
+    background: url(http://o6hc01bvr.bkt.clouddn.com/20161222084206.jpg) no-repeat center center;
+    background-size: cover;
 }
 
 .banner_title{
 	font-weight: bold;
 	text-align: center;
-	color: #fff;
+	color: #428bca;
 	font-size: 4em;
-	padding-top: 120px;
+	padding-top: 30px;
 	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media screen and (max-width: 760px) {
@@ -2536,7 +2536,7 @@ li [class*=" fa-"].icon-large {
 
 #banner-start {
 	text-align: center;
-	padding: 4rem 0;
+	padding: 8rem 0;
 	display: table;
 	margin: 0 auto;
 }
