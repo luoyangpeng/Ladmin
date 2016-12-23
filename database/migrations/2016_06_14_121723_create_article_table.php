@@ -22,7 +22,7 @@ class CreateArticleTable extends Migration
             $table->text("content")->comment('文章内容');
             $table->string("thumb",100)->comment('封面');
             $table->integer("status")->comment("文章状态");
-            $table->integer("view_count")->comment("浏览数");
+            $table->integer("view_count")->default(0)->comment("浏览数");
             $table->timestamps();
         });
     }
