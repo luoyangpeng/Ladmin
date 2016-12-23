@@ -102,7 +102,7 @@
                                   <img src="" width="200" height="200"/>
                                   <p class="btn blue margin-top-10">选择图片</p>
                               </div>
-                              <input type="text" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{old('thumb')}}">
+                              <input type="hidden" class="form-control hide" id="thumb" name="thumb" placeholder="{{trans('labels.article.thumb')}}" value="{{old('thumb')}}">
                               <div class="form-control-focus"> </div>
                           </div>
                       </div>
@@ -275,7 +275,7 @@
                     var imagePath       = body.find(".chose_icon").attr("src");
                     // alert(imagePath);
                     //设置input值
-                    $('.form-group').find('input[type=hidden]').val(imagePath);
+                    $('.form-group').find('#thumb').val(imagePath);
                     //修改图片src属性
                     $('.form-group').find('img').attr('src', imagePath);
                     //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
