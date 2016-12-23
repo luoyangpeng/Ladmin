@@ -95,7 +95,7 @@
             <div class="col-md-4 col-sm-4 ">
                 <!-- BEGIN ABOUT -->
                 <h2>关于</h2>
-                <p class="margin-bottom-30">Lmyadmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用.</p>
+                <p class="margin-bottom-30">Ladmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用.</p>
                 <div class="clearfix"></div>
                 <!-- END ABOUT -->
 
@@ -106,7 +106,6 @@
                 <h2>联系我们</h2>
                 <address class="margin-bottom-40">
                     QQ群:517471676<br>
-                    Email: <a href="mailto:luoyangpeng1122@163.com">luoyangpeng1122@163.com</a>
                 </address>
                 <!-- END CONTACTS -->
 
