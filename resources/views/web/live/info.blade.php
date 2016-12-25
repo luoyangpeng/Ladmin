@@ -31,7 +31,7 @@
                 image: poster,  
                 primary: 'flash',  
                 flashplayer: '/front/jwplayer/jwplayer.flash.swf',      
-                html5player: '/front/jwplayer/jwplayer.html5.js',  
+                html5player: '/front/jwplayer/provider.html5.js',  
                 width:981,  
                 height:586,  
                 startparam:true,
