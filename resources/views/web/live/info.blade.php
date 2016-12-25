@@ -36,10 +36,11 @@
                     bufferlength: 0.1  
                 }, 
                 androidhls:"true", 
+                volume : 80,
+                autostart: true //自动播放
 
             });  
   
-            jw.play();
             
     </script>  
 

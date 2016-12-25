@@ -34,18 +34,20 @@
                 primary: 'flash',  
                 flashplayer: '/front/jwplayer/jwplayer.flash.swf',      
                 html5player: '/front/jwplayer/provider.html5.js',  
-                width:981,  
-                height:586,  
+                width:jQuery(document).width(),  
+                height:jQuery(document).height(),  
                 startparam:true,
                 autoplay:true,
                 rtmp: {  
                     bufferlength: 0.1  
                 }, 
                 androidhls:"true", 
+                controls:false,
+                autostart: true,//自动播放
+                volume : 50
 
             });  
   
-            jw.play();
             
     </script>
 </body>
