@@ -41,6 +41,12 @@ class LiveController extends Controller
             'keywords' => 'Ladmin,Ladmin博客，直播',
         ];
 
-    	return view('web.live.info', compact('seo','roomId'));
+        if(isMobile()) {
+        	return view('web.live.wap', compact('seo','roomId'));
+        } else {
+        	return view('web.live.info', compact('seo','roomId'));
+        }
+
+    	
     }
 }

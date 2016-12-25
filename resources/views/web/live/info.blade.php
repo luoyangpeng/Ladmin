@@ -1,10 +1,6 @@
 @extends('web.layout.web')
 
-
-
 @section('content')
-
-    
     <div class="container">
          <div class="margin-bottom-40"></div>
          <div class="video" align="center">  
@@ -24,10 +20,10 @@
      <script type="text/javascript">  
      
             //调用播放器  
-           
-            poster = '/front/assets/img/banner.jpg';  
+            var poster = '/front/assets/img/banner.jpg';  
+
             var jw = jwplayer("jw_player").setup({  
-                file:'http://121.42.201.58:8888/live/livestream.m3u8',  
+                file:'rtmp://121.42.201.58:1935/live/livestream{{$roomId}}',  
                 image: poster,  
                 primary: 'flash',  
                 flashplayer: '/front/jwplayer/jwplayer.flash.swf',      
@@ -44,9 +40,7 @@
             });  
   
             jw.play();
-          
-      
-          
+            
     </script>  
 
 @endsection
