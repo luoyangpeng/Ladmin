@@ -35,6 +35,15 @@ Route::get('/push','MessagePushController@push');
 Route::get('/chat','MessagePushController@chat');
 
 
+//直播
+
+Route::group(['prefix'=>'live'], function() {
+	Route::get('/', 'LiveController@liveList');
+	Route::get('/info/{roomId}', 'LiveController@liveInfo');
+});
+
+
+
 
 
 

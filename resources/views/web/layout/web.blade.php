@@ -54,31 +54,20 @@
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown @if($url =="/")active @endif">
+                <li class="dropdown @if($url == '/')active @endif">
                     <a class="dropdown-toggle" href="/">首页 </a>
 
                 </li>
-                <li class="dropdown @if($url =="/blog")active @endif">
+                <li class="dropdown @if($url == '/blog')active @endif">
                     <a class="dropdown-toggle" href="{{url('blog/')}}">博客  </a>
 
                 </li>
+                <li class="dropdown @if($url == '/live')active @endif">
+                    <a class="dropdown-toggle" href="{{url('live/')}}">直播 </a>
 
-
-                <li class="menu-search">
-                    <span class="sep"></span>
-                    <i class="fa fa-search search-btn"></i>
-
-                    <div class="search-box">
-                        <form action="#">
-                            <div class="input-group input-large">
-                                <input class="form-control" type="text" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn theme-btn">Go</button>
-                                    </span>
-                            </div>
-                        </form>
-                    </div>
                 </li>
+
+                
             </ul>
         </div>
         <!-- BEGIN TOP NAVIGATION MENU -->

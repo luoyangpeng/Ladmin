@@ -1,46 +1,64 @@
 <html>
 <head>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <style>
-        body{
-            margin: 0;
-        }
-    </style>
+    <script src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://content.jwplatform.com/libraries/QtpxB0Gb.js"></script>
 
+    <script>jwplayer.key="pES2TFu8tO/o33W6FRv/OqGH0+wXANmsKx7p5Q==";</script>
+       <style type="text/css">   
+            .video{  
+                height: 374px;  
+                width: 654px;  
+                position: fixed;  
+                left: 50%;  
+                margin-left: -327px;  
+                top: 30%;  
+                border: 7px solid #fff;  
+                border-radius: 10px;  
+                border-color:rgba(255,255,255,0.3) ;  
+                background: #fff;  
+                background-clip: content-box;  
+            }  
+            
+        </style>            
 </head>
 <body>
 
-<!--
-<video id="video" style="width: 100%; height: 100%;" autoplay x-webkit-airplay webkit-playsinline >
-    <source src="http://121.42.201.58:8888/live/livestream.m3u8" type="application/x-mpegURL">
-</video>
--->
 
-<script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+        <div class="video">  
+            <div id="jw_player"></div>  
+        </div>  
+          
+    </body>  
+      
+    <script type="text/javascript">  
+     
+            //调用播放器  
+           
+            poster = '/front/assets/img/banner.jpg';  
+            var jw = jwplayer("jw_player").setup({  
+                file:'rtmp://121.42.201.58:1935/live/livestream',  
+                image: poster,  
+                primary: 'flash',  
+                flashplayer: '/front/jwplayer/jwplayer.flash.swf',      
+                html5player: '/front/jwplayer/jwplayer.html5.js',  
+                width:654,  
+                height:374,  
+                startparam:true,
+                autoplay:true,
+                rtmp: {  
+                    bufferlength: 0.1  
+                }, 
+                androidhls:"true", 
 
-<video id="video" style="width: 100%; height: 100%;" autoplay></video>
+            });  
+  
+            jw.play();
+          
+      
+          
+    </script>  
 
-<script>
-
-  if(Hls.isSupported()) {
-
-    var video = document.getElementById('video');
-
-    var hls = new Hls();
-
-    hls.loadSource('http://121.42.201.58:8888/live/livestream.m3u8');
-
-    hls.attachMedia(video);
-
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-
-      video.play();
-
-  });
-
- }
-
-</script>
 
 </body>
 </html>
