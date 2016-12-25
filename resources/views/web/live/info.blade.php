@@ -27,7 +27,7 @@
            
             poster = '/front/assets/img/banner.jpg';  
             var jw = jwplayer("jw_player").setup({  
-                file:'rtmp://121.42.201.58:1935/live/livestream{{$roomId}}',  
+                file:'http://121.42.201.58:8888/live/livestream.m3u8',  
                 image: poster,  
                 primary: 'flash',  
                 flashplayer: '/front/jwplayer/jwplayer.flash.swf',      
