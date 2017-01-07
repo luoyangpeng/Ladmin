@@ -12,7 +12,7 @@
         <div class="banner_content">
 
             <h1 class="banner_title">
-                <span>Ladmin后台管理系统</span>
+                <span>Ladmin管理系统V2.0</span>
             </h1>
             <div id="banner-start">
                 <span id="banner-start-command">https://github.com/luoyangpeng/Ladmin</span>

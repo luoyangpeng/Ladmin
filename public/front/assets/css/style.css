@@ -2,13 +2,14 @@
 @import url(../fonts/font.css);
 
 /* General body settings */
-body { 
+html,body { 
   color: #000;
   font-size:13px; 
   direction: ltr;
   margin: 0 !important;
   padding: 0 !important;
-	font-family: Lato,PingFang SC,Microsoft YaHei,sans-serif;
+  font-family: Lato,PingFang SC,Microsoft YaHei,sans-serif;
+  font-weight: normal;
   overflow-x: hidden;
 }
 
@@ -1182,7 +1183,7 @@ Footer
 .footer {
 	padding: 35px 0;
 	font-size: 13px;
-	background: #1f2021;
+	background: #333;
 }
 
 .footer h2 {
@@ -1266,8 +1267,8 @@ Copyright
 	color: #dee4eb;
 	font-size: 12px;
 	padding: 10px 0;
-	background: #1f2021;
-	border-top: 1px solid #333;
+	background: #333;
+	border-top: 1px solid #444;
 }
 
 .copyright p {
@@ -2513,32 +2514,68 @@ li [class*=" fa-"].icon-large {
     background-size: cover;
 }
 
+.banner_bg:before {
+    width: 100%;
+    background: rgba(64,64,64,.7);
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+.banner_bg:before {
+    content: '';
+}
+
 .banner_title{
+	position: relative;
 	font-weight: bold;
 	text-align: center;
-	color: #428bca;
+	color: #ffffff;
 	font-size: 4em;
 	padding-top: 30px;
 	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+
 @media screen and (max-width: 760px) {
 	.banner_title{
 		font-size: 2.4em;
 	}
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 760px) {
 	#banner-start {
 		padding: 40px 0;
 		font-size: 14px;
 	}
 }
 
+@media screen and (max-width: 760px) {
+	.banner_bg{
+	position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    background: url(http://o6hc01bvr.bkt.clouddn.com/20161222084206.jpg) no-repeat center center;
+    background-size: cover;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.footer {
+    padding: 35px 10px;
+    font-size: 13px;
+    background: #333;
+	}
+}
+
 #banner-start {
 	text-align: center;
-	padding: 8rem 0;
+	padding: 12rem 0;
 	display: table;
 	margin: 0 auto;
+	position: relative;
 }
 #banner-start-link {
 	color: #fff;
@@ -2560,7 +2597,7 @@ li [class*=" fa-"].icon-large {
 	padding: 1rem 1.2rem;
 }
 
-.blog-list{
+.blog-list {
 	background: #ffffff;
 	padding:20px
 }
@@ -2572,6 +2609,10 @@ li [class*=" fa-"].icon-large {
 
 .panel-body {
     padding: 15px;
+}
+
+.border-right {
+    height: 100px;
 }
 
 

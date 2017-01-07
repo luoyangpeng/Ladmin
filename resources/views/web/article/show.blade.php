@@ -16,7 +16,7 @@
 			</div>
 			<div class="col-md-8 col-sm-8">
 				<ul class="pull-right breadcrumb">
-					<li><a href="index.html">首页</a></li>
+					<li><a href="{{url('/')}}">首页</a></li>
 					<li><a href="{{url('/blog')}}">博客</a></li>
 					<li class="active">{{$article['title']}}</li>
 				</ul>

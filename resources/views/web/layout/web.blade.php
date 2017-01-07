@@ -81,16 +81,16 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4 ">
+            <div class="col-md-4 col-sm-4 border-right">
                 <!-- BEGIN ABOUT -->
-                <h2>关于</h2>
-                <p class="margin-bottom-30">Ladmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用.</p>
+                <h2>关于Ladmin</h2>
+                <p class="margin-bottom-30">Ladmin是一个免费开源的管理系统。</p>
                 <div class="clearfix"></div>
                 <!-- END ABOUT -->
 
 
             </div>
-            <div class="col-md-4 col-sm-4 ">
+            <div class="col-md-4 col-sm-4 border-right">
                 <!-- BEGIN CONTACTS -->
                 <h2>联系我们</h2>
                 <address class="margin-bottom-40">
@@ -103,7 +103,7 @@
                 <!-- BEGIN TWITTER BLOCK -->
                 <h2>关注我们</h2>
                 <dl class="dl-horizontal f-twitter">
-                    <dt><i class="fa fa-twitter"></i></dt>
+                    <dt><i class="fa fa-weibo"></i></dt>
                     <dd>
                         <a href="http://weibo.com/hnlhlyp1122" target="_blank">新浪微博</a>
 
