@@ -2510,7 +2510,7 @@ li [class*=" fa-"].icon-large {
     width: 100%;
     min-height: 630px;
     height: 50vw;
-    background: url(http://o6hc01bvr.bkt.clouddn.com/20161222084206.jpg) no-repeat center center;
+    background: url(/front/assets/img/apple.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -2557,7 +2557,7 @@ li [class*=" fa-"].icon-large {
     width: 100%;
     height: auto;
     min-height: auto;
-    background: url(http://o6hc01bvr.bkt.clouddn.com/20161222084206.jpg) no-repeat center center;
+    background: url('/front/assets/img/apple.jpg') no-repeat center center;
     background-size: cover;
 	}
 }
