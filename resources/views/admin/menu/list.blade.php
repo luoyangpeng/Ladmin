@@ -27,7 +27,7 @@
           <div class="portlet light portlet-fit portlet-datatable bordered">
             <div class="portlet-title">
               <div class="caption">
-                <i class="icon-settings font-green-sharp"></i>
+                
                 <span class="caption-subject font-green-sharp sbold uppercase">{!! trans('labels.breadcrumb.menuList') !!}</span>
               </div>
               <div class="actions">
@@ -105,7 +105,7 @@
           <div class="portlet  portlet-fit bordered" id="portlet_menu">
             <div class="portlet-title">
               <div class="caption">
-                <i class="icon-settings font-green-sharp"></i>
+              
                 <span class="caption-subject font-green-sharp sbold uppercase">{!! trans('labels.menu.detail') !!}</span>
               </div>
               <div class="actions">
@@ -245,6 +245,7 @@
 <script type="text/javascript" src="{{asset('backend/plugins/layer/layer.js')}}"></script>
 <script>
 $(function() {
+
   $('#nestable_list').nestable({
     "maxDepth":2
   })
@@ -327,4 +328,5 @@ $(function() {
 });
 
 </script>
+
 @endsection

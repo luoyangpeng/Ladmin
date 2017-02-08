@@ -64,7 +64,7 @@ class WechatController extends Controller
 
                     switch ($message->Event) {
                         case 'subscribe':
-                            return "{$fromUser->nickname} 欢迎关注 iadmin";
+                            return "{$fromUser->nickname} 欢迎关注 Ladmin";
                             break;
                          case 'unsubscribe':
                             return "{$fromUser->nickname} 走好不送";

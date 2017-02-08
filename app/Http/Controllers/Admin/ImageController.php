@@ -71,11 +71,24 @@ class ImageController extends Controller {
      */
     public function showImageList()
     {
-        $image_list = ImageRepository::getList();
-        if(isset($_GET['page'])){
-            //ajax加载内容
-            return view("admin.image.ajax_list",['image_list'=>$image_list]);
+        if(request()->ajax()) {
+            $page = request('page'); 
+        } else {
+            $page = 1;
         }
+
+        $image_list = ImageRepository::getList()->toArray();
+
+        $count = ImageRepository::getCount();
+
+        $last_page = $count%10  ? intval($count/10) + 1 : $count/10;
+
+        //ajax加载内容
+        if(request()->ajax()){
+            
+            return view("admin.image.ajax_list",compact('image_list','page','last_page'));
+        }
+
         return view("admin.image.image_list",['image_list'=>$image_list]);
     }
 

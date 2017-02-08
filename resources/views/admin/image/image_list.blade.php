@@ -19,16 +19,16 @@
     <div class="portfolio-content portfolio-1">
 
         <div id="js-grid-juicy-projects" class="cbp">
-            @foreach($image_list as $k=>$v)
+            @foreach($image_list['data'] as $k=>$v)
             <div class="cbp-item graphic">
                 <div class="cbp-caption">
                     <div class="cbp-caption-defaultWrap">
-                        <img src="http://o6hc01bvr.bkt.clouddn.com/{{$v->path}}" alt=""> </div>
+                        <img src="http://o6hc01bvr.bkt.clouddn.com/{{$v['path']}}" alt=""> </div>
                     <div class="cbp-caption-activeWrap">
                         <div class="cbp-l-caption-alignCenter">
                             <div class="cbp-l-caption-body">
-                                <a href="javascript:void(0);" class=" destroy-image btn red " rel="nofollow" data-id="{{$v->id}}">删除</a>
-                                <a href="http://o6hc01bvr.bkt.clouddn.com/{{$v->path}}" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard">查看</a>
+                                <a href="javascript:void(0);" class=" destroy-image btn red " rel="nofollow" data-id="{{$v['id']}}">删除</a>
+                                <a href="http://o6hc01bvr.bkt.clouddn.com/{{$v['path']}}" class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase" data-title="Dashboard">查看</a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
 
         </div>
         <div id="js-loadMore-juicy-projects" class="cbp-l-loadMore-button">
-            <a href="{{url('admin/image/image_list')}}?page=2" class="cbp-l-loadMore-link btn grey-mint btn-outline" rel="nofollow">
+            <a href="{{url('admin/image/image_list')}}" data-page="1" data-href="{{url('admin/image/image_list')}}" class="cbp-l-loadMore-link btn grey-mint btn-outline" rel="nofollow">
                 <span class="cbp-l-loadMore-defaultText">加载更多</span>
                 <span class="cbp-l-loadMore-loadingText">LOADING...</span>
                 <span class="cbp-l-loadMore-noMoreLoading">没有更多了</span>

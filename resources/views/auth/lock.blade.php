@@ -4,7 +4,7 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
-    <title>IAdmin</title>
+    <title>LAdmin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -33,7 +33,7 @@
                 <img src="{{asset('backend/img/logo.png')}}" alt="logo" /> </a>
         </div>
         <div class="page-body">
-            <div class="lock-head"> Locked </div>
+            <div class="lock-head"> 锁屏 </div>
             <div class="lock-body">
                 <div class="pull-left lock-avatar-block">
                     <img src="{{asset('backend/img/avatar3_small.jpg')}}" class="lock-avatar"> </div>
@@ -48,10 +48,10 @@
                 </form>
             </div>
             <div class="lock-bottom">
-                <a href="">Not Amanda Smith?</a>
+                <a href="{{ url('/password/reset') }}">忘记密码?</a>
             </div>
         </div>
-        <div class="page-footer-custom"> 2014 &copy;  IAdmin  </div>
+        <div class="page-footer-custom"> 2017 &copy;  Ladmin  </div>
     </div>
 </body>
 

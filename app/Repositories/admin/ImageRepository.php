@@ -20,8 +20,9 @@ class ImageRepository {
      */
     public function getList()
     {
-
+      
         $list = Image::paginate(10);
+
         return $list;
     }
 

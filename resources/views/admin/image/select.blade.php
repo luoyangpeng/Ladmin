@@ -16,6 +16,7 @@
     <div class="form-group">
 
         <img src="" />
+        <input type="hidden" name="image">
     </div>
 
 @endsection
@@ -33,7 +34,7 @@
             layer.open({
                 title:'选择图片',
                 type: 2,//1：字符串；2:content填URL
-                area: ['650px', '450px'],
+                area: ['650px', '455px'],
                 content: content ,//这里content是一个普通的String
                 zIndex: layer.zIndex,
                 btn: ['确认', '取消'],
