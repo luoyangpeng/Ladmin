@@ -271,17 +271,18 @@
                         return;
                     }
 
-                    //设置图片
+                     //设置图片
                     var imagePath       = body.find(".chose_icon").attr("src");
                     // alert(imagePath);
-                    //设置input值
-                    $('.form-group').find('#thumb').val(imagePath);
-                    //修改图片src属性
-                    $('.form-group').find('img').attr('src', imagePath);
                     //var html = '<img  style="max-height:500px;max-width:500px" src="'+imagePath+'"/>';
                     //ue.execCommand("insertHtml",html);
                     if(cm != '') {
                         cm.replaceSelection("![](" + imagePath +")");
+                    } else {
+                      //设置input值
+                      $('.form-group').find('#thumb').val(imagePath);
+                      //修改图片src属性
+                      $('.form-group').find('img').attr('src', imagePath);
                     }
 
                     layer.closeAll()
