@@ -18,6 +18,7 @@ class ArticleRepository {
     {
         return Article::join("article_category as category","category.id","=","article.category_id")
                 ->select("article.*","category.name")
+                ->orderBy('created_at','desc')
                 ->Paginate(10);
     }
 
