@@ -12,11 +12,14 @@ class CreateArticleCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_category', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->comment("分类名称");
-            $table->timestamps();
-        });
+        if(! Schema::hasTable('article_category')) {
+             Schema::create('article_category', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name')->comment("分类名称");
+                $table->timestamps();
+            });
+        }
+       
     }
 
     /**

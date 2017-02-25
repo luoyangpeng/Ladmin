@@ -11,16 +11,18 @@ class CreateRolesTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->string('description')->nullable();
-            $table->integer('level')->default(1);
-            $table->tinyInteger('status')->default(1);
-            $table->timestamps();
-        });
+    { 
+        if(! Schema::hasTable('roles')) {
+             Schema::create('roles', function (Blueprint $table) {
+                $table->increments('id')->unsigned();
+                $table->string('name');
+                $table->string('slug')->unique();
+                $table->string('description')->nullable();
+                $table->integer('level')->default(1);
+                $table->tinyInteger('status')->default(1);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

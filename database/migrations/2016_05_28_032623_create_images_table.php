@@ -12,8 +12,7 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('images'))
-        {
+        if (! Schema::hasTable('images')) {
             Schema::create('images', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('category_id')->default(1)->comment("分类id 1:广告图片 2:文章图片 3:其他");
