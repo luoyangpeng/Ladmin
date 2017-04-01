@@ -17,7 +17,9 @@
 		"intervention/image":"dev-master",
         "overtrue/laravel-wechat":"~3.0",
         "predis/predis":"^1.1",
-        "jlapp/swaggervel":"dev-master"
+        "jlapp/swaggervel":"dev-master",
+        "kbwebs/multiauth": "~1.0"
+
         
     },
     "require-dev": {

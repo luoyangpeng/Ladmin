@@ -91,7 +91,7 @@ if(!function_exists('curlRequest')){
 	}
 }
 
-if(!function_exists('isMobile')){
+if(! function_exists('isMobile')){
 	function isMobile()
 	{ 
 	    // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
@@ -161,4 +161,10 @@ if(!function_exists('isMobile')){
 	} 
 }
 
+
+if(! function_exists('isEmail')) {
+	function isEmail($email) {
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
+	}
+}
 

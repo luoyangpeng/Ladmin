@@ -16,7 +16,8 @@ class HomeController extends Controller
             'desc'     => 'Ladmin是一个免费开源的后台管理系统，使用html5响应式设计，兼容多客户端友好使用.',
             'keywords' => 'Ladmin,Laravel,后台管理系统,开源Laravel后台管理系统',
         ];
-
+       
+       
         return view('web.index',compact('seo'));
     }
 

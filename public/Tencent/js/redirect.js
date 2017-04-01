@@ -11,7 +11,7 @@ if (location.protocol == 'http:'){
 	//location.protocol = 'https:';
 }
 
-if (bowser.mobile) {
+/*if (bowser.mobile) {
 	var url = location.href.replace(/(zh-cn|zh-hk|en-us)/,'mobile/$1');
 	url = removeXSS(url);
 	url = url.replace(/(company|culture|system|investor)\.html/, function($1){
@@ -29,4 +29,4 @@ if (bowser.mobile) {
 	});
 	url = removeXSS(url);
 	location.href = url;
-}
+}*/

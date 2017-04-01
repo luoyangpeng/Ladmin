@@ -36,7 +36,23 @@ header("Access-Control-Allow-Headers: X-Requested-With");
         <!-- <script src='lang/en.js' type='text/javascript'></script> -->
         <script src='/vendor/swaggervel/lang/translator.js' type='text/javascript'></script>
         <script src='/vendor/swaggervel/lang/{{config('swaggervel.lang')}}.js' type='text/javascript'></script>
-
+        <style type="text/css">
+            .user{
+                    display: block;
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding: 6px 8px;
+                    font-size: 0.9em;
+                    color: white !important;
+                    background-color: #547f00;
+                    -moz-border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                    -o-border-radius: 4px;
+                    -ms-border-radius: 4px;
+                    -khtml-border-radius: 4px;
+                    border-radius: 4px;
+            }
+        </style>
         <script type="text/javascript">
 
             function log() {
@@ -129,6 +145,22 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 
             });
         </script>
+        <script>
+            var ticket = "{{$_COOKIE['ticket']}}";
+             $.ajax({
+                    url: 'http://account.iadmin.com/sso/user_info?ticket='+ticket,
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    success: function (data) {
+                        //var dataObj=eval("("+data+")");//转换为json对象 
+                        $("#account").text(data.username);
+                        console.log(data.username);
+                    },
+                    fail:function() {
+                        console.log('fail');
+                    }
+            })
+    </script>
     </head>
 
     <body class="swagger-section">
@@ -139,6 +171,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
                     <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
                     <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
                     <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
+                    <div class="input"><a id ="account" class="user"></a></div>
                 </form>
             </div>
         </div>

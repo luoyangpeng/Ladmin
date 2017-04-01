@@ -53,5 +53,7 @@ class Kernel extends HttpKernel
         'level' => \Bican\Roles\Middleware\VerifyLevel::class,
         'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class,
         'wechat.oauth2' => \App\Http\Middleware\OAuthAuthenticate::class,
+        'sso'   => \App\Http\Middleware\SSOClientMiddleware::class,
+        'cross' => \App\Http\Middleware\EnableCrossRequestMiddleware::class,
     ];
 }

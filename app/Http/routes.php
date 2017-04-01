@@ -74,9 +74,15 @@ Route::group(['domain'=>env('FRONT_DOMAIN'),'middleware' => ['web'] ],function($
     require(__DIR__ . '/Routes/web.php');
 });
 
+//登录路由
+Route::group(['domain'=>env('LOGIN_DOMAIN')],function($router){
+    
+    require(__DIR__ . '/Routes/login.php');
+});
+
 
 //Api 路由
-Route::group(['domain'=>env('API_DOMAIN'),'middleware' => ['web'] ],function($router){
+Route::group(['domain'=>env('API_DOMAIN'),'middleware' => ['web','sso'] ],function($router){
  
     require(__DIR__ . '/Routes/api.php');
 });

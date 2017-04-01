@@ -45,6 +45,10 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'front' => [
+            'driver' => 'session',
+            'provider' => 'front_users',
+        ],
     ],
 
     /*
@@ -70,10 +74,10 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+       'front_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\FrontUser::class,
+        ],
     ],
 
     /*
@@ -102,6 +106,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+    ],
+    'front_users' => [
+        'provider' => 'front_users',
+        'email' => 'auth.emails.password',
+        'table' => 'password_resets',
+        'expire' => 60,
     ],
 
 ];

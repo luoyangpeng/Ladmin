@@ -66,7 +66,11 @@
                     <a class="dropdown-toggle" href="{{url('live/')}}">直播 </a>
 
                 </li>
+                <li class="dropdown ">
 
+                    <a href="{{env('SSO_SERVER')}}login?oauth_callback=http://{{env('FRONT_DOMAIN')}}" id="loginLink"><i class="fa fa-user"></i><span id="account">登录</span></a>
+
+                </li>
                 
             </ul>
         </div>
@@ -128,7 +132,7 @@
 
             <div class="col-md-8 col-sm-8">
                 <p>
-                    <span class="margin-right-10">2016 © iyoulnag. 版权所有. </span>
+                    <span class="margin-right-10">2017 © iyoulang.cc 版权所有. </span>
                     <span>
                         Power by <a target="_blank" href="https://github.com/luoyangpeng/Ladmin">Ladmin</a>
                     </span>
@@ -155,6 +159,23 @@
 <!-- END CORE PLUGINS -->
 
 @yield('js')
+<script>
+    var ticket = "{{$_COOKIE['ticket'] or ''}}";
+     $.ajax({
+            url: 'http://account.iadmin.com/sso/user_info?ticket='+ticket,
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function (data) {
+                //var dataObj=eval("("+data+")");//转换为json对象 
+                $("#account").text(data.username);
+                $("#loginLink").attr('href','javascript:void()');
+                console.log(data.username);
+            },
+            fail:function() {
+                console.log('fail');
+            }
+    })
+    </script>
 </body>
 
 </html>
