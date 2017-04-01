@@ -116,7 +116,7 @@ class LoginController extends Controller
 
         $ticket = $this->createTicket();
         session()->put($ticket,auth('front')->user());
-        setcookie('ticket',$ticket,time()+3600*2,'/','iadmin.com');
+        setcookie('ticket',$ticket,time()+3600*2,'/', env('COOIKE_DOMAIN'));
         $this->redirectTo = request('oauth_callback')."/?ticket=".$ticket;
 
         return redirect()->intended($this->redirectPath());
