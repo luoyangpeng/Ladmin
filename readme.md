@@ -68,7 +68,7 @@ php artisan db:seed
 * 后台访问 admin.test.com/admin
 * 后台用户名密码 admin@admin.com 123456
 
-![macbook](http://o6hc01bvr.bkt.clouddn.com/20160921011158.png)
+![macbook](http://o6hc01bvr.bkt.clouddn.com/20161028081837.png)
 
 ## 扩展包描述
 
