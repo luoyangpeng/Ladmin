@@ -68,7 +68,7 @@
                 </li>
                 <li class="dropdown ">
 
-                    <a href="{{env('SSO_SERVER')}}login?oauth_callback=http://{{env('FRONT_DOMAIN')}}" id="loginLink"><i class="fa fa-user"></i><span id="account">登录</span></a>
+                    <a href="https://{{env('SSO_SERVER')}}login?oauth_callback=https://{{env('FRONT_DOMAIN')}}" id="loginLink"><i class="fa fa-user"></i><span id="account">登录</span></a>
 
                 </li>
                 
