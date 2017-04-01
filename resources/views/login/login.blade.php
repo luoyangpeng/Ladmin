@@ -172,10 +172,10 @@
             margin-bottom: 10px;
         }
         #sinal a {
-            background: #d63b22 url('http://www.jq22.com/demo/jQuery-tcc-150419131600/images/weibo.png') no-repeat 0px -5px;
+            background: #d63b22 url('/front/assets/img/weibo.png') no-repeat 0px -5px;
         }
         #qql a {
-            background: #3eb0d8 url('http://www.jq22.com/demo/jQuery-tcc-150419131600/images/qq.png') no-repeat 0px -5px;
+            background: #3eb0d8 url('/front/assets/img/qq.png') no-repeat 0px -5px;
         }
         .thirdlogin ul li a {
             display: block;
