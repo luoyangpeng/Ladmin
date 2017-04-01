@@ -162,7 +162,7 @@
 <script>
     var ticket = "{{$_COOKIE['ticket'] or ''}}";
      $.ajax({
-            url: 'http://account.iadmin.com/sso/user_info?ticket='+ticket,
+            url: '{{env("SSO_SERVER")}}sso/user_info?ticket='+ticket,
             dataType: "jsonp",
             jsonp: "callback",
             success: function (data) {

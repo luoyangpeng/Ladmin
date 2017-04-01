@@ -148,7 +148,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
         <script>
             var ticket = "{{$_COOKIE['ticket']}}";
              $.ajax({
-                    url: 'http://account.iadmin.com/sso/user_info?ticket='+ticket,
+                    url: '{{env("SSO_SERVER")}}sso/user_info?ticket='+ticket,
                     dataType: "jsonp",
                     jsonp: "callback",
                     success: function (data) {
