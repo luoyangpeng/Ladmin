@@ -84,7 +84,7 @@ class LoginController extends Controller
     {
         $ticket = isset($_COOKIE['ticket']) ? $_COOKIE['ticket'] :'';
         session()->forget($ticket);
-        setcookie('ticket',$ticket,time()-3600,'/','iadmin.com');
+        setcookie('ticket',$ticket,time()-3600,'/',env('COOIKE_DOMAIN'));
 
         Auth::guard($this->getGuard())->logout();
 
