@@ -62,6 +62,10 @@
                     <a class="dropdown-toggle" href="{{url('blog/')}}">博客  </a>
 
                 </li>
+                 <li class="dropdown @if($url == '/program')active @endif">
+                    <a class="dropdown-toggle" href="{{url('program/')}}">小应用 </a>
+
+                </li>
                 <li class="dropdown @if($url == '/live')active @endif">
                     <a class="dropdown-toggle" href="{{url('live/')}}">直播 </a>
 

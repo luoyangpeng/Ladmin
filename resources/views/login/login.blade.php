@@ -1,6 +1,7 @@
 <html><head>
     <title>单点登录</title>
     <meta charset="utf-8">
+     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script src="{{asset('/front/assets/plugins/jquery-1.10.2.min.js')}}"></script>
     <style>
         body {
@@ -296,8 +297,8 @@
         <div class="pd50">
             <h4>用第三方帐号直接登录</h4>
             <ul>
-                <li id="sinal"><a href="/">微博账号登录</a></li>
-                <li id="qql" style="margin-right: 0px;"><a href="/">QQ账号登录</a></li>
+                <li id="sinal"><a href="javascript:;">微博账号登录</a></li>
+                <li id="qql" style="margin-right: 0px;"><a href="javascript:;">QQ账号登录</a></li>
                 <div class="clear"></div>
             </ul>
             <div class="clear"></div>

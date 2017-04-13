@@ -107,9 +107,7 @@ class WechatController extends  ApiBaseController {
      * )
      */
     public function test() {
-        $ticket = request()->get('ticket');
-        $s = file_get_contents(env('SSO_SERVER')."sso/user_info?ticket=$ticket");
-        var_dump($s);exit;
+
         $data = [
             'name' => '老万',
             'sex'  => '男',
