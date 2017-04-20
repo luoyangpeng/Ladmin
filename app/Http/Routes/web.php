@@ -3,6 +3,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/reward', 'HomeController@reward');
+//小应用
+Route::get('/program','HomeController@application');
 
 //文章
 Route::get('/blog', 'ArticleController@index');
@@ -33,6 +35,8 @@ Route::get('/push','MessagePushController@push');
 
 //聊天
 Route::get('/chat','MessagePushController@chat');
+
+
 
 
 //直播

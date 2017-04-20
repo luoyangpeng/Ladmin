@@ -33,5 +33,22 @@ class HomeController extends Controller
     {
     	return view('web.reward');
     }
+
+    /**
+     * 小应用
+     * @itas
+     * @DateTime 2017-04-20
+     * @return   [type]     [description]
+     */
+    public function application()
+    {
+        $seo = [
+            'title'    => 'Easycms 管理系统-小应用',
+            'desc'     => 'Easycms',
+            'keywords' => 'Ladmin,Easycms,Laravel,后台管理系统,小应用',
+        ];
+
+        return view('web.application',compact('seo'));
+    }
     
 }

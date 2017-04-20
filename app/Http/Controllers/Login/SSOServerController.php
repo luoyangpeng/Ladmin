@@ -10,7 +10,7 @@ class SSOServerController extends Controller
      * get userInfo
      * @itas
      * @DateTime 2017-03-29
-     * @return   obj
+     * @return   json
      */
     public function getUserInfo()
     {
@@ -18,7 +18,7 @@ class SSOServerController extends Controller
         $callback = request()->get('callback');
 
         if(request()->session()->has($ticket)) {
-			return $callback.'('.json_encode(session($ticket)).')';
+			return response()->json(session($ticket))->setCallback($callback);
         } else {
             return response()->json(array());
         }
