@@ -43,6 +43,7 @@ cp .env.example .env
 	ADMIN_DOMAIN = admin.test.com
 	FRONT_DOMAIN = www.test.com
 	API_DOMAIN   = api.test.com
+	LOGIN_DOMAIN = account.test.com 
  ```
 
 ## 配置好数据库后生产项目秘钥，在项目根目录运行下面命令：
